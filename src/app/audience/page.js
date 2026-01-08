@@ -70,7 +70,7 @@ export default function AudiencePage() {
           >
             <motion.div variants={fadeInUp}>
               <Heading size="3xl" animate={false}>
-                OUR AUDIENCE
+                OUR REACH
               </Heading>
             </motion.div>
             <motion.div variants={fadeInUp} className="mt-6 max-w-3xl mx-auto">
@@ -257,7 +257,7 @@ export default function AudiencePage() {
           >
             <motion.div variants={fadeInUp}>
               <Heading size="2xl" animate={false}>
-                WANT TO REACH OUR AUDIENCE?
+                WANT TO REACH OUR REACH?
               </Heading>
             </motion.div>
             <motion.div variants={fadeInUp} className="mt-6 max-w-2xl mx-auto">

@@ -5,6 +5,7 @@ import { useRef } from 'react';
 import { Container, Heading, Text, Button } from '@/components/ui';
 import { staggerContainer, fadeInUp, scaleIn } from '@/lib/animations';
 import ImageGallery from './ImageGallery';
+import MediaGrid from './MediaGrid';
 
 const Hero = () => {
   const containerRef = useRef(null);
@@ -19,7 +20,7 @@ const Hero = () => {
   return (
     <section
       ref={containerRef}
-      className="relative min-h-screen overflow-hidden bg-gradient-to-br from-white via-light-100 to-accent-cyan/5"
+      className="relative h-screen max-h-screen overflow-hidden bg-gradient-to-br from-white via-light-100 to-accent-cyan/5"
     >
       {/* Animated background elements */}
       <div className="absolute inset-0 overflow-hidden">
@@ -92,30 +93,25 @@ const Hero = () => {
       </div>
 
       {/* Main content */}
-      <motion.div style={{ y }} className="relative z-10">
-        <Container className="pt-32 pb-20 md:pt-40 md:pb-32">
-          <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+      <motion.div style={{ y }} className="relative z-10 h-full flex items-center">
+        <Container className="py-4 px-3 sm:px-4 md:py-6 lg:py-8">
+          <div className="flex flex-col lg:grid lg:grid-cols-2 gap-4 sm:gap-6 lg:gap-10 items-center">
             {/* Left content */}
-            <motion.div
-              variants={staggerContainer}
-              initial="initial"
-              animate="animate"
-              className="text-center lg:text-left"
-            >
+            <div className="text-center lg:text-left order-2 lg:order-1">
               {/* Badge */}
-              <motion.div variants={fadeInUp} className="mb-6">
-                <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-accent-magenta/10 to-accent-cyan/10 border border-accent-magenta/20 text-dark-700 text-sm font-medium">
-                  <span className="w-2 h-2 bg-accent-magenta rounded-full animate-pulse" />
+              <div className="mb-2 sm:mb-3">
+                <span className="inline-flex items-center gap-1.5 sm:gap-2 px-2.5 sm:px-4 py-1.5 sm:py-2 rounded-full bg-gradient-to-r from-accent-magenta/10 to-accent-cyan/10 border border-accent-magenta/20 text-dark-700 text-[10px] xs:text-xs sm:text-sm font-medium">
+                  <span className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-accent-magenta rounded-full animate-pulse" />
                   Based in Your City, Heard Worldwide
                 </span>
-              </motion.div>
+              </div>
 
               {/* Main heading */}
-              <motion.div variants={fadeInUp}>
+              <div>
                 <Heading
                   as="h1"
-                  size="3xl"
-                  className="mb-6"
+                  size="lg"
+                  className="mb-2 sm:mb-3 text-3xl xs:text-4xl sm:text-5xl md:text-6xl lg:text-7xl"
                   animate={false}
                 >
                   <span className="block text-dark-400">WE'RE</span>
@@ -124,41 +120,35 @@ const Hero = () => {
                   </span>
                   <span className="block text-dark-400">MEDIA</span>
                 </Heading>
-              </motion.div>
+              </div>
 
               {/* Subtext */}
-              <motion.div variants={fadeInUp}>
-                <Text size="lg" className="mb-8 max-w-xl mx-auto lg:mx-0">
+              <div>
+                <Text size="sm" className="mb-3 sm:mb-4 max-w-xl mx-auto lg:mx-0 text-xs xs:text-sm sm:text-base">
                   The biggest data-driven TikTok marketing agency working across 
                   music and personal branding. Generating <span className="font-bold text-accent-magenta">100B+ views</span> yearly.
                 </Text>
-              </motion.div>
+              </div>
 
               {/* CTA Buttons */}
-              <motion.div
-                variants={fadeInUp}
-                className="flex flex-wrap gap-4 justify-center lg:justify-start"
-              >
+              <div className="flex flex-wrap gap-2 sm:gap-4 justify-center lg:justify-start">
                 <a href="#services">
-                  <Button variant="gradient" size="lg">
+                  <Button variant="gradient" size="sm" className="text-xs sm:text-sm px-3 sm:px-6 py-2 sm:py-3">
                     Our Services
-                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg className="w-3 h-3 sm:w-5 sm:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                     </svg>
                   </Button>
                 </a>
                 <a href="/team">
-                  <Button variant="outline" size="lg">
+                  <Button variant="outline" size="sm" className="text-xs sm:text-sm px-3 sm:px-6 py-2 sm:py-3">
                     Meet The Team
                   </Button>
                 </a>
-              </motion.div>
+              </div>
 
               {/* Stats preview */}
-              <motion.div
-                variants={fadeInUp}
-                className="mt-12 grid grid-cols-3 gap-6"
-              >
+              <div className="mt-3 sm:mt-6 grid grid-cols-3 gap-2 sm:gap-4">
                 {[
                   { value: '500+', label: 'Artists' },
                   { value: '5B+', label: 'Views' },
@@ -169,37 +159,32 @@ const Hero = () => {
                     className="text-center lg:text-left"
                     whileHover={{ scale: 1.05 }}
                   >
-                    <div className="text-2xl md:text-3xl font-display font-bold bg-gradient-to-r from-accent-magenta to-accent-violet bg-clip-text text-transparent">
+                    <div className="text-base xs:text-lg sm:text-xl md:text-2xl font-display font-bold bg-gradient-to-r from-accent-magenta to-accent-violet bg-clip-text text-transparent">
                       {stat.value}
                     </div>
-                    <div className="text-sm text-dark-600">{stat.label}</div>
+                    <div className="text-[10px] xs:text-xs text-dark-600">{stat.label}</div>
                   </motion.div>
                 ))}
-              </motion.div>
-            </motion.div>
+              </div>
+            </div>
 
-            {/* Right content - Image gallery */}
-            <motion.div
-              variants={scaleIn}
-              initial="initial"
-              animate="animate"
-              transition={{ duration: 0.8, delay: 0.3 }}
-            >
-              <ImageGallery />
-            </motion.div>
+            {/* Right content - Media gallery */}
+            <div className="order-1 lg:order-2 w-full">
+              <MediaGrid />
+            </div>
           </div>
         </Container>
       </motion.div>
 
       {/* Scroll indicator */}
       <motion.div
-        className="absolute bottom-8 left-1/2 -translate-x-1/2"
-        animate={{ y: [0, 10, 0] }}
+        className="absolute bottom-2 left-1/2 -translate-x-1/2 hidden md:block"
+        animate={{ y: [0, 5, 0] }}
         transition={{ duration: 2, repeat: Infinity }}
       >
-        <div className="flex flex-col items-center gap-2 text-dark-400">
-          <span className="text-sm font-medium">Scroll to explore</span>
-          <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <div className="flex flex-col items-center gap-1 text-dark-400">
+          <span className="text-xs font-medium">Scroll</span>
+          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
           </svg>
         </div>

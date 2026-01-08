@@ -4,18 +4,31 @@ import { motion } from 'framer-motion';
 import { ImagePlaceholder } from '@/components/ui';
 
 const ImageGallery = () => {
-  const images = [
-    { id: 1, variant: 'magenta', label: 'Artist 1', size: 'large' },
-    { id: 2, variant: 'cyan', label: 'Artist 2', size: 'small' },
-    { id: 3, variant: 'lime', label: 'Artist 3', size: 'small' },
-    { id: 4, variant: 'violet', label: 'Event 1', size: 'medium' },
-    { id: 5, variant: 'rainbow', label: 'Event 2', size: 'medium' },
-    { id: 6, variant: 'magenta', label: 'Studio', size: 'small' },
+  const mediaItems = [
+    { 
+      id: 1, 
+      type: 'image',
+      src: '/images/reel1.jpg',
+      alt: 'Featured Artist',
+      variant: 'magenta'
+    },
+    { 
+      id: 2, 
+      type: 'iframe',
+      src: 'https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1&mute=1&loop=1&playlist=dQw4w9WgXcQ&controls=0&showinfo=0&modestbranding=1',
+      variant: 'cyan'
+    },
+    { 
+      id: 3, 
+      type: 'video',
+      src: '/videos/tiktok.mp4',
+      variant: 'lime'
+    },
   ];
 
   return (
     <div className="relative w-full h-[500px] md:h-[600px]">
-      {/* Main large image */}
+      {/* Main large image/video */}
       <motion.div
         className="absolute top-0 left-0 w-[60%] z-10"
         initial={{ opacity: 0, x: -50, rotate: -5 }}
@@ -29,6 +42,7 @@ const ImageGallery = () => {
               src="/images/reel1.jpg" 
               alt="Featured Artist" 
               className="w-full h-full object-cover"
+              loading="lazy"
             />
           </div>
           {/* Decorative frame */}
@@ -36,7 +50,7 @@ const ImageGallery = () => {
         </div>
       </motion.div>
 
-      {/* Top right small image */}
+      {/* Top right - Iframe Video */}
       <motion.div
         className="absolute top-4 right-0 w-[35%] z-20"
         initial={{ opacity: 0, y: -30 }}
@@ -44,16 +58,18 @@ const ImageGallery = () => {
         transition={{ duration: 0.6, delay: 0.4 }}
         whileHover={{ y: -5, scale: 1.05 }}
       >
-        <ImagePlaceholder
-          aspectRatio="square"
-          variant="cyan"
-          label="Artist Photo"
-          className="shadow-xl"
-          animate={false}
-        />
+        <div className="relative aspect-square rounded-xl overflow-hidden shadow-xl bg-black">
+          <iframe
+            src="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1&mute=1&loop=1&playlist=dQw4w9WgXcQ&controls=0&showinfo=0&modestbranding=1&rel=0"
+            className="w-full h-full object-cover"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            loading="lazy"
+            style={{ border: 'none' }}
+          />
+        </div>
       </motion.div>
 
-      {/* Middle right image */}
+      {/* Middle right - Video with optimized loading */}
       <motion.div
         className="absolute top-[35%] right-[5%] w-[40%] z-30"
         initial={{ opacity: 0, scale: 0.8 }}
@@ -62,20 +78,17 @@ const ImageGallery = () => {
         whileHover={{ scale: 1.05, rotate: 2 }}
       >
         <div className="relative">
-          <ImagePlaceholder
-            aspectRatio="video"
-            variant="lime"
-            label="Concert Shot"
-            className="shadow-xl"
-            animate={false}
-          />
-          {/* Play button overlay */}
-          <div className="absolute inset-0 flex items-center justify-center">
-            <div className="w-12 h-12 bg-white/90 rounded-full flex items-center justify-center shadow-lg">
-              <svg className="w-5 h-5 text-accent-magenta ml-1" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M8 5v14l11-7z" />
-              </svg>
-            </div>
+          <div className="relative aspect-video rounded-xl overflow-hidden shadow-xl bg-black">
+            <video 
+              src="/videos/tiktok.mp4"
+              className="w-full h-full object-cover"
+              autoPlay
+              loop
+              muted
+              playsInline
+              preload="metadata"
+              loading="lazy"
+            />
           </div>
         </div>
       </motion.div>

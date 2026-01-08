@@ -70,28 +70,17 @@ const Services = () => {
           initial="initial"
           whileInView="animate"
           viewport={{ once: true }}
-          className="text-center mb-20"
+          className="text-center mb-10 sm:mb-20 px-2"
         >
           <motion.div variants={fadeInUp}>
-            <Heading size="2xl" className="mb-6" animate={false}>
-              OUR SERVICES
+            <Heading size="xl" className="text-3xl xs:text-4xl sm:text-5xl md:text-6xl" animate={false}>
+              OUR RESULTS
             </Heading>
-          </motion.div>
-          <motion.div variants={fadeInUp} className="max-w-3xl mx-auto">
-            <Card variant="lime" className="p-8 md:p-10">
-              <div className="flex items-start gap-4">
-                <span className="text-3xl">✦</span>
-                <Text size="lg" className="text-left" animate={false}>
-                  <span className="font-bold text-dark-900">AS A FULL-SERVICE DIGITAL MARKETING & PRODUCTION AGENCY,</span>{' '}
-                  OUR TEAM IS ADEPT AT SUPPORTING BRANDS WITH ALL THEIR SOCIAL MARKETING NEEDS.
-                </Text>
-              </div>
-            </Card>
           </motion.div>
         </motion.div>
 
         {/* Services List */}
-        <div className="space-y-32">
+        <div className="space-y-16 sm:space-y-24 md:space-y-32">
           {services.map((service, index) => (
             <ServiceCard key={service.number} service={service} isReversed={index % 2 !== 0} />
           ))}
@@ -108,27 +97,27 @@ const ServiceCard = ({ service, isReversed }) => {
       initial="initial"
       whileInView="animate"
       viewport={{ once: true, margin: '-100px' }}
-      className={`grid lg:grid-cols-2 gap-12 lg:gap-20 items-center ${isReversed ? 'lg:flex-row-reverse' : ''}`}
+      className={`grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-20 items-center px-2 ${isReversed ? 'lg:flex-row-reverse' : ''}`}
     >
       {/* Content */}
       <motion.div
         variants={fadeInUp}
         className={`${isReversed ? 'lg:order-2' : ''}`}
       >
-        <div className="mb-4">
-          <span className="text-sm font-mono text-accent-magenta">({service.number})</span>
+        <div className="mb-2 sm:mb-4">
+          <span className="text-xs sm:text-sm font-mono text-accent-magenta">({service.number})</span>
         </div>
-        <Heading size="lg" className="mb-6" animate={false}>
+        <Heading size="md" className="mb-3 sm:mb-6 text-xl xs:text-2xl sm:text-3xl md:text-4xl" animate={false}>
           {service.title}
         </Heading>
-        <Text size="base" className="mb-8" animate={false}>
+        <Text size="sm" className="mb-4 sm:mb-8 text-sm sm:text-base" animate={false}>
           {service.description}
         </Text>
 
         {/* Tags */}
         <motion.div
           variants={staggerContainer}
-          className="flex flex-wrap gap-3"
+          className="flex flex-wrap gap-2 sm:gap-3"
         >
           {service.tags.map((tag, i) => (
             <motion.div key={tag} variants={staggerChild}>
@@ -145,7 +134,7 @@ const ServiceCard = ({ service, isReversed }) => {
         variants={fadeInUp}
         className={`${isReversed ? 'lg:order-1' : ''}`}
       >
-        <div className="grid grid-cols-2 gap-4">
+        <div className="grid grid-cols-2 gap-2 sm:gap-4">
           {service.images.map((image, i) => (
             <motion.div
               key={i}

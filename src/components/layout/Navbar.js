@@ -7,17 +7,10 @@ import { Container, Button } from '@/components/ui';
 import { useScrollDirection } from '@/hooks/useAnimations';
 
 const navLinks = [
-  { name: 'Our Audience', href: '/audience', isPage: true },
-  { name: 'Reach Our Audience', href: '#reach' },
-  { 
-    name: 'Our Services', 
-    href: '#services',
-    submenu: [
-      { name: 'Influencer Marketing', href: '#services' },
-      { name: 'Content Creation', href: '#services' },
-      { name: 'Social Management', href: '#services' },
-    ]
-  },
+  { name: 'Our Reach', href: '/audience', isPage: true },
+  { name: 'Our Services', href: '/services', isPage: true },
+  { name: 'Our Tech', href: '/tech', isPage: true },
+  { name: 'Case Studies', href: '/case-studies', isPage: true },
   { name: 'Our Team', href: '/team', isPage: true },
   { name: 'Contact', href: '/contact', isPage: true },
 ];
@@ -26,6 +19,7 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [activeSubmenu, setActiveSubmenu] = useState(null);
+  const [showContactModal, setShowContactModal] = useState(false);
   const scrollDirection = useScrollDirection();
 
   useEffect(() => {
@@ -139,7 +133,11 @@ const Navbar = () => {
 
             {/* CTA Button */}
             <div className="hidden lg:block">
-              <Button variant="gradient" size="sm">
+              <Button 
+                variant="gradient" 
+                size="sm"
+                onClick={() => setShowContactModal(true)}
+              >
                 Get in Touch
               </Button>
             </div>
@@ -251,13 +249,92 @@ const Navbar = () => {
                   animate={{ opacity: 1 }}
                   transition={{ delay: 0.5 }}
                 >
-                  <Button variant="gradient" size="lg" className="w-full">
+                  <Button 
+                    variant="gradient" 
+                    size="lg" 
+                    className="w-full"
+                    onClick={() => {
+                      setShowContactModal(true);
+                      setIsOpen(false);
+                    }}
+                  >
                     Get in Touch
                   </Button>
                 </motion.div>
               </div>
             </motion.div>
           </motion.div>
+        )}
+      </AnimatePresence>
+
+      {/* Contact Modal */}
+      <AnimatePresence>
+        {showContactModal && (
+          <>
+            {/* Backdrop */}
+            <motion.div
+              className="fixed inset-0 bg-black/50 z-[100] flex items-center justify-center"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              onClick={() => setShowContactModal(false)}
+            >
+              {/* Modal */}
+              <motion.div
+                className="w-full max-w-md mx-4"
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 0.9 }}
+                onClick={(e) => e.stopPropagation()}
+              >
+                <div className="bg-white rounded-2xl shadow-2xl p-8 relative">
+                  {/* Close button */}
+                  <button
+                    onClick={() => setShowContactModal(false)}
+                    className="absolute top-4 right-4 w-8 h-8 flex items-center justify-center rounded-full hover:bg-light-100 transition-colors"
+                  >
+                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                  </button>
+
+                  {/* Content */}
+                  <div className="text-center mb-6">
+                    <div className="w-16 h-16 bg-gradient-to-br from-accent-magenta to-accent-cyan rounded-full mx-auto mb-4 flex items-center justify-center">
+                      <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                      </svg>
+                    </div>
+                    <h3 className="text-2xl font-display font-bold text-dark-900 mb-2">
+                      Get in Touch
+                    </h3>
+                    <p className="text-dark-600">
+                      You can contact us through email
+                    </p>
+                  </div>
+
+                  {/* Email */}
+                  <div className="bg-gradient-to-r from-accent-lime/20 to-accent-cyan/20 rounded-xl p-6 mb-6">
+                    <p className="text-sm text-dark-600 mb-2 font-medium">Email</p>
+                    <a 
+                      href="mailto:marketing@influtik.com" 
+                      className="text-lg font-bold text-dark-900 hover:text-accent-magenta transition-colors break-all"
+                    >
+                      marketing@influtik.com
+                    </a>
+                  </div>
+
+                  {/* Action button */}
+                  <a
+                    href="mailto:marketing@influtik.com"
+                    className="block w-full py-3 bg-gradient-to-r from-accent-magenta to-accent-cyan text-white rounded-full font-medium text-center hover:shadow-lg transition-shadow"
+                  >
+                    Send Email
+                  </a>
+                </div>
+              </motion.div>
+            </motion.div>
+          </>
         )}
       </AnimatePresence>
     </>

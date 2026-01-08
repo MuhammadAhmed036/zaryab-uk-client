@@ -53,25 +53,25 @@ const StatCard = ({ stat, index }) => {
       whileHover={{ scale: 1.03, y: -5 }}
       transition={{ type: 'spring', stiffness: 300 }}
     >
-      <Card variant={stat.variant} className="p-6 h-full" hover={false} animate={false}>
+      <Card variant={stat.variant} className="p-4 sm:p-6 h-full" hover={false} animate={false}>
         {/* Image placeholder */}
-        <div className="mb-4">
+        <div className="mb-3 sm:mb-4">
           <ImagePlaceholder
             aspectRatio="video"
             variant={stat.variant}
             label="Campaign Image"
-            rounded="rounded-xl"
+            rounded="rounded-lg sm:rounded-xl"
             animate={false}
           />
         </div>
         
         {/* Stat number */}
-        <div ref={ref} className="text-4xl md:text-5xl font-display font-bold text-dark-900 mb-2">
+        <div ref={ref} className="text-2xl xs:text-3xl sm:text-4xl md:text-5xl font-display font-bold text-dark-900 mb-1 sm:mb-2">
           {count.toLocaleString()}{stat.suffix}
         </div>
         
         {/* Label */}
-        <div className="text-dark-600 font-medium">
+        <div className="text-dark-600 font-medium text-xs sm:text-sm md:text-base">
           {stat.label}
         </div>
       </Card>
@@ -103,18 +103,18 @@ const Stats = () => {
           initial="initial"
           whileInView="animate"
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="text-center mb-10 sm:mb-16 px-2"
         >
-          <motion.div variants={fadeInUp} className="mb-4">
-            <span className="text-sm font-mono text-accent-magenta font-medium">2023 & 2024</span>
+          <motion.div variants={fadeInUp} className="mb-2 sm:mb-4">
+            <span className="text-xs sm:text-sm font-mono text-accent-magenta font-medium">2023 & 2024</span>
           </motion.div>
           <motion.div variants={fadeInUp}>
-            <Heading size="xl" animate={false}>
+            <Heading size="lg" className="text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl" animate={false}>
               BY THE NUMBERS
             </Heading>
           </motion.div>
-          <motion.div variants={fadeInUp} className="mt-6 max-w-2xl mx-auto">
-            <p className="text-dark-600 text-lg">
+          <motion.div variants={fadeInUp} className="mt-4 sm:mt-6 max-w-2xl mx-auto px-4">
+            <p className="text-dark-600 text-sm sm:text-base md:text-lg">
               We leverage our owned & operated media properties, combined with top influencers 
               to create culturally impactful campaigns that resonate with Gen Z and beyond.
             </p>
@@ -127,7 +127,7 @@ const Stats = () => {
           initial="initial"
           whileInView="animate"
           viewport={{ once: true, margin: '-100px' }}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 px-2"
         >
           {stats.map((stat, index) => (
             <StatCard key={index} stat={stat} index={index} />

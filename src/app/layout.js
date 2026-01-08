@@ -22,7 +22,7 @@ const montserrat = Montserrat({
 });
 
 export const metadata = {
-  title: 'Soundwave Media | Gen Z Music Marketing Agency',
+  title: 'Influtik',
   description: 'A Gen Z focused music marketing agency. We create viral campaigns and connect artists with millions of fans through innovative social media strategies.',
   keywords: ['music marketing', 'Gen Z', 'TikTok marketing', 'influencer marketing', 'social media agency', 'music industry'],
   authors: [{ name: 'Soundwave Media' }],

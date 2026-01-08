@@ -32,7 +32,7 @@ const BrandLogo = ({ brand, index }) => {
     <motion.div
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
-      className="relative flex items-center justify-center px-8 md:px-12 py-4 flex-shrink-0 group cursor-pointer"
+      className="relative flex items-center justify-center px-4 sm:px-8 md:px-12 py-2 sm:py-4 flex-shrink-0 group cursor-pointer"
       whileHover={{ scale: 1.15 }}
       transition={{ type: 'spring', stiffness: 400, damping: 25 }}
     >
@@ -48,10 +48,10 @@ const BrandLogo = ({ brand, index }) => {
         <img
           src={brand.logo}
           alt={brand.name}
-          className="h-8 md:h-12 w-auto object-contain filter brightness-0 invert opacity-60 group-hover:opacity-100 transition-all duration-300 relative z-10"
+          className="h-6 sm:h-8 md:h-12 w-auto object-contain filter brightness-0 invert opacity-60 group-hover:opacity-100 transition-all duration-300 relative z-10"
         />
       ) : (
-        <span className="text-white/60 font-display font-bold text-lg md:text-2xl whitespace-nowrap group-hover:text-white transition-all duration-300 relative z-10">
+        <span className="text-white/60 font-display font-bold text-sm sm:text-lg md:text-2xl whitespace-nowrap group-hover:text-white transition-all duration-300 relative z-10">
           {brand.name}
         </span>
       )}
@@ -80,7 +80,7 @@ const Brands = () => {
     <section 
       ref={sectionRef}
       id="brands" 
-      className="relative py-20 md:py-32 bg-gradient-to-b from-dark-900 via-dark-800 to-dark-900 overflow-hidden"
+      className="relative py-12 sm:py-16 md:py-32 bg-gradient-to-b from-dark-900 via-dark-800 to-dark-900 overflow-hidden"
     >
       {/* Animated background elements */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
@@ -110,7 +110,7 @@ const Brands = () => {
       </div>
 
       {/* Section Header */}
-      <Container className="relative z-10 mb-16">
+      <Container className="relative z-10 mb-8 sm:mb-12 md:mb-16 px-4">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -119,7 +119,7 @@ const Brands = () => {
           className="text-center"
         >
           <motion.span
-            className="inline-block text-accent-magenta font-mono text-sm tracking-widest mb-4"
+            className="inline-block text-accent-magenta font-mono text-xs sm:text-sm tracking-widest mb-2 sm:mb-4"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
@@ -127,24 +127,24 @@ const Brands = () => {
           >
             TRUSTED BY THE BEST
           </motion.span>
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold text-white mb-6">
+          <h2 className="text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-display font-bold text-white mb-3 sm:mb-6">
             OUR <span className="bg-gradient-to-r from-accent-magenta via-accent-violet to-accent-cyan bg-clip-text text-transparent">CLIENTS</span>
           </h2>
-          <p className="text-white/50 text-lg max-w-2xl mx-auto">
+          <p className="text-white/50 text-sm sm:text-base md:text-lg max-w-2xl mx-auto">
             We've partnered with world-leading brands and record labels to create viral moments.
           </p>
         </motion.div>
       </Container>
 
       {/* Animated Logo Marquee Container */}
-      <div className="max-w-6xl mx-auto px-4 md:px-8">
-        <div ref={containerRef} className="relative rounded-3xl border border-white/10 bg-dark-800/50 backdrop-blur-sm overflow-hidden">
+      <div className="max-w-6xl mx-auto px-2 sm:px-4 md:px-8">
+        <div ref={containerRef} className="relative rounded-xl sm:rounded-2xl md:rounded-3xl border border-white/10 bg-dark-800/50 backdrop-blur-sm overflow-hidden">
           {/* Gradient overlays for fade effect */}
-          <div className="absolute left-0 top-0 bottom-0 w-20 md:w-32 bg-gradient-to-r from-dark-800 to-transparent z-10 pointer-events-none" />
-          <div className="absolute right-0 top-0 bottom-0 w-20 md:w-32 bg-gradient-to-l from-dark-800 to-transparent z-10 pointer-events-none" />
+          <div className="absolute left-0 top-0 bottom-0 w-8 sm:w-12 md:w-32 bg-gradient-to-r from-dark-800 to-transparent z-10 pointer-events-none" />
+          <div className="absolute right-0 top-0 bottom-0 w-8 sm:w-12 md:w-32 bg-gradient-to-l from-dark-800 to-transparent z-10 pointer-events-none" />
           
           {/* First row - scrolling right to left */}
-          <div className="py-6">
+          <div className="py-3 sm:py-4 md:py-6">
             <motion.div
               className="flex items-center"
               animate={{
@@ -165,7 +165,7 @@ const Brands = () => {
           </div>
 
           {/* Center decorative line */}
-          <div className="relative h-px mx-4 md:mx-8">
+          <div className="relative h-px mx-2 sm:mx-4 md:mx-8">
             <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent" />
             <motion.div
               className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-2 h-2 bg-accent-magenta rounded-full"
@@ -175,7 +175,7 @@ const Brands = () => {
         </div>
 
         {/* Second row - scrolling left to right */}
-        <div className="py-6">
+        <div className="py-3 sm:py-4 md:py-6">
           <motion.div
             className="flex items-center"
             animate={{
@@ -198,13 +198,13 @@ const Brands = () => {
       </div>
 
       {/* Bottom stats */}
-      <Container className="relative z-10 mt-16">
+      <Container className="relative z-10 mt-8 sm:mt-12 md:mt-16 px-4">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.3 }}
-          className="flex flex-wrap justify-center gap-8 md:gap-16"
+          className="flex flex-wrap justify-center gap-4 sm:gap-8 md:gap-16"
         >
           {[
             { value: '100+', label: 'Brand Partners' },
@@ -216,10 +216,10 @@ const Brands = () => {
               className="text-center"
               whileHover={{ scale: 1.05 }}
             >
-              <div className="text-3xl md:text-4xl font-display font-bold bg-gradient-to-r from-accent-magenta to-accent-cyan bg-clip-text text-transparent">
+              <div className="text-xl xs:text-2xl sm:text-3xl md:text-4xl font-display font-bold bg-gradient-to-r from-accent-magenta to-accent-cyan bg-clip-text text-transparent">
                 {stat.value}
               </div>
-              <div className="text-white/40 text-sm mt-1">{stat.label}</div>
+              <div className="text-white/40 text-xs sm:text-sm mt-1">{stat.label}</div>
             </motion.div>
           ))}
         </motion.div>

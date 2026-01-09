@@ -46,7 +46,7 @@ const Footer = () => {
                 <motion.div key={link.name} variants={staggerChild}>
                   <Link
                     href={link.href}
-                    className="font-display font-bold text-sm xs:text-base sm:text-lg md:text-xl text-dark-900 hover:text-accent-magenta transition-colors uppercase"
+                    className="font-display font-bold text-sm xs:text-base sm:text-lg md:text-xl text-dark-900 hover:text-blue-600 transition-colors uppercase"
                   >
                     {link.name}
                   </Link>

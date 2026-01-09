@@ -9,8 +9,8 @@ const teamMembers = [
     name: 'ZARYAB',
     role: 'CEO',
     color: 'magenta',
-    bgColor: 'bg-accent-magenta/20',
-    labelColor: 'bg-accent-magenta',
+    bgColor: 'bg-blue-500/20',
+    labelColor: 'bg-blue-500',
     image: '/images/Zaryab.png',
   },
   {
@@ -24,22 +24,22 @@ const teamMembers = [
     name: 'SEBASTIAN CRANK',
     role: 'VP, Strategy & Brand Creative',
     color: 'magenta',
-    bgColor: 'bg-accent-magenta/20',
+    bgColor: 'bg-blue-500/20',
     labelColor: 'bg-accent-lime',
   },
   {
     name: 'HELEN JI',
     role: 'VP, Brand Partnerships',
     color: 'magenta',
-    bgColor: 'bg-accent-magenta/20',
+    bgColor: 'bg-blue-500/20',
     labelColor: 'bg-accent-cyan',
   },
   {
     name: 'ALEX RIVERA',
     role: 'Creative Director',
     color: 'violet',
-    bgColor: 'bg-accent-violet/20',
-    labelColor: 'bg-accent-magenta',
+    bgColor: 'bg-blue-600/20',
+    labelColor: 'bg-blue-500',
   },
   {
     name: 'JORDAN LEE',
@@ -53,13 +53,13 @@ const teamMembers = [
     role: 'Social Media Director',
     color: 'cyan',
     bgColor: 'bg-accent-cyan/20',
-    labelColor: 'bg-accent-violet',
+    labelColor: 'bg-blue-600',
   },
   {
     name: 'TYLER BROOKS',
     role: 'Influencer Relations',
     color: 'magenta',
-    bgColor: 'bg-accent-magenta/20',
+    bgColor: 'bg-blue-500/20',
     labelColor: 'bg-accent-lime',
   },
 ];
@@ -76,6 +76,7 @@ const TeamMemberCard = ({ member, index }) => {
       <div className={`relative overflow-hidden rounded-2xl ${member.bgColor}`}>
         {member.image ? (
           <div className="aspect-[3/4]">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src={member.image}
               alt={member.name}
@@ -150,7 +151,7 @@ const Team = () => {
           transition={{ duration: 8, repeat: Infinity }}
         />
         <motion.div
-          className="absolute bottom-20 right-10 w-96 h-96 bg-accent-magenta/15 rounded-full blur-3xl"
+          className="absolute bottom-20 right-10 w-96 h-96 bg-blue-500/15 rounded-full blur-3xl"
           animate={{ scale: [1, 1.3, 1], opacity: [0.2, 0.4, 0.2] }}
           transition={{ duration: 10, repeat: Infinity, delay: 2 }}
         />

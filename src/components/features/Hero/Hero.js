@@ -26,7 +26,7 @@ const Hero = () => {
       <div className="absolute inset-0 overflow-hidden">
         {/* Gradient orbs */}
         <motion.div
-          className="absolute -top-40 -right-40 w-96 h-96 bg-gradient-to-br from-accent-magenta/30 to-accent-violet/20 rounded-full blur-3xl"
+          className="absolute -top-40 -right-40 w-96 h-96 bg-gradient-to-br from-blue-500/30 to-blue-700/20 rounded-full blur-3xl"
           animate={{
             x: [0, 30, 0],
             y: [0, -20, 0],
@@ -53,7 +53,7 @@ const Hero = () => {
           }}
         />
         <motion.div
-          className="absolute top-1/3 left-1/4 w-64 h-64 bg-gradient-to-br from-accent-violet/20 to-accent-magenta/10 rounded-full blur-3xl"
+          className="absolute top-1/3 left-1/4 w-64 h-64 bg-gradient-to-br from-blue-600/20 to-blue-500/10 rounded-full blur-3xl"
           animate={{
             x: [0, 40, 0],
             y: [0, -30, 0],
@@ -100,8 +100,8 @@ const Hero = () => {
             <div className="text-center lg:text-left order-2 lg:order-1">
               {/* Badge */}
               <div className="mb-2 sm:mb-3">
-                <span className="inline-flex items-center gap-1.5 sm:gap-2 px-2.5 sm:px-4 py-1.5 sm:py-2 rounded-full bg-gradient-to-r from-accent-magenta/10 to-accent-cyan/10 border border-accent-magenta/20 text-dark-700 text-[10px] xs:text-xs sm:text-sm font-medium">
-                  <span className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-accent-magenta rounded-full animate-pulse" />
+                <span className="inline-flex items-center gap-1.5 sm:gap-2 px-2.5 sm:px-4 py-1.5 sm:py-2 rounded-full bg-gradient-to-r from-blue-500/10 to-accent-cyan/10 border border-blue-500/20 text-dark-700 text-[10px] xs:text-xs sm:text-sm font-medium">
+                  <span className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-blue-500 rounded-full animate-pulse" />
                   Based in Your City, Heard Worldwide
                 </span>
               </div>
@@ -115,7 +115,7 @@ const Hero = () => {
                   animate={false}
                 >
                   <span className="block text-dark-400">WE'RE</span>
-                  <span className="block bg-gradient-to-r from-accent-magenta via-accent-violet to-accent-cyan bg-clip-text text-transparent">
+                  <span className="block bg-gradient-to-r from-blue-500 via-blue-700 to-accent-cyan bg-clip-text text-transparent">
                     INFLUTIK
                   </span>
                   <span className="block text-dark-400">MEDIA</span>
@@ -126,22 +126,19 @@ const Hero = () => {
               <div>
                 <Text size="sm" className="mb-3 sm:mb-4 max-w-xl mx-auto lg:mx-0 text-xs xs:text-sm sm:text-base">
                   The biggest data-driven TikTok marketing agency working across 
-                  music and personal branding. Generating <span className="font-bold text-accent-magenta">100B+ views</span> yearly.
+                  music and personal branding. Generating <span className="font-bold text-blue-600">100B+ views</span> yearly.
                 </Text>
               </div>
 
               {/* CTA Buttons */}
-              <div className="flex flex-wrap gap-2 sm:gap-4 justify-center lg:justify-start">
+              <div className="flex flex-wrap gap-2 sm:gap-4 justify-center lg:justify-start items-center">
                 <a href="#services">
-                  <Button variant="gradient" size="sm" className="text-xs sm:text-sm px-3 sm:px-6 py-2 sm:py-3">
+                  <Button variant="gradient" size="sm" className="text-xs sm:text-sm px-4 sm:px-6 !py-2 sm:!py-2.5">
                     Our Services
-                    <svg className="w-3 h-3 sm:w-5 sm:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                    </svg>
                   </Button>
                 </a>
                 <a href="/team">
-                  <Button variant="outline" size="sm" className="text-xs sm:text-sm px-3 sm:px-6 py-2 sm:py-3">
+                  <Button variant="outline" size="sm" className="text-xs sm:text-sm px-4 sm:px-6 !py-2 sm:!py-2.5">
                     Meet The Team
                   </Button>
                 </a>
@@ -159,7 +156,7 @@ const Hero = () => {
                     className="text-center lg:text-left"
                     whileHover={{ scale: 1.05 }}
                   >
-                    <div className="text-base xs:text-lg sm:text-xl md:text-2xl font-display font-bold bg-gradient-to-r from-accent-magenta to-accent-violet bg-clip-text text-transparent">
+                    <div className="text-base xs:text-lg sm:text-xl md:text-2xl font-display font-bold bg-gradient-to-r from-blue-500 to-blue-700 bg-clip-text text-transparent">
                       {stat.value}
                     </div>
                     <div className="text-[10px] xs:text-xs text-dark-600">{stat.label}</div>

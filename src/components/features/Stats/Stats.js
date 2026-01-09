@@ -90,7 +90,7 @@ const Stats = () => {
           transition={{ duration: 6, repeat: Infinity }}
         />
         <motion.div
-          className="absolute bottom-0 right-1/4 w-80 h-80 bg-accent-magenta/15 rounded-full blur-3xl"
+          className="absolute bottom-0 right-1/4 w-80 h-80 bg-blue-500/15 rounded-full blur-3xl"
           animate={{ y: [0, -30, 0], opacity: [0.2, 0.4, 0.2] }}
           transition={{ duration: 8, repeat: Infinity, delay: 1 }}
         />
@@ -106,7 +106,7 @@ const Stats = () => {
           className="text-center mb-10 sm:mb-16 px-2"
         >
           <motion.div variants={fadeInUp} className="mb-2 sm:mb-4">
-            <span className="text-xs sm:text-sm font-mono text-accent-magenta font-medium">2023 & 2024</span>
+            <span className="text-xs sm:text-sm font-mono text-blue-600 font-medium">2023 & 2024</span>
           </motion.div>
           <motion.div variants={fadeInUp}>
             <Heading size="lg" className="text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl" animate={false}>

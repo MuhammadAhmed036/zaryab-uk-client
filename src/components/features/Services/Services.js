@@ -52,7 +52,7 @@ const Services = () => {
       {/* Background decorations */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <motion.div
-          className="absolute top-20 right-20 w-72 h-72 bg-accent-magenta/10 rounded-full blur-3xl"
+          className="absolute top-20 right-20 w-72 h-72 bg-blue-500/10 rounded-full blur-3xl"
           animate={{ scale: [1, 1.2, 1], opacity: [0.3, 0.5, 0.3] }}
           transition={{ duration: 8, repeat: Infinity }}
         />
@@ -105,7 +105,7 @@ const ServiceCard = ({ service, isReversed }) => {
         className={`${isReversed ? 'lg:order-2' : ''}`}
       >
         <div className="mb-2 sm:mb-4">
-          <span className="text-xs sm:text-sm font-mono text-accent-magenta">({service.number})</span>
+          <span className="text-xs sm:text-sm font-mono text-blue-600">({service.number})</span>
         </div>
         <Heading size="md" className="mb-3 sm:mb-6 text-xl xs:text-2xl sm:text-3xl md:text-4xl" animate={false}>
           {service.title}
@@ -153,7 +153,7 @@ const ServiceCard = ({ service, isReversed }) => {
                 {i % 2 === 0 && (
                   <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
                     <div className="w-14 h-14 bg-white/90 rounded-full flex items-center justify-center shadow-lg">
-                      <svg className="w-6 h-6 text-accent-magenta ml-1" fill="currentColor" viewBox="0 0 24 24">
+                      <svg className="w-6 h-6 text-blue-600 ml-1" fill="currentColor" viewBox="0 0 24 24">
                         <path d="M8 5v14l11-7z" />
                       </svg>
                     </div>

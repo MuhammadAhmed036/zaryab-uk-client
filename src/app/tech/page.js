@@ -1,14 +1,22 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Section, Container, Heading, Text, Card, ImagePlaceholder } from '@/components/ui';
+import { Section, Container, Heading, Text, Card, ImagePlaceholder, Button } from '@/components/ui';
 import { staggerContainer, fadeInUp } from '@/lib/animations';
+
+const clientLogos = [
+  { name: 'Spotify', variant: 'lime' },
+  { name: 'Netflix', variant: 'magenta' },
+  { name: 'TikTok', variant: 'cyan' },
+  { name: 'Instagram', variant: 'violet' },
+  { name: 'YouTube', variant: 'lime' },
+];
 
 export default function TechPage() {
   return (
-    <main className="pt-24">
-      {/* Hero Section */}
-      <Section background="gradient" className="py-24 relative overflow-hidden">
+    <main className="h-screen overflow-hidden pt-24">
+      {/* Single Viewport Landing Section */}
+      <Section background="gradient" className="h-full relative overflow-hidden">
         {/* Background decorations */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           <motion.div
@@ -17,149 +25,162 @@ export default function TechPage() {
             transition={{ duration: 8, repeat: Infinity }}
           />
           <motion.div
-            className="absolute bottom-40 left-10 w-80 h-80 bg-accent-magenta/20 rounded-full blur-3xl"
+            className="absolute bottom-40 left-10 w-80 h-80 bg-blue-600/20 rounded-full blur-3xl"
             animate={{ scale: [1, 1.3, 1], opacity: [0.2, 0.4, 0.2] }}
             transition={{ duration: 10, repeat: Infinity, delay: 2 }}
           />
+          <motion.div
+            className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-accent-lime/10 rounded-full blur-2xl"
+            animate={{ rotate: 360, scale: [1, 1.1, 1] }}
+            transition={{ duration: 20, repeat: Infinity }}
+          />
         </div>
 
-        <Container className="relative z-10">
-          <motion.div
-            variants={staggerContainer}
-            initial="initial"
-            animate="animate"
-            className="text-center mb-16"
-          >
-            <motion.div variants={fadeInUp}>
-              <Heading size="3xl" animate={false}>
-                OUR TECH
-              </Heading>
-            </motion.div>
-            <motion.div variants={fadeInUp} className="mt-6 max-w-3xl mx-auto">
-              <Text size="xl" animate={false}>
-                Cutting-edge technology powering our social media campaigns and content creation.
-              </Text>
-            </motion.div>
-          </motion.div>
-        </Container>
-      </Section>
-
-      {/* Tech Stack Section */}
-      <Section background="white" className="py-24">
-        <Container>
-          <motion.div
-            variants={staggerContainer}
-            initial="initial"
-            whileInView="animate"
-            viewport={{ once: true }}
-            className="text-center mb-16"
-          >
-            <motion.div variants={fadeInUp}>
-              <Heading size="2xl" animate={false}>
-                Our Technology Stack
-              </Heading>
-            </motion.div>
-          </motion.div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {techItems.map((item, index) => (
-              <motion.div
-                key={item.title}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-              >
-                <Card variant={item.variant} className="p-6 h-full">
-                  <div className="text-4xl mb-4">{item.icon}</div>
-                  <Heading size="sm" className="mb-3" animate={false}>
-                    {item.title}
-                  </Heading>
-                  <Text animate={false}>
-                    {item.description}
-                  </Text>
-                </Card>
+        <Container className="relative z-10 h-full flex items-center">
+          <div className="grid lg:grid-cols-12 gap-8 items-center w-full">
+            
+            {/* Left Content - Compact */}
+            <motion.div
+              variants={staggerContainer}
+              initial="initial"
+              animate="animate"
+              className="lg:col-span-6 space-y-6"
+            >
+              <motion.div variants={fadeInUp} className="space-y-2">
+                <span className="text-sm font-mono text-blue-600 tracking-wider">OUR TECH</span>
+                <Heading size="4xl" animate={false} className="leading-tight">
+                  Z-engine Platform
+                  <span className="text-accent-cyan block text-3xl mt-2 font-bold tracking-wide">
+                    Automated Influence
+                  </span>
+                </Heading>
               </motion.div>
-            ))}
+              
+              <motion.div variants={fadeInUp}>
+                <Text size="xl" animate={false} className="text-dark-600 max-w-lg">
+                  AI-powered influencer discovery and campaign automation. 
+                  From scouting to analytics - all on autopilot.
+                </Text>
+              </motion.div>
+
+              {/* Quick Stats */}
+              <motion.div variants={fadeInUp} className="grid grid-cols-3 gap-6 pt-4">
+                {[
+                  { label: 'AI Models', value: '50+', color: 'text-blue-600' },
+                  { label: 'Creators', value: '1M+', color: 'text-accent-cyan' },
+                  { label: 'Campaigns', value: '10K+', color: 'text-accent-lime' }
+                ].map((stat, index) => (
+                  <motion.div
+                    key={stat.label}
+                    className="text-center"
+                    whileHover={{ scale: 1.05, y: -2 }}
+                    animate={{ y: [0, -2, 0] }}
+                    transition={{ duration: 2, repeat: Infinity, delay: index * 0.3 }}
+                  >
+                    <div className={`text-3xl font-bold ${stat.color}`}>{stat.value}</div>
+                    <div className="text-sm text-dark-500 uppercase tracking-wide">{stat.label}</div>
+                  </motion.div>
+                ))}
+              </motion.div>
+            </motion.div>
+
+            {/* Center - Main Dashboard */}
+            <motion.div
+              variants={fadeInUp}
+              className="lg:col-span-6 relative"
+              animate={{ y: [0, -10, 0] }}
+              transition={{ duration: 4, repeat: Infinity }}
+            >
+              <motion.div
+                className="relative bg-white rounded-2xl shadow-2xl overflow-hidden h-80"
+                whileHover={{ scale: 1.02, rotateY: 5 }}
+                transition={{ type: 'spring', stiffness: 300 }}
+              >
+                <div className="h-full bg-gradient-to-br from-indigo-50 to-cyan-50 p-4">
+                  <div className="flex items-center gap-1 mb-4">
+                    <motion.div 
+                      className="w-2 h-2 bg-red-400 rounded-full"
+                      animate={{ scale: [1, 1.2, 1] }}
+                      transition={{ duration: 2, repeat: Infinity }}
+                    />
+                    <motion.div 
+                      className="w-2 h-2 bg-yellow-400 rounded-full"
+                      animate={{ scale: [1, 1.2, 1] }}
+                      transition={{ duration: 2, repeat: Infinity, delay: 0.3 }}
+                    />
+                    <motion.div 
+                      className="w-2 h-2 bg-green-400 rounded-full"
+                      animate={{ scale: [1, 1.2, 1] }}
+                      transition={{ duration: 2, repeat: Infinity, delay: 0.6 }}
+                    />
+                  </div>
+                  
+                  <div className="space-y-3">
+                    <div className="flex justify-between items-center">
+                      <h3 className="text-sm font-semibold">Campaign Analytics</h3>
+                      <motion.div 
+                        className="text-xl font-bold text-blue-600"
+                        animate={{ scale: [1, 1.1, 1] }}
+                        transition={{ duration: 3, repeat: Infinity }}
+                      >
+                        94%
+                      </motion.div>
+                    </div>
+                    
+                    <div className="grid grid-cols-2 gap-2">
+                      {[
+                        { label: 'Reach', value: '2.4M', color: 'bg-accent-cyan' },
+                        { label: 'Engagement', value: '185K', color: 'bg-accent-lime' },
+                        { label: 'Conversions', value: '12.8K', color: 'bg-blue-600' },
+                        { label: 'ROI', value: '340%', color: 'bg-blue-800' }
+                      ].map((metric, i) => (
+                        <motion.div 
+                          key={metric.label}
+                          className="bg-white rounded p-2 text-center"
+                          whileHover={{ scale: 1.05 }}
+                          animate={{ y: [0, -1, 0] }}
+                          transition={{ duration: 2, repeat: Infinity, delay: i * 0.2 }}
+                        >
+                          <div className="text-sm font-bold">{metric.value}</div>
+                          <div className="text-xs text-dark-500">{metric.label}</div>
+                        </motion.div>
+                      ))}
+                    </div>
+                    
+                    <motion.div 
+                      className="h-2 bg-dark-100 rounded-full overflow-hidden"
+                      initial={{ width: 0 }}
+                      animate={{ width: '100%' }}
+                      transition={{ duration: 1 }}
+                    >
+                      <motion.div 
+                        className="h-full bg-gradient-to-r from-blue-600 to-accent-cyan rounded-full"
+                        initial={{ width: '0%' }}
+                        animate={{ width: '85%' }}
+                        transition={{ duration: 2, delay: 0.5 }}
+                      />
+                    </motion.div>
+                  </div>
+                </div>
+              </motion.div>
+            </motion.div>
           </div>
         </Container>
-      </Section>
 
-      {/* CTA Section */}
-      <Section background="gradient" className="py-24">
-        <Container>
-          <motion.div
-            variants={staggerContainer}
-            initial="initial"
-            whileInView="animate"
-            viewport={{ once: true }}
-            className="text-center"
-          >
-            <motion.div variants={fadeInUp}>
-              <Heading size="2xl" animate={false}>
-                Ready to Leverage Our Tech?
-              </Heading>
+        {/* Bottom floating elements */}
+        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex gap-4">
+          {clientLogos.map((logo, index) => (
+            <motion.div
+              key={logo.name}
+              className="text-sm font-medium text-dark-400 opacity-60 hover:opacity-100 transition-opacity"
+              animate={{ y: [0, -3, 0] }}
+              transition={{ duration: 2, repeat: Infinity, delay: index * 0.2 }}
+            >
+              {logo.name}
             </motion.div>
-            <motion.div variants={fadeInUp} className="mt-6 max-w-2xl mx-auto">
-              <Text size="lg" animate={false}>
-                Let's discuss how our technology can amplify your brand's social media presence.
-              </Text>
-            </motion.div>
-            <motion.div variants={fadeInUp} className="mt-8">
-              <motion.a
-                href="/contact"
-                className="inline-flex items-center gap-2 px-8 py-4 bg-dark-900 text-white rounded-full font-medium text-lg hover:bg-dark-800 transition-colors"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                Get in Touch
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                </svg>
-              </motion.a>
-            </motion.div>
-          </motion.div>
-        </Container>
+          ))}
+        </div>
       </Section>
     </main>
   );
 }
-
-const techItems = [
-  {
-    title: 'AI-Powered Analytics',
-    description: 'Advanced algorithms to track and predict viral trends, optimize content performance, and measure campaign ROI in real-time.',
-    icon: '🤖',
-    variant: 'magenta',
-  },
-  {
-    title: 'Content Management Platform',
-    description: 'Proprietary CMS for seamless content creation, scheduling, and distribution across all major social platforms.',
-    icon: '📱',
-    variant: 'cyan',
-  },
-  {
-    title: 'Influencer Network',
-    description: 'Custom-built platform to match brands with the perfect creators based on audience demographics and engagement metrics.',
-    icon: '🌟',
-    variant: 'lime',
-  },
-  {
-    title: 'Video Editing Suite',
-    description: 'Professional-grade editing tools optimized for short-form content creation with trend-aware templates and effects.',
-    icon: '🎬',
-    variant: 'violet',
-  },
-  {
-    title: 'Performance Dashboard',
-    description: 'Real-time analytics dashboard showing engagement metrics, audience insights, and campaign performance across platforms.',
-    icon: '📊',
-    variant: 'magenta',
-  },
-  {
-    title: 'Automation Tools',
-    description: 'Smart automation for posting schedules, responses, and community management to maximize efficiency and engagement.',
-    icon: '⚡',
-    variant: 'cyan',
-  },
-];

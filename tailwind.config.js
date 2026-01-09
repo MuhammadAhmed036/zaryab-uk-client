@@ -18,24 +18,26 @@ module.exports = {
       colors: {
         // Light theme primary colors
         primary: {
-          50: '#fdf4ff',
-          100: '#fae8ff',
-          200: '#f5d0fe',
-          300: '#f0abfc',
-          400: '#e879f9',
-          500: '#d946ef',
-          600: '#c026d3',
-          700: '#a21caf',
-          800: '#86198f',
-          900: '#701a75',
+          50: '#eff6ff',
+          100: '#dbeafe',
+          200: '#bfdbfe',
+          300: '#93c5fd',
+          400: '#60a5fa',
+          500: '#3b82f6',
+          600: '#2563eb',
+          700: '#1d4ed8',
+          800: '#1e40af',
+          900: '#1e3a8a',
         },
-        // Accent colors for music vibe
+        // Accent colors for blue/black/white theme
         accent: {
           cyan: '#22d3ee',
-          magenta: '#ec4899',
-          lime: '#a3e635',
-          violet: '#8b5cf6',
-          orange: '#fb923c',
+          magenta: '#3b82f6',
+          lime: '#22d3ee',
+          violet: '#1e40af',
+          orange: '#60a5fa',
+          blue: '#3b82f6',
+          darkBlue: '#1e3a8a',
         },
         // Light background shades
         light: {

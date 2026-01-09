@@ -37,7 +37,8 @@ const ImageGallery = () => {
         whileHover={{ rotate: 0, scale: 1.02 }}
       >
         <div className="relative">
-          <div className="relative aspect-[3/4] rounded-2xl overflow-hidden shadow-2xl shadow-accent-magenta/20">
+          <div className="relative aspect-[3/4] rounded-2xl overflow-hidden shadow-2xl shadow-blue-500/20">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
             <img 
               src="/images/reel1.jpg" 
               alt="Featured Artist" 
@@ -46,7 +47,7 @@ const ImageGallery = () => {
             />
           </div>
           {/* Decorative frame */}
-          <div className="absolute -inset-2 border-2 border-accent-magenta/30 rounded-2xl -z-10 transform rotate-2" />
+          <div className="absolute -inset-2 border-2 border-blue-500/30 rounded-2xl -z-10 transform rotate-2" />
         </div>
       </motion.div>
 
@@ -129,7 +130,7 @@ const ImageGallery = () => {
 
       {/* Decorative elements */}
       <motion.div
-        className="absolute -bottom-4 -left-4 w-20 h-20 bg-gradient-to-br from-accent-magenta to-accent-violet rounded-full opacity-50 blur-xl"
+        className="absolute -bottom-4 -left-4 w-20 h-20 bg-gradient-to-br from-blue-500 to-blue-700 rounded-full opacity-50 blur-xl"
         animate={{
           scale: [1, 1.2, 1],
           opacity: [0.5, 0.7, 0.5],

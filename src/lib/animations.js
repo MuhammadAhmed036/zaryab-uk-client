@@ -170,7 +170,7 @@ export const hoverLift = {
 };
 
 export const hoverGlow = {
-  boxShadow: '0 0 30px rgba(236, 72, 153, 0.4)',
+  boxShadow: '0 0 30px rgba(59, 130, 246, 0.4)',
   transition: { duration: 0.3 },
 };
 

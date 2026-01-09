@@ -18,11 +18,11 @@ const ImagePlaceholder = ({
 }) => {
   const variants = {
     default: 'bg-gradient-to-br from-light-200 via-light-100 to-light-200',
-    magenta: 'bg-gradient-to-br from-accent-magenta/20 via-accent-violet/10 to-accent-magenta/20',
-    cyan: 'bg-gradient-to-br from-accent-cyan/20 via-accent-violet/10 to-accent-cyan/20',
+    magenta: 'bg-gradient-to-br from-blue-500/20 via-blue-600/10 to-blue-500/20',
+    cyan: 'bg-gradient-to-br from-accent-cyan/20 via-blue-600/10 to-accent-cyan/20',
     lime: 'bg-gradient-to-br from-accent-lime/20 via-accent-cyan/10 to-accent-lime/20',
-    violet: 'bg-gradient-to-br from-accent-violet/20 via-accent-magenta/10 to-accent-violet/20',
-    rainbow: 'bg-gradient-to-br from-accent-magenta/20 via-accent-cyan/20 to-accent-lime/20',
+    violet: 'bg-gradient-to-br from-blue-700/20 via-blue-600/10 to-blue-700/20',
+    rainbow: 'bg-gradient-to-br from-blue-500/20 via-accent-cyan/20 to-blue-800/20',
   };
 
   const aspectRatios = {
@@ -42,7 +42,7 @@ const ImagePlaceholder = ({
         aspectRatio ? aspectRatios[aspectRatio] : '',
         rounded,
         'border-2 border-dashed border-dark-300/30',
-        'hover:border-accent-magenta/50 transition-colors duration-300',
+        'hover:border-blue-500/50 transition-colors duration-300',
         className
       )}
       style={style}
@@ -50,7 +50,7 @@ const ImagePlaceholder = ({
     >
       {/* Animated background pattern */}
       <div className="absolute inset-0 opacity-30">
-        <div className="absolute top-0 left-0 w-32 h-32 bg-accent-magenta/20 rounded-full blur-3xl animate-float" />
+        <div className="absolute top-0 left-0 w-32 h-32 bg-blue-500/20 rounded-full blur-3xl animate-float" />
         <div className="absolute bottom-0 right-0 w-40 h-40 bg-accent-cyan/20 rounded-full blur-3xl animate-float" style={{ animationDelay: '2s' }} />
       </div>
 
@@ -123,6 +123,7 @@ const AnimatedImage = ({
         className
       )}
     >
+      {/* eslint-disable-next-line @next/next/no-img-element */}
       <img
         src={src}
         alt={alt}

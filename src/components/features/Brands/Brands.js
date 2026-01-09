@@ -38,13 +38,14 @@ const BrandLogo = ({ brand, index }) => {
     >
       {/* Glow effect on hover */}
       <motion.div
-        className="absolute inset-0 bg-gradient-to-r from-accent-magenta/20 via-accent-cyan/20 to-accent-violet/20 rounded-2xl blur-xl"
+        className="absolute inset-0 bg-gradient-to-r from-blue-500/20 via-accent-cyan/20 to-blue-700/20 rounded-2xl blur-xl"
         initial={{ opacity: 0, scale: 0.8 }}
         animate={{ opacity: isHovered ? 1 : 0, scale: isHovered ? 1.2 : 0.8 }}
         transition={{ duration: 0.3 }}
       />
       
       {brand.logo ? (
+        // eslint-disable-next-line @next/next/no-img-element
         <img
           src={brand.logo}
           alt={brand.name}
@@ -87,14 +88,14 @@ const Brands = () => {
         {/* Floating orbs */}
         <motion.div
           style={{ y: decorY }}
-          className="absolute -top-20 -left-20 w-96 h-96 bg-gradient-to-br from-accent-magenta/10 to-transparent rounded-full blur-3xl"
+          className="absolute -top-20 -left-20 w-96 h-96 bg-gradient-to-br from-blue-500/10 to-transparent rounded-full blur-3xl"
         />
         <motion.div
           style={{ y: decorY, rotate: decorRotate }}
           className="absolute -bottom-40 -right-20 w-[500px] h-[500px] bg-gradient-to-tl from-accent-cyan/10 to-transparent rounded-full blur-3xl"
         />
         <motion.div
-          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gradient-to-r from-accent-violet/5 to-accent-magenta/5 rounded-full blur-3xl"
+          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gradient-to-r from-blue-600/5 to-blue-500/5 rounded-full blur-3xl"
           animate={{ scale: [1, 1.1, 1], rotate: [0, 90, 0] }}
           transition={{ duration: 20, repeat: Infinity, ease: 'linear' }}
         />
@@ -119,7 +120,7 @@ const Brands = () => {
           className="text-center"
         >
           <motion.span
-            className="inline-block text-accent-magenta font-mono text-xs sm:text-sm tracking-widest mb-2 sm:mb-4"
+            className="inline-block text-blue-500 font-mono text-xs sm:text-sm tracking-widest mb-2 sm:mb-4"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
@@ -128,7 +129,7 @@ const Brands = () => {
             TRUSTED BY THE BEST
           </motion.span>
           <h2 className="text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-display font-bold text-white mb-3 sm:mb-6">
-            OUR <span className="bg-gradient-to-r from-accent-magenta via-accent-violet to-accent-cyan bg-clip-text text-transparent">CLIENTS</span>
+            OUR <span className="bg-gradient-to-r from-blue-500 via-blue-700 to-accent-cyan bg-clip-text text-transparent">CLIENTS</span>
           </h2>
           <p className="text-white/50 text-sm sm:text-base md:text-lg max-w-2xl mx-auto">
             We've partnered with world-leading brands and record labels to create viral moments.
@@ -168,7 +169,7 @@ const Brands = () => {
           <div className="relative h-px mx-2 sm:mx-4 md:mx-8">
             <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent" />
             <motion.div
-              className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-2 h-2 bg-accent-magenta rounded-full"
+              className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-2 h-2 bg-blue-500 rounded-full"
               animate={{ scale: [1, 1.5, 1], opacity: [0.5, 1, 0.5] }}
               transition={{ duration: 2, repeat: Infinity }}
             />
@@ -216,7 +217,7 @@ const Brands = () => {
               className="text-center"
               whileHover={{ scale: 1.05 }}
             >
-              <div className="text-xl xs:text-2xl sm:text-3xl md:text-4xl font-display font-bold bg-gradient-to-r from-accent-magenta to-accent-cyan bg-clip-text text-transparent">
+              <div className="text-xl xs:text-2xl sm:text-3xl md:text-4xl font-display font-bold bg-gradient-to-r from-blue-500 to-accent-cyan bg-clip-text text-transparent">
                 {stat.value}
               </div>
               <div className="text-white/40 text-xs sm:text-sm mt-1">{stat.label}</div>

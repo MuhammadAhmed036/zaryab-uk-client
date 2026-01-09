@@ -112,7 +112,7 @@ export default function ServicesPage() {
                 variants={fadeInUp}
                 className={index % 2 !== 0 ? 'lg:order-2' : ''}
               >
-                <span className="text-sm font-mono text-accent-magenta mb-2 block">
+                <span className="text-sm font-mono text-blue-600 mb-2 block">
                   ({service.number})
                 </span>
                 <Heading size="xl" className="mb-6" animate={false}>

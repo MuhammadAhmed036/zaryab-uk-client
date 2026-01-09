@@ -62,6 +62,7 @@ const Navbar = () => {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
+                {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img 
                   src="/images/influtik-1-6.png" 
                   alt="Influtik Logo" 
@@ -119,7 +120,7 @@ const Navbar = () => {
                             key={sublink.name}
                             href={sublink.href}
                             onClick={(e) => handleNavClick(e, sublink.href)}
-                            className="block px-4 py-3 text-dark-700 hover:bg-light-100 hover:text-accent-magenta transition-colors text-sm"
+                            className="block px-4 py-3 text-dark-700 hover:bg-light-100 hover:text-blue-600 transition-colors text-sm"
                           >
                             {sublink.name}
                           </a>
@@ -212,7 +213,7 @@ const Navbar = () => {
                         <Link
                           href={link.href}
                           onClick={() => setIsOpen(false)}
-                          className="block text-2xl font-display font-bold text-dark-900 hover:text-accent-magenta transition-colors"
+                          className="block text-2xl font-display font-bold text-dark-900 hover:text-blue-600 transition-colors"
                         >
                           {link.name}
                         </Link>
@@ -220,7 +221,7 @@ const Navbar = () => {
                         <a
                           href={link.href}
                           onClick={(e) => handleNavClick(e, link.href)}
-                          className="block text-2xl font-display font-bold text-dark-900 hover:text-accent-magenta transition-colors"
+                          className="block text-2xl font-display font-bold text-dark-900 hover:text-blue-600 transition-colors"
                         >
                           {link.name}
                         </a>
@@ -232,7 +233,7 @@ const Navbar = () => {
                               key={sublink.name}
                               href={sublink.href}
                               onClick={(e) => handleNavClick(e, sublink.href)}
-                              className="block text-dark-600 hover:text-accent-magenta transition-colors"
+                              className="block text-dark-600 hover:text-blue-600 transition-colors"
                             >
                               {sublink.name}
                             </a>
@@ -300,7 +301,7 @@ const Navbar = () => {
 
                   {/* Content */}
                   <div className="text-center mb-6">
-                    <div className="w-16 h-16 bg-gradient-to-br from-accent-magenta to-accent-cyan rounded-full mx-auto mb-4 flex items-center justify-center">
+                    <div className="w-16 h-16 bg-gradient-to-br from-blue-600 to-cyan-500 rounded-full mx-auto mb-4 flex items-center justify-center">
                       <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                       </svg>
@@ -318,7 +319,7 @@ const Navbar = () => {
                     <p className="text-sm text-dark-600 mb-2 font-medium">Email</p>
                     <a 
                       href="mailto:marketing@influtik.com" 
-                      className="text-lg font-bold text-dark-900 hover:text-accent-magenta transition-colors break-all"
+                      className="text-lg font-bold text-dark-900 hover:text-blue-600 transition-colors break-all"
                     >
                       marketing@influtik.com
                     </a>
@@ -327,7 +328,7 @@ const Navbar = () => {
                   {/* Action button */}
                   <a
                     href="mailto:marketing@influtik.com"
-                    className="block w-full py-3 bg-gradient-to-r from-accent-magenta to-accent-cyan text-white rounded-full font-medium text-center hover:shadow-lg transition-shadow"
+                    className="block w-full py-3 bg-gradient-to-r from-blue-600 to-cyan-500 text-white rounded-full font-medium text-center hover:shadow-lg transition-shadow"
                   >
                     Send Email
                   </a>

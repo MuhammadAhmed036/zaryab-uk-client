@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { useState, useRef, useEffect } from 'react';
+import { useState, useRef, useEffect, useMemo } from 'react';
 
 const MediaGrid = () => {
   const [loadedVideos, setLoadedVideos] = useState({});
@@ -19,7 +19,7 @@ const MediaGrid = () => {
   }, []);
 
   // TikTok style vertical videos - show fewer on mobile
-  const allVideos = [
+  const allVideos = useMemo(() => [
     { 
       id: 1, 
       src: 'https://player.vimeo.com/video/1041732861?title=0&byline=0&portrait=0&badge=0&autoplay=1&muted=1&loop=1&background=1&autopause=0&player_id=0&app_id=58479',
@@ -44,7 +44,7 @@ const MediaGrid = () => {
       id: 6, 
       src: 'https://player.vimeo.com/video/1152439139?autoplay=1&muted=1&loop=1&background=1&autopause=0&title=0&byline=0&portrait=0',
     },
-  ];
+  ], []);
 
   // Show only 3 videos on mobile, all 6 on desktop
   const tiktokVideos = isMobile ? allVideos.slice(0, 3) : allVideos;
@@ -56,7 +56,7 @@ const MediaGrid = () => {
       allLoadedVideos[v.id] = true;
     });
     setLoadedVideos(allLoadedVideos);
-  }, []);
+  }, [allVideos]);
 
   // Animation variants
   const containerVariants = {
@@ -178,7 +178,7 @@ const MediaGrid = () => {
 
                 {/* Badge */}
                 <motion.div 
-                  className="absolute top-1 right-1 xs:top-1.5 xs:right-1.5 sm:top-2 sm:right-2 z-10 bg-gradient-to-r from-accent-magenta to-accent-cyan text-white text-[6px] xs:text-[8px] sm:text-[10px] font-bold px-1 py-0.5 xs:px-1.5 sm:px-2 sm:py-1 rounded-full shadow-lg"
+                  className="absolute top-1 right-1 xs:top-1.5 xs:right-1.5 sm:top-2 sm:right-2 z-10 bg-gradient-to-r from-blue-600 to-accent-cyan text-white text-[6px] xs:text-[8px] sm:text-[10px] font-bold px-1 py-0.5 xs:px-1.5 sm:px-2 sm:py-1 rounded-full shadow-lg"
                   whileHover={{ scale: 1.1 }}
                 >
                   #{index + 1}
@@ -203,7 +203,7 @@ const MediaGrid = () => {
               </div>
 
               {/* Glow Effect */}
-              <div className="absolute -inset-4 bg-gradient-to-r from-accent-magenta/0 via-accent-cyan/20 to-accent-magenta/0 rounded-3xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10" />
+              <div className="absolute -inset-4 bg-gradient-to-r from-blue-600/0 via-accent-cyan/20 to-blue-600/0 rounded-3xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10" />
             </div>
           </motion.div>
         ))}
@@ -211,7 +211,7 @@ const MediaGrid = () => {
 
       {/* Decorative Floating Elements */}
       <motion.div 
-        className="absolute -top-10 -right-10 w-32 h-32 bg-accent-magenta/10 rounded-full blur-3xl pointer-events-none hidden md:block"
+        className="absolute -top-10 -right-10 w-32 h-32 bg-blue-600/10 rounded-full blur-3xl pointer-events-none hidden md:block"
         animate={{
           scale: [1, 1.3, 1],
           opacity: [0.3, 0.5, 0.3]

@@ -9,8 +9,8 @@ const cardVariants = {
   gradient: 'bg-gradient-to-br from-white via-light-100 to-light-200',
   glass: 'bg-white/70 backdrop-blur-lg border border-white/20',
   neon: 'bg-white border-2 border-accent-cyan shadow-lg shadow-accent-cyan/20',
-  magenta: 'bg-gradient-to-br from-accent-magenta/10 to-accent-violet/10 border border-accent-magenta/20',
-  cyan: 'bg-gradient-to-br from-accent-cyan/10 to-accent-violet/10 border border-accent-cyan/20',
+  magenta: 'bg-gradient-to-br from-blue-500/10 to-blue-800/10 border border-blue-500/20',
+  cyan: 'bg-gradient-to-br from-accent-cyan/10 to-blue-600/10 border border-accent-cyan/20',
   lime: 'bg-gradient-to-br from-accent-lime/20 to-accent-cyan/10 border border-accent-lime/30',
 };
 
@@ -82,13 +82,14 @@ const CardImage = ({
 }) => (
   <div className={clsx('relative overflow-hidden', aspectRatio, className)}>
     {src ? (
+      // eslint-disable-next-line @next/next/no-img-element
       <img 
         src={src} 
         alt={alt} 
         className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
       />
     ) : placeholder && (
-      <div className="w-full h-full bg-gradient-to-br from-accent-magenta/20 via-accent-cyan/20 to-accent-violet/20 flex items-center justify-center">
+      <div className="w-full h-full bg-gradient-to-br from-blue-500/20 via-accent-cyan/20 to-blue-800/20 flex items-center justify-center">
         <div className="text-center text-dark-600">
           <svg className="w-12 h-12 mx-auto mb-2 opacity-50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />

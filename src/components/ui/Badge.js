@@ -13,12 +13,12 @@ const Badge = ({
 }) => {
   const variants = {
     default: 'bg-light-200 text-dark-700',
-    primary: 'bg-accent-magenta/10 text-accent-magenta border border-accent-magenta/20',
+    primary: 'bg-blue-500/10 text-blue-600 border border-blue-500/20',
     cyan: 'bg-accent-cyan/10 text-dark-800 border border-accent-cyan/30',
-    magenta: 'bg-accent-magenta/10 text-dark-800 border border-accent-magenta/30',
+    magenta: 'bg-blue-500/10 text-dark-800 border border-blue-500/30',
     lime: 'bg-accent-lime/20 text-dark-800 border border-accent-lime/40',
-    violet: 'bg-accent-violet/10 text-accent-violet border border-accent-violet/20',
-    gradient: 'bg-gradient-to-r from-accent-cyan to-accent-magenta text-white',
+    violet: 'bg-blue-800/10 text-blue-800 border border-blue-800/20',
+    gradient: 'bg-gradient-to-r from-accent-cyan to-blue-600 text-white',
     outline: 'border border-dark-300 text-dark-700',
   };
 

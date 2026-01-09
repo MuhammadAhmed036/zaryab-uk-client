@@ -3,16 +3,81 @@
 import { motion } from 'framer-motion';
 import { Section, Container, Heading, Text, Card, ImagePlaceholder, Badge } from '@/components/ui';
 import { staggerContainer, fadeInUp } from '@/lib/animations';
+import { useState } from 'react';
+
+const phoneVariants = {
+  hidden: { opacity: 0, y: 20, rotate: -5 },
+  visible: (index) => ({
+    opacity: 1,
+    y: 0,
+    rotate: 0,
+    transition: {
+      delay: index * 0.1,
+      duration: 0.6,
+      ease: "easeOut"
+    }
+  }),
+  hover: {
+    scale: 1.05,
+    y: -10,
+    rotate: 2,
+    transition: { duration: 0.3 }
+  }
+};
+
+const caseStudyCards = [
+  {
+    id: 1,
+    title: '+44',
+    subtitle: 'HUGO',
+    background: 'from-slate-900 to-slate-700',
+    borderColor: 'border-slate-200',
+    textColor: 'text-white',
+    accentColor: 'text-accent-lime',
+    stats: {
+      streams: '4M',
+      videos: '500+',
+      views: '300M+'
+    },
+    description: 'We were able to produce over 500 football edits within a 3 week period generating 300M+ views and a lot of organic recreations within the football niche. We started the content production at less than 300 video creations.',
+    phones: [
+      { type: 'FOOTBALL EDITS', variant: 'lime' },
+      { type: 'LUXURY EDITS', variant: 'magenta' }
+    ]
+  },
+  {
+    id: 2,
+    title: 'PLENTY',
+    subtitle: 'RHEEZ',
+    background: 'from-white to-slate-50',
+    borderColor: 'border-blue-500',
+    textColor: 'text-slate-900',
+    accentColor: 'text-blue-600',
+    stats: {
+      streams: '1M+',
+      videos: '8K+',
+      views: '251M+'
+    },
+    description: 'We developed content strategy for a debut song by an artist from scratch resulting in over 8K video recreations and over 1M streams. Growing his monthly listeners from 300 to 30K+ within a month',
+    phones: [
+      { type: 'INFLUENCER TRENDY', variant: 'cyan' },
+      { type: 'AI CONTENT', variant: 'violet' },
+      { type: 'FOOTBALL EDITS', variant: 'lime' },
+      { type: 'MOVIE EDITS', variant: 'magenta' }
+    ]
+  }
+];
 
 export default function CaseStudiesPage() {
+  const [hoveredCard, setHoveredCard] = useState(null);
+
   return (
-    <main className="pt-24">
-      {/* Hero Section */}
-      <Section background="gradient" className="py-24 relative overflow-hidden">
-        {/* Background decorations */}
+    <main className="h-screen overflow-hidden pt-24">
+      {/* Single Viewport Landing Section */}
+      <Section background="gradient" className="h-full relative overflow-hidden">
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           <motion.div
-            className="absolute top-20 right-20 w-96 h-96 bg-accent-violet/20 rounded-full blur-3xl"
+            className="absolute top-20 right-20 w-96 h-96 bg-blue-600/20 rounded-full blur-3xl"
             animate={{ scale: [1, 1.2, 1], opacity: [0.3, 0.5, 0.3] }}
             transition={{ duration: 8, repeat: Infinity }}
           />
@@ -23,136 +88,228 @@ export default function CaseStudiesPage() {
           />
         </div>
 
-        <Container className="relative z-10">
+        <Container className="relative z-10 h-full flex flex-col justify-center py-8">
+          {/* Compact Header */}
           <motion.div
             variants={staggerContainer}
             initial="initial"
             animate="animate"
-            className="text-center mb-16"
-          >
-            <motion.div variants={fadeInUp}>
-              <Heading size="3xl" animate={false}>
-                CASE STUDIES
-              </Heading>
-            </motion.div>
-            <motion.div variants={fadeInUp} className="mt-6 max-w-3xl mx-auto">
-              <Text size="xl" animate={false}>
-                Real results from real campaigns. See how we've helped brands achieve viral success and meaningful engagement.
-              </Text>
-            </motion.div>
-          </motion.div>
-        </Container>
-      </Section>
-
-      {/* Case Studies Grid */}
-      <Section background="white" className="py-24">
-        <Container>
-          <div className="space-y-24">
-            {caseStudies.map((study, index) => (
-              <motion.div
-                key={study.id}
-                initial={{ opacity: 0, y: 50 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-              >
-                <Card variant="elevated" className="overflow-hidden">
-                  <div className={`grid lg:grid-cols-2 gap-8 ${index % 2 === 1 ? 'lg:grid-flow-dense' : ''}`}>
-                    {/* Image */}
-                    <div className={index % 2 === 1 ? 'lg:col-start-2' : ''}>
-                      <ImagePlaceholder
-                        aspectRatio="video"
-                        variant={study.variant}
-                        label={study.client}
-                        className="!rounded-none"
-                        animate={false}
-                      />
-                    </div>
-
-                    {/* Content */}
-                    <div className="p-8 flex flex-col justify-center">
-                      <div className="flex flex-wrap gap-2 mb-4">
-                        {study.tags.map((tag) => (
-                          <Badge key={tag} variant={study.variant}>
-                            {tag}
-                          </Badge>
-                        ))}
-                      </div>
-
-                      <Heading size="lg" className="mb-4" animate={false}>
-                        {study.client}
-                      </Heading>
-
-                      <Text className="mb-6" animate={false}>
-                        {study.description}
-                      </Text>
-
-                      {/* Results */}
-                      <div className="grid grid-cols-2 gap-4 mb-6">
-                        {study.results.map((result) => (
-                          <div key={result.label}>
-                            <div className={`text-3xl font-display font-bold bg-gradient-to-r ${getGradient(study.variant)} bg-clip-text text-transparent`}>
-                              {result.value}
-                            </div>
-                            <Text size="sm" className="text-dark-600" animate={false}>
-                              {result.label}
-                            </Text>
-                          </div>
-                        ))}
-                      </div>
-
-                      <motion.a
-                        href="#"
-                        className="inline-flex items-center gap-2 text-dark-900 font-medium hover:gap-3 transition-all"
-                        whileHover={{ x: 5 }}
-                      >
-                        View Full Case Study
-                        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                        </svg>
-                      </motion.a>
-                    </div>
-                  </div>
-                </Card>
-              </motion.div>
-            ))}
-          </div>
-        </Container>
-      </Section>
-
-      {/* CTA Section */}
-      <Section background="gradient" className="py-24">
-        <Container>
-          <motion.div
-            variants={staggerContainer}
-            initial="initial"
-            whileInView="animate"
-            viewport={{ once: true }}
-            className="text-center"
+            className="text-center mb-8"
           >
             <motion.div variants={fadeInUp}>
               <Heading size="2xl" animate={false}>
-                Ready to Create Your Success Story?
+                CASE STUDIES
               </Heading>
             </motion.div>
-            <motion.div variants={fadeInUp} className="mt-6 max-w-2xl mx-auto">
-              <Text size="lg" animate={false}>
-                Let's work together to create a campaign that drives real results for your brand.
+            <motion.div variants={fadeInUp} className="mt-3 max-w-2xl mx-auto">
+              <Text animate={false}>
+                Real results from viral campaigns. See our impact in action.
               </Text>
             </motion.div>
-            <motion.div variants={fadeInUp} className="mt-8">
-              <motion.a
-                href="/contact"
-                className="inline-flex items-center gap-2 px-8 py-4 bg-dark-900 text-white rounded-full font-medium text-lg hover:bg-dark-800 transition-colors"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
+          </motion.div>
+
+          {/* Case Studies Cards - Side by Side */}
+          <motion.div
+            className="grid lg:grid-cols-2 gap-6 flex-1"
+            variants={staggerContainer}
+            initial="initial"
+            animate="animate"
+          >
+            {caseStudyCards.map((study, index) => (
+              <motion.div
+                key={study.id}
+                variants={fadeInUp}
+                className="group"
+                onHoverStart={() => setHoveredCard(study.id)}
+                onHoverEnd={() => setHoveredCard(null)}
+                whileHover={{ y: -5, scale: 1.02 }}
+                transition={{ duration: 0.3 }}
               >
-                Start Your Campaign
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                </svg>
-              </motion.a>
-            </motion.div>
+                <div className={`
+                  relative overflow-hidden rounded-2xl p-6 h-full
+                  bg-gradient-to-br ${study.background}
+                  border-2 ${study.borderColor}
+                  shadow-lg hover:shadow-2xl transition-all duration-500
+                  min-h-[480px]
+                `}>
+                  
+                  {/* Hero Number */}
+                  <motion.div
+                    className="mb-6"
+                    animate={hoveredCard === study.id ? { scale: 1.05 } : { scale: 1 }}
+                    transition={{ duration: 0.3 }}
+                  >
+                    <div className={`text-6xl font-bold ${study.accentColor} leading-none`}>
+                      {study.title}
+                    </div>
+                    <div className={`text-lg font-semibold ${study.textColor} mt-1`}>
+                      {study.subtitle}
+                    </div>
+                  </motion.div>
+
+                  {/* TikTok Videos Grid - Matching Screenshot */}
+                  <div className={`grid ${study.phones.length === 2 ? 'grid-cols-2' : 'grid-cols-4'} gap-3 mb-6`}>
+                    {study.phones.map((video, videoIndex) => (
+                      <motion.div
+                        key={videoIndex}
+                        variants={phoneVariants}
+                        custom={videoIndex}
+                        whileHover="hover"
+                        className="relative group/video"
+                      >
+                        <div className="bg-white/10 backdrop-blur-sm rounded-xl p-2 h-32">
+                          <div className={`w-full h-full bg-gradient-to-b ${getPhoneGradient(video.variant)} rounded-lg relative overflow-hidden shadow-lg`}>
+                            {/* Video Screen Content */}
+                            <motion.div
+                              className="absolute inset-1 bg-black/20 rounded flex items-center justify-center"
+                              animate={{
+                                opacity: [0.8, 0.6, 0.8],
+                              }}
+                              transition={{
+                                duration: 3,
+                                repeat: Infinity,
+                                delay: videoIndex * 0.5
+                              }}
+                            >
+                              {/* Play Button */}
+                              <motion.div
+                                className="w-6 h-6 bg-white rounded-full flex items-center justify-center shadow-lg"
+                                animate={{
+                                  scale: [1, 1.1, 1],
+                                }}
+                                transition={{
+                                  duration: 2,
+                                  repeat: Infinity,
+                                  delay: videoIndex * 0.3
+                                }}
+                              >
+                                <div className="w-0 h-0 border-l-[6px] border-l-gray-800 border-t-[4px] border-t-transparent border-b-[4px] border-b-transparent ml-0.5"></div>
+                              </motion.div>
+                            </motion.div>
+                            
+                            {/* Video UI Elements */}
+                            <motion.div
+                              className="absolute bottom-1 left-1 right-1 h-1 bg-white/30 rounded-full overflow-hidden"
+                              initial={{ width: '0%' }}
+                            >
+                              <motion.div
+                                className="h-full bg-white rounded-full"
+                                animate={{ width: ['0%', '100%', '0%'] }}
+                                transition={{
+                                  duration: 8,
+                                  repeat: Infinity,
+                                  delay: videoIndex * 1.5
+                                }}
+                              />
+                            </motion.div>
+                            
+                            {/* Engagement Icons */}
+                            <motion.div
+                              className="absolute top-1 right-1 w-1.5 h-1.5 bg-red-500 rounded-full"
+                              animate={{
+                                scale: [1, 1.3, 1],
+                                opacity: [1, 0.7, 1]
+                              }}
+                              transition={{
+                                duration: 1.5,
+                                repeat: Infinity,
+                                delay: videoIndex * 0.4
+                              }}
+                            />
+                          </div>
+                        </div>
+                        
+                        <motion.div
+                          className={`text-xs ${study.textColor} text-center mt-1.5 opacity-80 group-hover/video:opacity-100 transition-opacity font-medium`}
+                          animate={hoveredCard === study.id ? { y: [0, -1, 0] } : {}}
+                          transition={{ duration: 2, repeat: Infinity }}
+                        >
+                          {video.type}
+                        </motion.div>
+                      </motion.div>
+                    ))}
+                  </div>
+
+                  {/* Stats - Compact Grid */}
+                  <motion.div
+                    className="grid grid-cols-3 gap-3 mb-4"
+                    animate={hoveredCard === study.id ? { scale: 1.02 } : { scale: 1 }}
+                    transition={{ duration: 0.3 }}
+                  >
+                    {Object.entries(study.stats).map(([key, value], statIndex) => (
+                      <motion.div
+                        key={key}
+                        className="text-left"
+                        whileHover={{ scale: 1.05 }}
+                        animate={{
+                          y: hoveredCard === study.id ? [0, -1, 0] : 0
+                        }}
+                        transition={{
+                          duration: 2,
+                          repeat: Infinity,
+                          delay: statIndex * 0.2
+                        }}
+                      >
+                        <div className={`text-xs ${study.textColor} opacity-70 uppercase tracking-wide font-medium`}>
+                          {key}:
+                        </div>
+                        <div className={`text-xl font-bold ${study.textColor} leading-tight`}>
+                          {value}
+                        </div>
+                      </motion.div>
+                    ))}
+                  </motion.div>
+
+                  {/* Description - Compact */}
+                  <motion.div
+                    className="absolute bottom-6 left-6 right-6"
+                    animate={hoveredCard === study.id ? { opacity: 1 } : { opacity: 0.9 }}
+                    transition={{ duration: 0.3 }}
+                  >
+                    <Text 
+                      size="sm" 
+                      className={`${study.textColor} leading-relaxed text-sm`}
+                      animate={false}
+                    >
+                      {study.description.slice(0, 120)}...
+                    </Text>
+                  </motion.div>
+
+                  {/* Floating Background Element */}
+                  <motion.div
+                    className="absolute top-3 right-3 w-20 h-20 bg-white/5 rounded-full blur-xl"
+                    animate={{
+                      scale: [1, 1.2, 1],
+                      opacity: [0.3, 0.1, 0.3]
+                    }}
+                    transition={{
+                      duration: 4,
+                      repeat: Infinity,
+                      delay: index
+                    }}
+                  />
+                </div>
+              </motion.div>
+            ))}
+          </motion.div>
+
+          {/* Bottom CTA - Compact */}
+          <motion.div
+            variants={fadeInUp}
+            className="text-center mt-8"
+            animate="animate"
+          >
+            <motion.a
+              href="/contact"
+              className="inline-flex items-center gap-2 px-6 py-3 bg-dark-900 text-white rounded-full font-medium hover:bg-dark-800 transition-colors"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              Start Your Campaign
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
+            </motion.a>
           </motion.div>
         </Container>
       </Section>
@@ -160,67 +317,12 @@ export default function CaseStudiesPage() {
   );
 }
 
-const caseStudies = [
-  {
-    id: 1,
-    client: 'Major Artist Launch Campaign',
-    description: 'Helped launch a breakout artist\'s debut single with a viral TikTok campaign that reached over 100M users in the first week. Strategic influencer partnerships and trend-jacking led to organic chart success.',
-    tags: ['TikTok', 'Influencer Marketing', 'Music Launch'],
-    variant: 'magenta',
-    results: [
-      { label: 'Total Views', value: '100M+' },
-      { label: 'Engagement Rate', value: '15%' },
-      { label: 'User-Generated Content', value: '50K+' },
-      { label: 'Chart Position', value: 'Top 10' },
-    ],
-  },
-  {
-    id: 2,
-    client: 'Global Brand Awareness Campaign',
-    description: 'Created a multi-platform social campaign for a Fortune 500 brand targeting Gen Z. Combined influencer partnerships with original content creation to drive massive brand awareness and product sales.',
-    tags: ['Multi-Platform', 'Content Creation', 'Brand Awareness'],
-    variant: 'cyan',
-    results: [
-      { label: 'Impressions', value: '250M+' },
-      { label: 'New Followers', value: '500K+' },
-      { label: 'Conversion Rate', value: '8.5%' },
-      { label: 'ROI', value: '450%' },
-    ],
-  },
-  {
-    id: 3,
-    client: 'Festival Promotion Success',
-    description: 'Drove record ticket sales for a major music festival through targeted social campaigns, behind-the-scenes content, and strategic partnerships with top creators across platforms.',
-    tags: ['Instagram', 'YouTube', 'Event Marketing'],
-    variant: 'lime',
-    results: [
-      { label: 'Tickets Sold', value: '50K+' },
-      { label: 'Social Reach', value: '75M+' },
-      { label: 'Content Pieces', value: '200+' },
-      { label: 'Sell-Out Time', value: '48 hrs' },
-    ],
-  },
-  {
-    id: 4,
-    client: 'Product Launch Viral Campaign',
-    description: 'Orchestrated a viral product launch using TikTok trends, custom filters, and micro-influencer seeding. The campaign generated organic buzz that exceeded all initial projections.',
-    tags: ['TikTok', 'Product Launch', 'Viral Marketing'],
-    variant: 'violet',
-    results: [
-      { label: 'Views', value: '180M+' },
-      { label: 'Shares', value: '2M+' },
-      { label: 'Sales Increase', value: '320%' },
-      { label: 'Brand Mentions', value: '100K+' },
-    ],
-  },
-];
-
-function getGradient(variant) {
+function getPhoneGradient(variant) {
   const gradients = {
-    magenta: 'from-accent-magenta to-accent-violet',
-    cyan: 'from-accent-cyan to-accent-lime',
-    lime: 'from-accent-lime to-accent-cyan',
-    violet: 'from-accent-violet to-accent-magenta',
+    magenta: 'from-blue-500 to-blue-700',
+    cyan: 'from-cyan-400 to-blue-500',
+    lime: 'from-lime-400 to-green-500',
+    violet: 'from-blue-600 to-indigo-600',
   };
-  return gradients[variant] || gradients.magenta;
+  return gradients[variant] || gradients.cyan;
 }

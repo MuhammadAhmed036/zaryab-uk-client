@@ -5,11 +5,11 @@ import { forwardRef } from 'react';
 import clsx from 'clsx';
 
 const buttonVariants = {
-  primary: 'bg-gradient-to-r from-accent-magenta to-accent-violet text-white hover:shadow-lg hover:shadow-accent-magenta/30',
+  primary: 'bg-gradient-to-r from-blue-600 to-blue-800 text-white hover:shadow-lg hover:shadow-blue-500/30',
   secondary: 'bg-dark-900 text-white hover:bg-dark-800',
   outline: 'border-2 border-dark-900 text-dark-900 hover:bg-dark-900 hover:text-white',
   ghost: 'text-dark-900 hover:bg-light-200',
-  gradient: 'bg-gradient-to-r from-accent-cyan via-accent-magenta to-accent-violet text-white bg-300% animate-gradient',
+  gradient: 'bg-gradient-to-r from-accent-cyan via-blue-600 to-blue-800 text-white bg-300% animate-gradient',
   neon: 'bg-white text-dark-900 border-2 border-accent-cyan hover:shadow-lg hover:shadow-accent-cyan/50',
 };
 
@@ -32,7 +32,7 @@ const Button = forwardRef(({
   animate = true,
   ...props
 }, ref) => {
-  const baseClasses = 'inline-flex items-center justify-center gap-2 font-semibold rounded-full transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-accent-magenta disabled:opacity-50 disabled:cursor-not-allowed';
+  const baseClasses = 'inline-flex items-center justify-center gap-2 font-semibold rounded-full transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-600 disabled:opacity-50 disabled:cursor-not-allowed';
 
   const buttonContent = (
     <>

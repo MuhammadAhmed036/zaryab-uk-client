@@ -56,7 +56,7 @@ const pressItems = [
 const PressCard = ({ item, index }) => {
   const colorClasses = {
     lime: 'bg-accent-lime/20 border-accent-lime/30 hover:bg-accent-lime/30',
-    magenta: 'bg-accent-magenta/20 border-accent-magenta/30 hover:bg-accent-magenta/30',
+    magenta: 'bg-blue-500/20 border-blue-500/30 hover:bg-blue-500/30',
     cyan: 'bg-accent-cyan/20 border-accent-cyan/30 hover:bg-accent-cyan/30',
   };
 
@@ -85,7 +85,7 @@ const PressCard = ({ item, index }) => {
       <div className="absolute top-0 right-0 w-8 h-8 overflow-hidden">
         <div className={`absolute top-0 right-0 w-16 h-16 transform rotate-45 translate-x-8 -translate-y-8 ${
           item.color === 'lime' ? 'bg-accent-lime/40' :
-          item.color === 'magenta' ? 'bg-accent-magenta/40' :
+          item.color === 'magenta' ? 'bg-blue-500/40' :
           'bg-accent-cyan/40'
         }`} />
       </div>

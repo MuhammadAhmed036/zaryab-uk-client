@@ -69,7 +69,7 @@ const Contact = () => {
           transition={{ duration: 6, repeat: Infinity }}
         />
         <motion.div
-          className="absolute top-1/3 left-1/4 w-48 h-48 bg-accent-magenta/15 rounded-full blur-3xl"
+          className="absolute top-1/3 left-1/4 w-48 h-48 bg-blue-500/15 rounded-full blur-3xl"
           animate={{ scale: [1, 1.3, 1], opacity: [0.2, 0.4, 0.2] }}
           transition={{ duration: 8, repeat: Infinity, delay: 1 }}
         />
@@ -101,8 +101,8 @@ const Contact = () => {
             {/* Location info */}
             <motion.div variants={fadeInUp} className="mt-6 sm:mt-8 space-y-3 sm:space-y-4">
               <div className="flex items-start gap-3 sm:gap-4">
-                <div className="w-10 h-10 sm:w-12 sm:h-12 bg-accent-magenta/10 rounded-full flex items-center justify-center flex-shrink-0">
-                  <svg className="w-5 h-5 sm:w-6 sm:h-6 text-accent-magenta" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div className="w-10 h-10 sm:w-12 sm:h-12 bg-blue-500/10 rounded-full flex items-center justify-center flex-shrink-0">
+                  <svg className="w-5 h-5 sm:w-6 sm:h-6 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                   </svg>
@@ -119,7 +119,7 @@ const Contact = () => {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                   </svg>
                 </div>
-                <a href="tel:+447789772413" className="font-semibold text-dark-900 hover:text-accent-magenta transition-colors text-sm sm:text-base">
+                <a href="tel:+447789772413" className="font-semibold text-dark-900 hover:text-blue-500 transition-colors text-sm sm:text-base">
                   +44 7789772413
                 </a>
               </div>
@@ -129,7 +129,7 @@ const Contact = () => {
               {/* Email button */}
               <motion.a
                 href="mailto:marketing@influtik.com"
-                className="inline-flex items-center gap-2 sm:gap-3 px-4 sm:px-6 py-3 sm:py-4 rounded-full bg-gradient-to-r from-accent-cyan/30 via-accent-magenta/20 to-accent-violet/30 border border-accent-cyan/30 hover:border-accent-cyan/50 transition-all duration-300 group"
+                className="inline-flex items-center gap-2 sm:gap-3 px-4 sm:px-6 py-3 sm:py-4 rounded-full bg-gradient-to-r from-accent-cyan/30 via-blue-500/20 to-blue-700/30 border border-accent-cyan/30 hover:border-accent-cyan/50 transition-all duration-300 group"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
               >
@@ -155,7 +155,7 @@ const Contact = () => {
                 {['twitter', 'instagram', 'tiktok', 'linkedin'].map((social) => (
                   <motion.button
                     key={social}
-                    className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-light-100 border border-light-300 flex items-center justify-center hover:bg-accent-magenta/10 hover:border-accent-magenta/30 transition-all"
+                    className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-light-100 border border-light-300 flex items-center justify-center hover:bg-blue-500/10 hover:border-blue-500/30 transition-all"
                     whileHover={{ scale: 1.1, y: -3 }}
                     whileTap={{ scale: 0.95 }}
                   >
@@ -195,7 +195,7 @@ const Contact = () => {
                 animate={{ rotate: 360 }}
                 transition={{ duration: 30, repeat: Infinity, ease: 'linear' }}
               >
-                <div className="w-36 h-36 rounded-full bg-gradient-to-br from-accent-cyan/20 to-accent-violet/20 flex items-center justify-center">
+                <div className="w-36 h-36 rounded-full bg-gradient-to-br from-accent-cyan/20 to-blue-600/20 flex items-center justify-center">
                   <svg className="w-20 h-20 text-dark-400/50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
                   </svg>
@@ -206,7 +206,7 @@ const Contact = () => {
               {[0, 120, 240].map((angle, i) => (
                 <motion.div
                   key={i}
-                  className="absolute w-8 h-8 rounded-full bg-gradient-to-br from-accent-magenta to-accent-violet"
+                  className="absolute w-8 h-8 rounded-full bg-gradient-to-br from-blue-500 to-blue-700"
                   style={{
                     top: `calc(50% + ${Math.sin(angle * Math.PI / 180) * 120}px)`,
                     left: `calc(50% + ${Math.cos(angle * Math.PI / 180) * 120}px)`,

@@ -71,11 +71,11 @@ src/
 
 ## 🎨 Color Palette
 
-The light theme uses these accent colors:
-- **Magenta**: `#ec4899` - Primary accent
+The light theme uses these accent colors (blue/black/white theme):
+- **Blue**: `#3b82f6` - Primary accent
 - **Cyan**: `#22d3ee` - Secondary accent  
 - **Lime**: `#a3e635` - Highlight color
-- **Violet**: `#8b5cf6` - Tertiary accent
+- **Dark Blue**: `#1e40af` - Tertiary accent
 
 ## 🖼️ Adding Images
 

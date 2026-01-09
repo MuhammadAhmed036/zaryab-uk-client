@@ -75,7 +75,7 @@ export const Heading = ({
   };
 
   const gradientClass = gradient 
-    ? 'bg-gradient-to-r from-accent-magenta via-accent-violet to-accent-cyan bg-clip-text text-transparent' 
+    ? 'bg-gradient-to-r from-blue-500 via-blue-700 to-accent-cyan bg-clip-text text-transparent' 
     : 'text-dark-900';
 
   const baseClasses = 'font-display font-bold tracking-tight leading-tight';
@@ -176,7 +176,7 @@ export const Divider = ({ className = '', gradient = false }) => (
     className={clsx(
       'h-px w-full',
       gradient
-        ? 'bg-gradient-to-r from-transparent via-accent-magenta to-transparent'
+        ? 'bg-gradient-to-r from-transparent via-blue-500 to-transparent'
         : 'bg-light-300',
       className
     )}

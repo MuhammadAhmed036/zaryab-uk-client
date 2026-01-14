@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Section, Container, Heading, Card, ImagePlaceholder } from '@/components/ui';
+import { Section, Container, Heading, Card } from '@/components/ui';
 import { useCountUp } from '@/hooks/useAnimations';
 import { staggerContainer, fadeInUp, staggerChild } from '@/lib/animations';
 
@@ -11,36 +11,48 @@ const stats = [
     suffix: '',
     label: 'Artists',
     variant: 'lime',
+    mediaType: 'video',
+    mediaSrc: 'https://player.vimeo.com/video/1053014597?autoplay=1&loop=1&background=1&muted=1',
   },
   {
     value: 1261,
     suffix: '',
     label: 'Campaigns',
     variant: 'lime',
+    mediaType: 'video',
+    mediaSrc: 'https://player.vimeo.com/video/1053014597?autoplay=1&loop=1&background=1&muted=1',
   },
   {
     value: 9,
     suffix: 'B',
     label: 'Views Delivered',
     variant: 'lime',
+    mediaType: 'video',
+    mediaSrc: 'https://player.vimeo.com/video/1053014597?autoplay=1&loop=1&background=1&muted=1',
   },
   {
     value: 102,
     suffix: 'M',
     label: 'UGC pieces created',
     variant: 'lime',
+    mediaType: 'video',
+    mediaSrc: 'https://player.vimeo.com/video/1053014655?autoplay=1&loop=1&background=1&muted=1',
   },
   {
     value: 178,
     suffix: '',
     label: 'Billboard Hot 100™ entries',
     variant: 'magenta',
+    mediaType: 'image',
+    mediaSrc: '/images/Billboard.avif',
   },
   {
     value: 71,
     suffix: '',
     label: 'TikTok Top 50 entries',
     variant: 'magenta',
+    mediaType: 'image',
+    mediaSrc: '/images/TikTok Top 50 entries.avif',
   },
 ];
 
@@ -54,15 +66,32 @@ const StatCard = ({ stat, index }) => {
       transition={{ type: 'spring', stiffness: 300 }}
     >
       <Card variant={stat.variant} className="p-4 sm:p-6 h-full" hover={false} animate={false}>
-        {/* Image placeholder */}
+        {/* Campaign Media */}
         <div className="mb-3 sm:mb-4">
-          <ImagePlaceholder
-            aspectRatio="video"
-            variant={stat.variant}
-            label="Campaign Image"
-            rounded="rounded-lg sm:rounded-xl"
-            animate={false}
-          />
+          <div className={`relative aspect-video rounded-lg sm:rounded-xl overflow-hidden ${
+            stat.variant === 'lime' 
+              ? 'bg-gradient-to-br from-accent-lime/20 to-accent-lime/5' 
+              : 'bg-gradient-to-br from-blue-200/30 to-blue-100/20'
+          }`}>
+            {stat.mediaType === 'video' ? (
+              <iframe
+                src={stat.mediaSrc}
+                className="absolute inset-0 w-full h-full"
+                allow="autoplay; fullscreen; picture-in-picture"
+                allowFullScreen
+                frameBorder="0"
+                style={{ border: 'none' }}
+                title={`Campaign video for ${stat.label}`}
+              />
+            ) : (
+              // eslint-disable-next-line @next/next/no-img-element
+              <img
+                src={stat.mediaSrc}
+                alt={stat.label}
+                className="absolute inset-0 w-full h-full object-cover"
+              />
+            )}
+          </div>
         </div>
         
         {/* Stat number */}

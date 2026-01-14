@@ -4,25 +4,22 @@ import { motion, useScroll, useTransform } from 'framer-motion';
 import { useRef, useState } from 'react';
 import { Container } from '@/components/ui';
 
-// Brand logos - replace placeholder with actual image paths when available
+// Brand logos - using actual client logos from public/images/client logos
 const brandsRow1 = [
-  { name: 'Hollister', placeholder: true },
-  { name: 'Neutrogena', placeholder: true },
-  { name: 'Chipotle', placeholder: true },
-  { name: 'Lionsgate', placeholder: true },
-  { name: 'A24', placeholder: true },
-  { name: 'Warner Bros', placeholder: true },
-  { name: 'American Eagle', placeholder: true },
+  { name: 'Sony Music', logo: '/images/client logos/Sony music.png' },
+  { name: 'Warner Music Group', logo: '/images/client logos/warner-music-group-logo-png-transparent.png' },
+  { name: 'Columbia Records', logo: '/images/client logos/Columbia_Records_Colored_Logo.svg.png' },
+  { name: 'The Orchard', logo: '/images/client logos/The_Orchard_Logo..png' },
+  { name: 'Create Music Group', logo: '/images/client logos/Create_Music_Group_Logo.png' },
+  { name: 'AAO Records', logo: '/images/client logos/AAO Records.webp' },
 ];
 
 const brandsRow2 = [
-  { name: 'Nice Life', placeholder: true },
-  { name: 'TikTok Music', placeholder: true },
-  { name: '88rising', placeholder: true },
-  { name: 'Geffen', placeholder: true },
-  { name: 'Republic Records', placeholder: true },
-  { name: 'Capitol Records', placeholder: true },
-  { name: 'Interscope', placeholder: true },
+  { name: 'Isakai Records', logo: '/images/client logos/Isakai records.avif' },
+  { name: 'QIA', logo: '/images/client logos/QIA logo.jpg' },
+  { name: 'Robots + Humans', logo: '/images/client logos/Robots + Humans logo.jpg' },
+  { name: 'SoundOn', logo: '/images/client logos/soundon logo.webp' },
+  { name: 'The Other Songs', logo: '/images/client logos/The Other Songs logo.png' },
 ];
 
 const BrandLogo = ({ brand, index }) => {
@@ -49,7 +46,7 @@ const BrandLogo = ({ brand, index }) => {
         <img
           src={brand.logo}
           alt={brand.name}
-          className="h-6 sm:h-8 md:h-12 w-auto object-contain filter brightness-0 invert opacity-60 group-hover:opacity-100 transition-all duration-300 relative z-10"
+          className="h-8 sm:h-10 md:h-14 lg:h-16 w-auto max-w-[100px] sm:max-w-[140px] md:max-w-[180px] object-contain filter grayscale opacity-70 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-300 relative z-10"
         />
       ) : (
         <span className="text-white/60 font-display font-bold text-sm sm:text-lg md:text-2xl whitespace-nowrap group-hover:text-white transition-all duration-300 relative z-10">

@@ -22,27 +22,33 @@ const MediaGrid = () => {
   const allVideos = useMemo(() => [
     { 
       id: 1, 
-      src: 'https://player.vimeo.com/video/1041732861?title=0&byline=0&portrait=0&badge=0&autoplay=1&muted=1&loop=1&background=1&autopause=0&player_id=0&app_id=58479',
+      src: 'https://player.vimeo.com/video/1154252112?autoplay=1&muted=1&loop=1&background=1&autopause=0&title=0&byline=0&portrait=0',
+      title: 'BRAINROT'
     },
     { 
       id: 2, 
-      src: 'https://player.vimeo.com/video/1041732885?title=0&byline=0&portrait=0&badge=0&autoplay=1&muted=1&loop=1&background=1&autopause=0&player_id=0&app_id=58479',
+      src: 'https://player.vimeo.com/video/1154252594?autoplay=1&muted=1&loop=1&background=1&autopause=0&title=0&byline=0&portrait=0',
+      title: 'DANCERS'
     },
     { 
       id: 3, 
-      src: 'https://player.vimeo.com/video/1152439139?autoplay=1&muted=1&loop=1&background=1&autopause=0&title=0&byline=0&portrait=0',
+      src: 'https://player.vimeo.com/video/1154252893?autoplay=1&muted=1&loop=1&background=1&autopause=0&title=0&byline=0&portrait=0',
+      title: 'CAR EDITS'
     },
     { 
       id: 4, 
-      src: 'https://player.vimeo.com/video/1041732805?title=0&byline=0&portrait=0&badge=0&autoplay=1&muted=1&loop=1&background=1&autopause=0&player_id=0&app_id=58479',
+      src: 'https://player.vimeo.com/video/1154253346?autoplay=1&muted=1&loop=1&background=1&autopause=0&title=0&byline=0&portrait=0',
+      title: 'MOVIE EDITS'
     },
     { 
       id: 5, 
-      src: 'https://player.vimeo.com/video/1152439139?autoplay=1&muted=1&loop=1&background=1&autopause=0&title=0&byline=0&portrait=0',
+      src: 'https://player.vimeo.com/video/1154258411?autoplay=1&muted=1&loop=1&background=1&autopause=0&title=0&byline=0&portrait=0',
+      title: 'NICHE COMMUNITIES'
     },
     { 
       id: 6, 
-      src: 'https://player.vimeo.com/video/1152439139?autoplay=1&muted=1&loop=1&background=1&autopause=0&title=0&byline=0&portrait=0',
+      src: 'https://player.vimeo.com/video/1154258826?autoplay=1&muted=1&loop=1&background=1&autopause=0&title=0&byline=0&portrait=0',
+      title: 'LIP-SYNC'
     },
   ], []);
 
@@ -197,6 +203,20 @@ const MediaGrid = () => {
                     </svg>
                   </motion.div>
                 </div>
+
+                {/* Video Title Overlay */}
+                <motion.div 
+                  className="absolute bottom-2 left-2 right-2 z-20"
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.5 + index * 0.1 }}
+                >
+                  <div className="bg-black/60 backdrop-blur-sm rounded-md px-2 py-1 border border-white/10">
+                    <p className="text-white text-[8px] xs:text-[9px] sm:text-[10px] md:text-xs font-bold tracking-wider text-center leading-tight">
+                      {video.title}
+                    </p>
+                  </div>
+                </motion.div>
 
                 {/* Bottom Gradient Overlay */}
                 <div className="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-black/70 to-transparent pointer-events-none" />

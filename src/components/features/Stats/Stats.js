@@ -1,5 +1,6 @@
 'use client';
 
+import React from 'react';
 import { motion } from 'framer-motion';
 import { Section, Container, Heading, Card } from '@/components/ui';
 import { useCountUp } from '@/hooks/useAnimations';
@@ -11,8 +12,16 @@ const stats = [
     suffix: '+',
     label: 'Artists',
     variant: 'lime',
-    mediaType: 'video',
-    mediaSrc: 'https://player.vimeo.com/video/1053014597?autoplay=1&loop=1&background=1&muted=1',
+    mediaType: 'slideshow',
+    mediaImages: [
+      '/images/artist slideshow/8f9117a26dc60853c8f862ca81ff635a (1).png',
+      '/images/artist slideshow/ab6761610000e5eb9eff991f88390d25b5d7c9a9.jpeg',
+      '/images/artist slideshow/channels4_profile (2).jpg',
+      '/images/artist slideshow/IMG_6629.webp',
+      '/images/artist slideshow/karri-kehlani-scaled.jpg',
+      '/images/artist slideshow/MK-Neil-Favila-759x500.jpg',
+      '/images/artist slideshow/Skye-1-e1764693337176.jpg',
+    ],
   },
   {
     value: 130,
@@ -20,7 +29,7 @@ const stats = [
     label: 'Campaigns',
     variant: 'lime',
     mediaType: 'video',
-    mediaSrc: 'https://player.vimeo.com/video/1053014597?autoplay=1&loop=1&background=1&muted=1',
+    mediaSrc: 'https://player.vimeo.com/video/1053014687?autoplay=1&loop=1&background=1',
   },
   {
     value: 110,
@@ -58,6 +67,17 @@ const stats = [
 
 const StatCard = ({ stat, index }) => {
   const { ref, count } = useCountUp(stat.value, 2.5);
+  const [currentImageIndex, setCurrentImageIndex] = React.useState(0);
+
+  // Auto-advance slideshow
+  React.useEffect(() => {
+    if (stat.mediaType === 'slideshow' && stat.mediaImages) {
+      const interval = setInterval(() => {
+        setCurrentImageIndex((prev) => (prev + 1) % stat.mediaImages.length);
+      }, 2500);
+      return () => clearInterval(interval);
+    }
+  }, [stat.mediaType, stat.mediaImages]);
 
   return (
     <motion.div
@@ -83,6 +103,20 @@ const StatCard = ({ stat, index }) => {
                 style={{ border: 'none' }}
                 title={`Campaign video for ${stat.label}`}
               />
+            ) : stat.mediaType === 'slideshow' ? (
+              <div className="relative w-full h-full">
+                {stat.mediaImages.map((imgSrc, idx) => (
+                  <motion.img
+                    key={imgSrc}
+                    src={imgSrc}
+                    alt={`${stat.label} ${idx + 1}`}
+                    className="absolute inset-0 w-full h-full object-cover"
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: idx === currentImageIndex ? 1 : 0 }}
+                    transition={{ duration: 0.5 }}
+                  />
+                ))}
+              </div>
             ) : (
               // eslint-disable-next-line @next/next/no-img-element
               <img

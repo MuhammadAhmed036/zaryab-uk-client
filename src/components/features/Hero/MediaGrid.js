@@ -52,8 +52,8 @@ const MediaGrid = () => {
     },
   ], []);
 
-  // Show only 3 videos on mobile, all 6 on desktop
-  const tiktokVideos = isMobile ? allVideos.slice(0, 3) : allVideos;
+  // Show all videos on both mobile and desktop
+  const tiktokVideos = allVideos;
 
   // Load all videos on mount
   useEffect(() => {
@@ -97,7 +97,7 @@ const MediaGrid = () => {
   // Get staggered position for dynamic layout - smaller on mobile
   const getYOffset = (index) => {
     if (isMobile) {
-      const offsets = [0, 8, -5];
+      const offsets = [0, 5, -3, 8, -2, 6];
       return offsets[index] || 0;
     }
     const offsets = [0, 15, -10, 20, 5, -15];
@@ -108,7 +108,7 @@ const MediaGrid = () => {
     <div className="w-full relative" ref={containerRef}>
       {/* Responsive TikTok Style Grid */}
       <motion.div 
-        className="flex flex-row flex-nowrap sm:flex-wrap justify-center items-start gap-2 xs:gap-3 sm:gap-3 md:gap-4 overflow-hidden px-2"
+        className="flex flex-row flex-wrap justify-center items-start gap-2 xs:gap-2.5 sm:gap-3 md:gap-4 px-2 py-4"
         variants={containerVariants}
         initial="hidden"
         animate="visible"

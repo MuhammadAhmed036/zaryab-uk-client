@@ -93,7 +93,7 @@ const Hero = () => {
       </div>
 
       {/* Main content */}
-      <motion.div style={{ y }} className="relative z-10 h-full flex items-center">
+      <motion.div style={{ y }} className="relative z-10 h-full flex items-center pt-20 sm:pt-24">
         <Container className="py-4 px-3 sm:px-4 md:py-6 lg:py-8">
           <div className="flex flex-col lg:grid lg:grid-cols-2 gap-4 sm:gap-6 lg:gap-10 items-center">
             {/* Left content */}
@@ -165,7 +165,7 @@ const Hero = () => {
             </div>
 
             {/* Right content - Media gallery */}
-            <div className="order-1 lg:order-2 w-full">
+            <div className="order-1 lg:order-2 w-full mt-4 sm:mt-6 lg:mt-0">
               <MediaGrid />
             </div>
           </div>

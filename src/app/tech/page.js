@@ -1,185 +1,234 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Section, Container, Heading, Text, Card, ImagePlaceholder, Button } from '@/components/ui';
+import { Section, Container, Heading, Text, Button } from '@/components/ui';
 import { staggerContainer, fadeInUp } from '@/lib/animations';
-
-const clientLogos = [
-  { name: 'Spotify', variant: 'lime' },
-  { name: 'Netflix', variant: 'magenta' },
-  { name: 'TikTok', variant: 'cyan' },
-  { name: 'Instagram', variant: 'violet' },
-  { name: 'YouTube', variant: 'lime' },
-];
 
 export default function TechPage() {
   return (
-    <main className="h-screen overflow-hidden pt-24">
-      {/* Single Viewport Landing Section */}
-      <Section background="gradient" className="h-full relative overflow-hidden">
+    <main className="pt-24">
+      {/* Hero Section */}
+      <Section background="gradient" className="py-32 relative overflow-hidden">
         {/* Background decorations */}
-        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute inset-0 pointer-events-none">
           <motion.div
             className="absolute top-20 right-20 w-96 h-96 bg-accent-cyan/20 rounded-full blur-3xl"
             animate={{ scale: [1, 1.2, 1], opacity: [0.3, 0.5, 0.3] }}
             transition={{ duration: 8, repeat: Infinity }}
           />
           <motion.div
-            className="absolute bottom-40 left-10 w-80 h-80 bg-blue-600/20 rounded-full blur-3xl"
+            className="absolute bottom-20 left-20 w-80 h-80 bg-blue-600/20 rounded-full blur-3xl"
             animate={{ scale: [1, 1.3, 1], opacity: [0.2, 0.4, 0.2] }}
             transition={{ duration: 10, repeat: Infinity, delay: 2 }}
           />
+        </div>
+
+        <Container className="relative z-10">
           <motion.div
-            className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-accent-lime/10 rounded-full blur-2xl"
-            animate={{ rotate: 360, scale: [1, 1.1, 1] }}
-            transition={{ duration: 20, repeat: Infinity }}
+            variants={staggerContainer}
+            initial="initial"
+            animate="animate"
+            className="text-center max-w-4xl mx-auto"
+          >
+            <motion.div variants={fadeInUp}>
+              <Heading size="3xl" animate={false}>
+                OUR TECH
+              </Heading>
+            </motion.div>
+            <motion.div variants={fadeInUp}>
+              <Text size="xl" className="mt-6" animate={false}>
+                Cutting-edge technology powering viral campaigns. Our proprietary tools and platforms 
+                help you manage creators, track performance, and scale your music marketing.
+              </Text>
+            </motion.div>
+          </motion.div>
+        </Container>
+      </Section>
+
+      {/* Section 1: Social TikTok */}
+      <Section background="white" className="py-24 relative overflow-hidden">
+        <div className="absolute inset-0 pointer-events-none">
+          <motion.div
+            className="absolute top-20 left-20 w-64 h-64 bg-accent-lime/20 rounded-full blur-3xl"
+            animate={{ y: [0, 30, 0], opacity: [0.3, 0.5, 0.3] }}
+            transition={{ duration: 6, repeat: Infinity }}
           />
         </div>
 
-        <Container className="relative z-10 h-full flex items-center">
-          <div className="grid lg:grid-cols-12 gap-8 items-center w-full">
-            
-            {/* Left Content - Compact */}
-            <motion.div
-              variants={staggerContainer}
-              initial="initial"
-              animate="animate"
-              className="lg:col-span-6 space-y-6"
-            >
-              <motion.div variants={fadeInUp} className="space-y-2">
-                <span className="text-sm font-mono text-blue-600 tracking-wider">OUR TECH</span>
-                <Heading size="4xl" animate={false} className="leading-tight">
-                  Z-engine Platform
-                  <span className="text-accent-cyan block text-3xl mt-2 font-bold tracking-wide">
-                    Automated Influence
-                  </span>
-                </Heading>
-              </motion.div>
-              
-              <motion.div variants={fadeInUp}>
-                <Text size="xl" animate={false} className="text-dark-600 max-w-lg">
-                  AI-powered influencer discovery and campaign automation. 
-                  From scouting to analytics - all on autopilot.
+        <Container className="relative z-10">
+          <motion.div
+            variants={staggerContainer}
+            initial="initial"
+            whileInView="animate"
+            viewport={{ once: true }}
+            className="grid lg:grid-cols-2 gap-12 items-center"
+          >
+            {/* Content - Left Side */}
+            <motion.div variants={fadeInUp}>
+              <Heading size="xl" className="mb-6" animate={false}>
+                Internal Database of 10,000+ creators updated every single day.
+              </Heading>
+              <div className="space-y-4 text-dark-600">
+                <Text size="base" animate={false}>
+                  Our internal tool Z-engine allows us to track performance of 10,000+ creators which enables us to 
+                  collaborate with the best performing and cost efficient creators in our network
                 </Text>
-              </motion.div>
-
-              {/* Quick Stats */}
-              <motion.div variants={fadeInUp} className="grid grid-cols-3 gap-6 pt-4">
-                {[
-                  { label: 'AI Models', value: '50+', color: 'text-blue-600' },
-                  { label: 'Creators', value: '1M+', color: 'text-accent-cyan' },
-                  { label: 'Campaigns', value: '10K+', color: 'text-accent-lime' }
-                ].map((stat, index) => (
-                  <motion.div
-                    key={stat.label}
-                    className="text-center"
-                    whileHover={{ scale: 1.05, y: -2 }}
-                    animate={{ y: [0, -2, 0] }}
-                    transition={{ duration: 2, repeat: Infinity, delay: index * 0.3 }}
-                  >
-                    <div className={`text-3xl font-bold ${stat.color}`}>{stat.value}</div>
-                    <div className="text-sm text-dark-500 uppercase tracking-wide">{stat.label}</div>
-                  </motion.div>
-                ))}
-              </motion.div>
+              </div>
             </motion.div>
 
-            {/* Center - Main Dashboard */}
-            <motion.div
-              variants={fadeInUp}
-              className="lg:col-span-6 relative"
-              animate={{ y: [0, -10, 0] }}
-              transition={{ duration: 4, repeat: Infinity }}
-            >
-              <motion.div
-                className="relative bg-white rounded-2xl shadow-2xl overflow-hidden h-80"
-                whileHover={{ scale: 1.02, rotateY: 5 }}
-                transition={{ type: 'spring', stiffness: 300 }}
-              >
-                <div className="h-full bg-gradient-to-br from-indigo-50 to-cyan-50 p-4">
-                  <div className="flex items-center gap-1 mb-4">
-                    <motion.div 
-                      className="w-2 h-2 bg-red-400 rounded-full"
-                      animate={{ scale: [1, 1.2, 1] }}
-                      transition={{ duration: 2, repeat: Infinity }}
-                    />
-                    <motion.div 
-                      className="w-2 h-2 bg-yellow-400 rounded-full"
-                      animate={{ scale: [1, 1.2, 1] }}
-                      transition={{ duration: 2, repeat: Infinity, delay: 0.3 }}
-                    />
-                    <motion.div 
-                      className="w-2 h-2 bg-green-400 rounded-full"
-                      animate={{ scale: [1, 1.2, 1] }}
-                      transition={{ duration: 2, repeat: Infinity, delay: 0.6 }}
-                    />
-                  </div>
-                  
-                  <div className="space-y-3">
-                    <div className="flex justify-between items-center">
-                      <h3 className="text-sm font-semibold">Campaign Analytics</h3>
-                      <motion.div 
-                        className="text-xl font-bold text-blue-600"
-                        animate={{ scale: [1, 1.1, 1] }}
-                        transition={{ duration: 3, repeat: Infinity }}
-                      >
-                        94%
-                      </motion.div>
-                    </div>
-                    
-                    <div className="grid grid-cols-2 gap-2">
-                      {[
-                        { label: 'Reach', value: '2.4M', color: 'bg-accent-cyan' },
-                        { label: 'Engagement', value: '185K', color: 'bg-accent-lime' },
-                        { label: 'Conversions', value: '12.8K', color: 'bg-blue-600' },
-                        { label: 'ROI', value: '340%', color: 'bg-blue-800' }
-                      ].map((metric, i) => (
-                        <motion.div 
-                          key={metric.label}
-                          className="bg-white rounded p-2 text-center"
-                          whileHover={{ scale: 1.05 }}
-                          animate={{ y: [0, -1, 0] }}
-                          transition={{ duration: 2, repeat: Infinity, delay: i * 0.2 }}
-                        >
-                          <div className="text-sm font-bold">{metric.value}</div>
-                          <div className="text-xs text-dark-500">{metric.label}</div>
-                        </motion.div>
-                      ))}
-                    </div>
-                    
-                    <motion.div 
-                      className="h-2 bg-dark-100 rounded-full overflow-hidden"
-                      initial={{ width: 0 }}
-                      animate={{ width: '100%' }}
-                      transition={{ duration: 1 }}
-                    >
-                      <motion.div 
-                        className="h-full bg-gradient-to-r from-blue-600 to-accent-cyan rounded-full"
-                        initial={{ width: '0%' }}
-                        animate={{ width: '85%' }}
-                        transition={{ duration: 2, delay: 0.5 }}
-                      />
-                    </motion.div>
-                  </div>
-                </div>
-              </motion.div>
+            {/* Video - Right Side */}
+            <motion.div variants={fadeInUp}>
+              <div className="relative aspect-video rounded-2xl overflow-hidden shadow-xl">
+                <iframe
+                  src="https://player.vimeo.com/video/1154403206?quality=1080p&autoplay=1&muted=1&loop=1&background=1"
+                  className="absolute inset-0 w-full h-full"
+                  allow="autoplay; fullscreen; picture-in-picture"
+                  allowFullScreen
+                  frameBorder="0"
+                  style={{ border: 'none' }}
+                  title="Z-engine Database Demo"
+                />
+              </div>
             </motion.div>
-          </div>
+          </motion.div>
         </Container>
+      </Section>
 
-        {/* Bottom floating elements */}
-        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex gap-4">
-          {clientLogos.map((logo, index) => (
-            <motion.div
-              key={logo.name}
-              className="text-sm font-medium text-dark-400 opacity-60 hover:opacity-100 transition-opacity"
-              animate={{ y: [0, -3, 0] }}
-              transition={{ duration: 2, repeat: Infinity, delay: index * 0.2 }}
-            >
-              {logo.name}
-            </motion.div>
-          ))}
+      {/* Section 2: Tracking */}
+      <Section background="light" className="py-24 relative overflow-hidden">
+        <div className="absolute inset-0 pointer-events-none">
+          <motion.div
+            className="absolute bottom-20 right-20 w-72 h-72 bg-blue-500/20 rounded-full blur-3xl"
+            animate={{ scale: [1, 1.2, 1], opacity: [0.3, 0.5, 0.3] }}
+            transition={{ duration: 7, repeat: Infinity }}
+          />
         </div>
+
+        <Container className="relative z-10">
+          <motion.div
+            variants={staggerContainer}
+            initial="initial"
+            whileInView="animate"
+            viewport={{ once: true }}
+            className="grid lg:grid-cols-2 gap-12 items-center"
+          >
+            {/* Video - Left Side */}
+            <motion.div variants={fadeInUp}>
+              <div className="relative aspect-video rounded-2xl overflow-hidden shadow-xl">
+                <iframe
+                  src="https://player.vimeo.com/video/1154405421?quality=1080p&autoplay=1&muted=1&loop=1&background=1"
+                  className="absolute inset-0 w-full h-full"
+                  allow="autoplay; fullscreen; picture-in-picture"
+                  allowFullScreen
+                  frameBorder="0"
+                  style={{ border: 'none' }}
+                  title="Creator Scraping Demo"
+                />
+              </div>
+            </motion.div>
+
+            {/* Content - Right Side */}
+            <motion.div variants={fadeInUp}>
+              <Heading size="xl" className="mb-6" animate={false}>
+                We are able to scrape creators under hashtags or sound ids at scale.
+              </Heading>
+              <div className="space-y-4 text-dark-600">
+                <Text size="base" animate={false}>
+                  Our tool enable us to scrape creators under sounds or hashtags/topics, and filter based off 
+                  average views performance across latest videos while automating outreach.
+                </Text>
+              </div>
+            </motion.div>
+          </motion.div>
+        </Container>
+      </Section>
+
+      {/* Section 3: Social Add Influencers (Outreach) */}
+      <Section background="white" className="py-24 relative overflow-hidden">
+        <div className="absolute inset-0 pointer-events-none">
+          <motion.div
+            className="absolute top-20 left-20 w-80 h-80 bg-accent-cyan/20 rounded-full blur-3xl"
+            animate={{ scale: [1, 1.3, 1], opacity: [0.2, 0.4, 0.2] }}
+            transition={{ duration: 9, repeat: Infinity }}
+          />
+        </div>
+
+        <Container className="relative z-10">
+          <motion.div
+            variants={staggerContainer}
+            initial="initial"
+            whileInView="animate"
+            viewport={{ once: true }}
+            className="grid lg:grid-cols-2 gap-12 items-center"
+          >
+            {/* Content - Left Side */}
+            <motion.div variants={fadeInUp}>
+              <Heading size="xl" className="mb-6" animate={false}>
+                Automated Influencers Outreach
+              </Heading>
+              <div className="space-y-4 text-dark-600">
+                <Text size="base" animate={false}>
+                  Our internally built tool allows us to outreach creators at scale using automated bulk emails 
+                  and AI, and filter creators based on price, average views, and more.
+                </Text>
+              </div>
+            </motion.div>
+
+            {/* Video - Right Side */}
+            <motion.div variants={fadeInUp}>
+              <div className="relative aspect-video rounded-2xl overflow-hidden shadow-xl">
+                <iframe
+                  src="https://player.vimeo.com/video/1154406369?quality=1080p&autoplay=1&muted=1&loop=1&background=1"
+                  className="absolute inset-0 w-full h-full"
+                  allow="autoplay; fullscreen; picture-in-picture"
+                  allowFullScreen
+                  frameBorder="0"
+                  style={{ border: 'none' }}
+                  title="Automated Outreach Demo"
+                />
+              </div>
+            </motion.div>
+          </motion.div>
+        </Container>
+      </Section>
+
+      {/* CTA Section */}
+      <Section background="gradient" className="py-24 relative overflow-hidden">
+        <div className="absolute inset-0 pointer-events-none">
+          <motion.div
+            className="absolute top-20 left-20 w-80 h-80 bg-accent-cyan/20 rounded-full blur-3xl"
+            animate={{ scale: [1, 1.2, 1] }}
+            transition={{ duration: 8, repeat: Infinity }}
+          />
+        </div>
+
+        <Container className="relative z-10">
+          <motion.div
+            variants={staggerContainer}
+            initial="initial"
+            whileInView="animate"
+            viewport={{ once: true }}
+            className="text-center max-w-3xl mx-auto"
+          >
+            <motion.div variants={fadeInUp}>
+              <Heading size="xl" animate={false}>
+                Ready to Use Our Technology?
+              </Heading>
+            </motion.div>
+            <motion.div variants={fadeInUp}>
+              <Text size="lg" className="mt-6 mb-8" animate={false}>
+                Get access to our powerful platform and start running data-driven campaigns today.
+              </Text>
+            </motion.div>
+            <motion.div variants={fadeInUp}>
+              <a href="/contact">
+                <Button variant="gradient" size="lg">
+                  Get Started
+                </Button>
+              </a>
+            </motion.div>
+          </motion.div>
+        </Container>
       </Section>
     </main>
   );

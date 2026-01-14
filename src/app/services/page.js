@@ -4,71 +4,26 @@ import { motion } from 'framer-motion';
 import { Section, Container, Heading, Text, Card, ImagePlaceholder, Button } from '@/components/ui';
 import { staggerContainer, fadeInUp, staggerChild } from '@/lib/animations';
 
-const services = [
-  {
-    number: '01',
-    title: 'Influencer Marketing',
-    description: 'We connect brands with the perfect creators across TikTok, Instagram, and YouTube. Our network of Gen Z influencers creates authentic content that resonates.',
-    features: [
-      'TikTok Campaigns',
-      'Instagram Partnerships',
-      'YouTube Collaborations',
-      'Brand Ambassador Programs',
-      'Micro & Macro Influencer Strategy',
-    ],
-    color: 'magenta',
-    image: 'Influencer Campaign',
-  },
-  {
-    number: '02',
-    title: 'Content Creation',
-    description: 'Our creative team produces viral-worthy content tailored for each platform. From concept to execution, we handle everything.',
-    features: [
-      'Video Production',
-      'Social Media Content',
-      'TikTok & Reels',
-      'Photography',
-      'Animation & Motion Graphics',
-    ],
-    color: 'cyan',
-    image: 'Content Creation',
-  },
-  {
-    number: '03',
-    title: 'Social Media Management',
-    description: 'End-to-end social media management for artists and brands. We grow audiences and build engaged communities.',
-    features: [
-      'Strategy Development',
-      'Content Calendar',
-      'Community Management',
-      'Analytics & Reporting',
-      'Growth Optimization',
-    ],
-    color: 'lime',
-    image: 'Social Management',
-  },
-  {
-    number: '04',
-    title: 'Music Marketing',
-    description: 'Specialized campaigns for artists, labels, and music brands. We understand the industry and know how to make songs go viral.',
-    features: [
-      'Release Campaigns',
-      'Playlist Pitching',
-      'Music Video Promotion',
-      'Artist Branding',
-      'Tour Marketing',
-    ],
-    color: 'violet',
-    image: 'Music Marketing',
-  },
-];
-
 export default function ServicesPage() {
   return (
     <>
       {/* Hero Section */}
-      <Section background="gradient" className="pt-32 pb-20">
-        <Container>
+      <Section background="gradient" className="pt-32 pb-20 relative overflow-hidden">
+        {/* Background decorations */}
+        <div className="absolute inset-0 pointer-events-none">
+          <motion.div
+            className="absolute top-20 right-20 w-96 h-96 bg-blue-500/20 rounded-full blur-3xl"
+            animate={{ scale: [1, 1.2, 1], opacity: [0.3, 0.5, 0.3] }}
+            transition={{ duration: 8, repeat: Infinity }}
+          />
+          <motion.div
+            className="absolute bottom-20 left-20 w-80 h-80 bg-accent-cyan/20 rounded-full blur-3xl"
+            animate={{ scale: [1, 1.3, 1], opacity: [0.2, 0.4, 0.2] }}
+            transition={{ duration: 10, repeat: Infinity, delay: 2 }}
+          />
+        </div>
+
+        <Container className="relative z-10">
           <motion.div
             variants={staggerContainer}
             initial="initial"
@@ -82,91 +37,194 @@ export default function ServicesPage() {
             </motion.div>
             <motion.div variants={fadeInUp}>
               <Text size="xl" className="mt-6" animate={false}>
-                As a full-service digital marketing & production agency, our team is adept 
-                at supporting brands with all their social marketing needs.
+                A full-service music label and music marketing agency. We don't chase trends, we set them. 
+                Access our creators database, fastest technology, and cheapest CPM.
               </Text>
             </motion.div>
           </motion.div>
         </Container>
       </Section>
 
-      {/* Services Detail Sections */}
-      {services.map((service, index) => (
-        <Section
-          key={service.number}
-          background={index % 2 === 0 ? 'white' : 'light'}
-          className="py-24"
-        >
-          <Container>
-            <motion.div
-              variants={staggerContainer}
-              initial="initial"
-              whileInView="animate"
-              viewport={{ once: true, margin: '-100px' }}
-              className={`grid lg:grid-cols-2 gap-16 items-center ${
-                index % 2 !== 0 ? 'lg:flex-row-reverse' : ''
-              }`}
+      {/* Viral Music Marketing Section */}
+      <Section background="white" className="py-24 relative overflow-hidden">
+        {/* Background decorations */}
+        <div className="absolute inset-0 pointer-events-none">
+          <motion.div
+            className="absolute top-1/3 right-10 w-64 h-64 bg-accent-lime/20 rounded-full blur-3xl"
+            animate={{ y: [0, 30, 0], opacity: [0.3, 0.5, 0.3] }}
+            transition={{ duration: 6, repeat: Infinity }}
+          />
+        </div>
+
+        <Container className="relative z-10">
+          <motion.div
+            variants={staggerContainer}
+            initial="initial"
+            whileInView="animate"
+            viewport={{ once: true }}
+          >
+            {/* Top Section - Title with Image */}
+            <div className="mb-16">
+              <div className="grid lg:grid-cols-2 gap-12 items-center">
+                {/* Content - Left Side */}
+                <motion.div variants={fadeInUp}>
+                  <span className="text-sm font-mono text-blue-600 mb-2 block">(01)</span>
+                  <Heading size="xl" className="mb-6" animate={false}>
+                    Viral Music Marketing
+                  </Heading>
+                  <Text size="lg" className="mb-8 text-dark-600" animate={false}>
+                    We run viral music campaigns by leveraging our owned & operated creators and technology. 
+                    We have a track record of charting 85% of our songs across the TikTok Viral 50 Charts.
+                  </Text>
+                </motion.div>
+
+                {/* Animated Image - Right Side */}
+                <motion.div 
+                  variants={fadeInUp}
+                  whileHover={{ scale: 1.05, rotate: 2 }}
+                  transition={{ type: 'spring', stiffness: 300 }}
+                >
+                  <motion.div
+                    className="relative rounded-2xl overflow-hidden shadow-2xl"
+                    animate={{ y: [0, -10, 0] }}
+                    transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+                  >
+                    <img 
+                      src="/images/our services first heading.png" 
+                      alt="Viral Music Marketing" 
+                      className="w-full h-auto"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-blue-600/20 to-transparent" />
+                  </motion.div>
+                </motion.div>
+              </div>
+            </div>
+          </motion.div>
+        </Container>
+      </Section>
+
+      {/* Removed duplicate dark section */}
+
+      {/* Label Music Marketing Outsourcing Section */}
+      <Section background="light" className="py-24 relative overflow-hidden">
+        {/* Background decorations */}
+        <div className="absolute inset-0 pointer-events-none">
+          <motion.div
+            className="absolute bottom-20 right-20 w-72 h-72 bg-blue-500/20 rounded-full blur-3xl"
+            animate={{ scale: [1, 1.2, 1], opacity: [0.3, 0.5, 0.3] }}
+            transition={{ duration: 7, repeat: Infinity }}
+          />
+        </div>
+
+        <Container className="relative z-10">
+          <motion.div
+            variants={staggerContainer}
+            initial="initial"
+            whileInView="animate"
+            viewport={{ once: true }}
+            className="grid lg:grid-cols-2 gap-12 items-center"
+          >
+            {/* Animated Image - Left Side */}
+            <motion.div 
+              variants={fadeInUp}
+              whileHover={{ scale: 1.05, rotate: -2 }}
+              transition={{ type: 'spring', stiffness: 300 }}
             >
-              {/* Content */}
               <motion.div
-                variants={fadeInUp}
-                className={index % 2 !== 0 ? 'lg:order-2' : ''}
+                className="relative rounded-2xl overflow-hidden shadow-2xl"
+                animate={{ y: [0, -10, 0] }}
+                transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
               >
-                <span className="text-sm font-mono text-blue-600 mb-2 block">
-                  ({service.number})
-                </span>
-                <Heading size="xl" className="mb-6" animate={false}>
-                  {service.title}
-                </Heading>
-                <Text size="lg" className="mb-8" animate={false}>
-                  {service.description}
-                </Text>
-
-                {/* Features List */}
-                <motion.ul variants={staggerContainer} className="space-y-3 mb-8">
-                  {service.features.map((feature, i) => (
-                    <motion.li
-                      key={feature}
-                      variants={staggerChild}
-                      className="flex items-center gap-3"
-                    >
-                      <span className={`w-2 h-2 rounded-full bg-accent-${service.color}`} />
-                      <span className="text-dark-700">{feature}</span>
-                    </motion.li>
-                  ))}
-                </motion.ul>
-
-                <Button variant="gradient">
-                  Learn More
-                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                  </svg>
-                </Button>
-              </motion.div>
-
-              {/* Image */}
-              <motion.div
-                variants={fadeInUp}
-                className={index % 2 !== 0 ? 'lg:order-1' : ''}
-              >
-                <Card variant={service.color} className="p-4">
-                  <ImagePlaceholder
-                    aspectRatio="video"
-                    variant={service.color}
-                    label={service.image}
-                    animate={false}
-                    className="!border-none"
-                  />
-                </Card>
+                <img 
+                  src="/images/Copy of Music Case studies.png" 
+                  alt="Label Music Marketing" 
+                  className="w-full h-auto"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-accent-cyan/20 to-transparent" />
               </motion.div>
             </motion.div>
-          </Container>
-        </Section>
-      ))}
+
+            {/* Content - Right Side */}
+            <motion.div variants={fadeInUp}>
+              <span className="text-sm font-mono text-blue-600 mb-2 block">(02)</span>
+              <Heading size="xl" className="mb-6" animate={false}>
+                Label Music Marketing Outsourcing
+              </Heading>
+              <Text size="lg" className="text-dark-600" animate={false}>
+                You can outsource your music marketing to us, and leverage our experience, database, 
+                staff, and technology. This is a cheaper and more effective alternative to hiring internally.
+              </Text>
+            </motion.div>
+          </motion.div>
+        </Container>
+      </Section>
+
+      {/* Artist Marketing / Publishing / Distribution Section */}
+      <Section background="white" className="py-24 relative overflow-hidden">
+        {/* Background decorations */}
+        <div className="absolute inset-0 pointer-events-none">
+          <motion.div
+            className="absolute top-20 left-20 w-80 h-80 bg-accent-cyan/20 rounded-full blur-3xl"
+            animate={{ scale: [1, 1.3, 1], opacity: [0.2, 0.4, 0.2] }}
+            transition={{ duration: 9, repeat: Infinity }}
+          />
+        </div>
+
+        <Container className="relative z-10">
+          <motion.div
+            variants={staggerContainer}
+            initial="initial"
+            whileInView="animate"
+            viewport={{ once: true }}
+            className="grid lg:grid-cols-2 gap-12 items-center"
+          >
+            {/* Content - Left Side */}
+            <motion.div variants={fadeInUp}>
+              <span className="text-sm font-mono text-blue-600 mb-2 block">(03)</span>
+              <Heading size="xl" className="mb-6" animate={false}>
+                Artist Marketing / Publishing / Distribution
+              </Heading>
+              <Text size="lg" className="text-dark-600" animate={false}>
+                We also run our own full-service label, servicing artists with distribution, marketing, 
+                and artist development. Our signed artists see an average +1500% growth in streams within 
+                the first 3 months.
+              </Text>
+            </motion.div>
+
+            {/* Animated Image - Right Side */}
+            <motion.div 
+              variants={fadeInUp}
+              whileHover={{ scale: 1.05, rotate: 2 }}
+              transition={{ type: 'spring', stiffness: 300 }}
+            >
+              <motion.div
+                className="relative rounded-2xl overflow-hidden shadow-2xl"
+                animate={{ y: [0, -10, 0] }}
+                transition={{ duration: 3.5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+              >
+                <img 
+                  src="/images/Copy of Music Case studies (2).png" 
+                  alt="Artist Marketing" 
+                  className="w-full h-auto"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-accent-lime/20 to-transparent" />
+              </motion.div>
+            </motion.div>
+          </motion.div>
+        </Container>
+      </Section>
 
       {/* CTA Section */}
-      <Section background="gradient" className="py-24">
-        <Container>
+      <Section background="gradient" className="py-24 relative overflow-hidden">
+        <div className="absolute inset-0 pointer-events-none">
+          <motion.div
+            className="absolute top-20 left-20 w-80 h-80 bg-accent-cyan/20 rounded-full blur-3xl"
+            animate={{ scale: [1, 1.2, 1] }}
+            transition={{ duration: 8, repeat: Infinity }}
+          />
+        </div>
+
+        <Container className="relative z-10">
           <motion.div
             variants={staggerContainer}
             initial="initial"
@@ -185,9 +243,11 @@ export default function ServicesPage() {
               </Text>
             </motion.div>
             <motion.div variants={fadeInUp}>
-              <Button variant="gradient" size="lg">
-                Contact Us
-              </Button>
+              <a href="/contact">
+                <Button variant="gradient" size="lg">
+                  Contact Us
+                </Button>
+              </a>
             </motion.div>
           </motion.div>
         </Container>

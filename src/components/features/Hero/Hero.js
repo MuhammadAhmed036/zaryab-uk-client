@@ -102,7 +102,7 @@ const Hero = () => {
               <div className="mb-2 sm:mb-3">
                 <span className="inline-flex items-center gap-1.5 sm:gap-2 px-2.5 sm:px-4 py-1.5 sm:py-2 rounded-full bg-gradient-to-r from-blue-500/10 to-accent-cyan/10 border border-blue-500/20 text-dark-700 text-[10px] xs:text-xs sm:text-sm font-medium">
                   <span className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-blue-500 rounded-full animate-pulse" />
-                  Based in Your City, Heard Worldwide
+                  London or Toronto
                 </span>
               </div>
 
@@ -125,8 +125,7 @@ const Hero = () => {
               {/* Subtext */}
               <div>
                 <Text size="sm" className="mb-3 sm:mb-4 max-w-xl mx-auto lg:mx-0 text-xs xs:text-sm sm:text-base">
-                  The biggest data-driven TikTok marketing agency working across 
-                  music and personal branding. Generating <span className="font-bold text-blue-600">100B+ views</span> yearly.
+                  The biggest data-driven TikTok marketing agency / Music label working across music. Generating <span className="font-bold text-blue-600">110B+ views</span> yearly.
                 </Text>
               </div>
 
@@ -137,9 +136,9 @@ const Hero = () => {
                     Our Services
                   </Button>
                 </a>
-                <a href="/team">
+                <a href="/case-studies">
                   <Button variant="outline" size="sm" className="text-xs sm:text-sm px-4 sm:px-6 !py-2 sm:!py-2.5">
-                    Meet The Team
+                    Case Studies
                   </Button>
                 </a>
               </div>
@@ -147,9 +146,9 @@ const Hero = () => {
               {/* Stats preview */}
               <div className="mt-3 sm:mt-6 grid grid-cols-3 gap-2 sm:gap-4">
                 {[
-                  { value: '500+', label: 'Artists' },
-                  { value: '5B+', label: 'Views' },
-                  { value: '100+', label: 'Campaigns' },
+                  { value: '150+', label: 'Artists' },
+                  { value: '110B+', label: 'Views' },
+                  { value: '130+', label: 'Campaigns' },
                 ].map((stat, index) => (
                   <motion.div
                     key={index}

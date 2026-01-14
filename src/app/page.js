@@ -3,7 +3,6 @@
 import { motion } from 'framer-motion';
 import {
   Hero,
-  Services,
   Stats,
   Brands,
   Press,
@@ -15,7 +14,6 @@ export default function Home() {
     <>
       <Hero />
       <Brands />
-      <Services />
       <Stats />
       <Contact />
     </>

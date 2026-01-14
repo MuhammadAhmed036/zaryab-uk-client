@@ -205,8 +205,8 @@ const Brands = () => {
           className="flex flex-wrap justify-center gap-4 sm:gap-8 md:gap-16"
         >
           {[
-            { value: '100+', label: 'Brand Partners' },
-            { value: '500M+', label: 'Campaign Views' },
+            { value: '7800+', label: 'Creators' },
+            { value: '10M$+', label: 'Spent on creators' },
             { value: '50+', label: 'Record Labels' },
           ].map((stat, i) => (
             <motion.div

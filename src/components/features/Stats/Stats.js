@@ -7,47 +7,47 @@ import { staggerContainer, fadeInUp, staggerChild } from '@/lib/animations';
 
 const stats = [
   {
-    value: 865,
-    suffix: '',
+    value: 150,
+    suffix: '+',
     label: 'Artists',
     variant: 'lime',
     mediaType: 'video',
     mediaSrc: 'https://player.vimeo.com/video/1053014597?autoplay=1&loop=1&background=1&muted=1',
   },
   {
-    value: 1261,
-    suffix: '',
+    value: 130,
+    suffix: '+',
     label: 'Campaigns',
     variant: 'lime',
     mediaType: 'video',
     mediaSrc: 'https://player.vimeo.com/video/1053014597?autoplay=1&loop=1&background=1&muted=1',
   },
   {
-    value: 9,
-    suffix: 'B',
+    value: 110,
+    suffix: 'B+',
     label: 'Views Delivered',
     variant: 'lime',
     mediaType: 'video',
     mediaSrc: 'https://player.vimeo.com/video/1053014597?autoplay=1&loop=1&background=1&muted=1',
   },
   {
-    value: 102,
-    suffix: 'M',
-    label: 'UGC pieces created',
+    value: 10,
+    suffix: 'M+',
+    label: 'UGC created',
     variant: 'lime',
     mediaType: 'video',
     mediaSrc: 'https://player.vimeo.com/video/1053014655?autoplay=1&loop=1&background=1&muted=1',
   },
   {
-    value: 178,
-    suffix: '',
-    label: 'Billboard Hot 100™ entries',
+    value: 1,
+    suffix: 'B+',
+    label: 'Streams Delivered',
     variant: 'magenta',
     mediaType: 'image',
     mediaSrc: '/images/Billboard.avif',
   },
   {
-    value: 71,
+    value: 30,
     suffix: '',
     label: 'TikTok Top 50 entries',
     variant: 'magenta',
@@ -135,11 +135,11 @@ const Stats = () => {
           className="text-center mb-10 sm:mb-16 px-2"
         >
           <motion.div variants={fadeInUp} className="mb-2 sm:mb-4">
-            <span className="text-xs sm:text-sm font-mono text-blue-600 font-medium">2023 & 2024</span>
+            <span className="text-xs sm:text-sm font-mono text-blue-600 font-medium">2025</span>
           </motion.div>
           <motion.div variants={fadeInUp}>
             <Heading size="lg" className="text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl" animate={false}>
-              BY THE NUMBERS
+              Our Results
             </Heading>
           </motion.div>
           <motion.div variants={fadeInUp} className="mt-4 sm:mt-6 max-w-2xl mx-auto px-4">

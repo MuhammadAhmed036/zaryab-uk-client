@@ -5,10 +5,10 @@ import { Section, Container, Heading, Text, Card, ImagePlaceholder } from '@/com
 import { staggerContainer, fadeInUp } from '@/lib/animations';
 
 const audienceStats = [
-  { label: 'TikTok Followers', value: '50M+', color: 'blue' },
-  { label: 'Instagram Reach', value: '30M+', color: 'cyan' },
-  { label: 'YouTube Subscribers', value: '10M+', color: 'lime' },
-  { label: 'Monthly Impressions', value: '500M+', color: 'violet' },
+  { label: 'TikTok Followers', value: '1B+', color: 'blue' },
+  { label: 'Creators', value: '7000+', color: 'cyan' },
+  { label: 'Daily spend on creators', value: '5000$', color: 'lime' },
+  { label: 'Yearly views', value: '110B+', color: 'violet' },
 ];
 
 

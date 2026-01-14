@@ -54,6 +54,34 @@ const teamMembers = [
     color: 'lime',
     image: '/images/neha.png',
   },
+  {
+    name: 'Abdullah Mudassar',
+    role: 'Head of Marketing & Operations',
+    bio: '',
+    color: 'cyan',
+    image: '/images/Abdullah Mudassar (Head of marketing & operations) 2.png',
+  },
+  {
+    name: 'Maheen Fatima',
+    role: 'Marketing Executive',
+    bio: '',
+    color: 'magenta',
+    image: '/images/Maheen Fatima (Marketing Executive).png',
+  },
+  {
+    name: 'Maheer Tahir',
+    role: 'Data Analyst',
+    bio: '',
+    color: 'cyan',
+    image: '/images/Maheer Tahir (Data Analyst).png',
+  },
+  {
+    name: 'Muhammad Ahmad',
+    role: 'Marketing Executive',
+    bio: '',
+    color: 'lime',
+    image: '/images/Muhammad Ahmad (Marketing Executive).png',
+  },
 ];
 
 const TeamMemberCard = ({ member, index }) => {

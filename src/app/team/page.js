@@ -52,7 +52,7 @@ const teamMembers = [
     role: 'Marketing Executive',
     bio: '',
     color: 'magenta',
-    image: '/images/Maheen Fatima (Marketing Executive).png',
+    image: '/images/7. Maheen (Marketing Executive).png',
   },
   {
     name: 'Maheer Tahir',

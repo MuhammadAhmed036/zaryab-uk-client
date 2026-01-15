@@ -41,11 +41,11 @@ const teamMembers = [
     image: '/images/neha.png',
   },
   {
-    name: 'Maheer Tahir',
-    role: 'Data Analyst',
+    name: 'Huda',
+    role: 'Marketing Executive',
     bio: '',
-    color: 'magenta',
-    image: '/images/Maheer Tahir (Data Analyst).png',
+    color: 'lime',
+    image: '/images/6.Huda (Marketing Executive).png',
   },
   {
     name: 'Maheen Fatima',
@@ -53,6 +53,13 @@ const teamMembers = [
     bio: '',
     color: 'magenta',
     image: '/images/Maheen Fatima (Marketing Executive).png',
+  },
+  {
+    name: 'Maheer Tahir',
+    role: 'Data Analyst',
+    bio: '',
+    color: 'cyan',
+    image: '/images/Maheer Tahir (Data Analyst).png',
   },
   {
     name: 'Muhammad Ahmad',

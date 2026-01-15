@@ -94,6 +94,160 @@ const caseStudyCards = [
   }
 ];
 
+// Content At Scale Section Data
+const contentAtScaleData = {
+  title: 'NUNCA MUDA?',
+  mainPhone: {
+    type: 'CAR EDITS',
+    variant: 'violet',
+    image: '/images/case-studies/car-edit.jpg'
+  },
+  contentTypes: [
+    {
+      title: 'UNEXPECTED EDITS TEMPLATE',
+      subtitle: 'CAR EDITS',
+      variant: 'orange',
+      image: '/images/case-studies/car-template.jpg'
+    },
+    {
+      title: 'MEME DANCE VIDEOS',
+      subtitle: 'MEME DANCE EDITS',
+      variant: 'cyan',
+      image: '/images/case-studies/meme-dance.jpg'
+    },
+    {
+      title: 'FOOTBALL EDITS',
+      subtitle: 'FOOTBALL EDITS',
+      variant: 'emerald',
+      image: '/images/case-studies/football.jpg'
+    },
+    {
+      title: 'MOVIE/SERIES EDITS',
+      subtitle: 'FOOTBALL EDITS',
+      variant: 'slate',
+      image: '/images/case-studies/movie.jpg'
+    }
+  ],
+  stats: [
+    { label: 'STREAMS', value: '120M' },
+    { label: 'VIDEOS', value: '5000+' },
+    { label: 'VIEWS', value: '500M+' }
+  ],
+  description: 'We were able to produce content at scale for 4 different niches which resulted in over 500M+ views within a week'
+};
+
+// LIKE ME - MGEE Section Data
+const likeMeData = {
+  title: 'LIKE ME',
+  artist: 'MGEE',
+  contentTypes: [
+    {
+      title: 'FOOTBALL EDITS',
+      subtitle: 'FOOTBALL EDITS',
+      variant: 'emerald'
+    },
+    {
+      title: 'INTERVIEW EDITS',
+      subtitle: 'UNEXPECTED FOOTBALL EDITS',
+      variant: 'cyan'
+    }
+  ],
+  stats: [
+    { label: 'SREAMS', value: '20M' },
+    { label: 'VIDEOS', value: '150+' },
+    { label: 'VIEWS', value: '30M+' }
+  ],
+  description: 'We were able to produce over 150 football edits within a week generating 30M+ views and a lot of organic recreations within the football niche. We also edited street interviews for unexpected football edits resulting in a trend.'
+};
+
+// COLD - ALFIE CASTLEY Section Data
+const coldData = {
+  title: 'COLD',
+  artist: 'ALFIE CASTLEY',
+  demoInfo: {
+    title: 'Cold DEMO',
+    artist: 'Alfie Castley',
+    videos: '18.1k videos'
+  },
+  contentCategories: [
+    { title: 'MOVIE EDITS', variant: 'rose' },
+    { title: 'ANIME EDITS', variant: 'violet' },
+    { title: 'INFLUENCER CONTENT', variant: 'cyan' },
+    { title: 'LYRICAL CONTENT', variant: 'emerald' }
+  ],
+  stats: [
+    { label: 'SREAMS', value: '8M' },
+    { label: 'VIDEOS', value: '10K+' },
+    { label: 'VIEWS', value: '50M+' }
+  ],
+  description: 'We developed this sound from 10 creations to 18k creation within 2 months, pushing the track from 20k daily streams on release day to 150k daily streams within a week'
+};
+
+// TEN YEARS - HENRY MOODIE Section Data
+const tenYearsData = {
+  title: 'TEN YEARS',
+  artist: 'HENRY MOODIE',
+  demoInfo: {
+    title: 'ten years time',
+    artist: 'Henry Moodie',
+    videos: '8407 videos',
+    hasAddToMusic: true
+  },
+  contentCategories: [
+    { title: 'MOVIE EDITS', variant: 'rose' },
+    { title: 'KDRAMA EDITS', variant: 'violet' },
+    { title: 'ROMANTIC QUOTES', variant: 'pink' },
+    { title: 'INFLUENCER CONTENT', variant: 'cyan' }
+  ],
+  stats: [
+    { label: 'SREAMS', value: '3M' },
+    { label: 'VIDEOS', value: '6K+' },
+    { label: 'VIEWS', value: '30M+' }
+  ],
+  description: 'We developed this sound from 300 creations to 8k creations within 1 month, pushing the track from 20k daily streams on release day to 110k daily streams within a week'
+};
+
+// WILDFIRE - FUZION Section Data
+const wildfireData = {
+  title: 'WILDFIRE',
+  artist: 'FUZION',
+  demoInfo: {
+    title: 'WILDFIRE',
+    artist: 'FUZION&Zeli',
+    videos: '5541 videos',
+    hasAddToMusic: true
+  },
+  contentCategories: [
+    { title: 'MOVIE EDITS', variant: 'rose' },
+    { title: 'ANIME EDITS', variant: 'violet' },
+    { title: 'FOOTBALL EDITS', variant: 'emerald' },
+    { title: 'INFLUENCER CONTENT', variant: 'cyan' }
+  ],
+  stats: [
+    { label: 'SREAMS', value: '5M' },
+    { label: 'VIDEOS', value: '2K+' },
+    { label: 'VIEWS', value: '50M+' }
+  ],
+  description: 'We developed this sound from 100 creations to 2k creations within 2 weeks, mainly focusing around movie edits, sports edits and influencer content'
+};
+
+// WATCHIN - NICHOLAS CREUS Section Data
+const watchinData = {
+  title: 'WATCHIN',
+  artist: 'NICHOLAS CREUS',
+  contentCategories: [
+    { title: 'AESTHETIC CONTENT', variant: 'slate' },
+    { title: 'SCENEIC CONTENT', variant: 'cyan' },
+    { title: 'MOVIE/SERIES EDITS', variant: 'violet' }
+  ],
+  stats: [
+    { label: 'SREAMS', value: '2.2M' },
+    { label: 'VIDEOS', value: '5K+' },
+    { label: 'VIEWS', value: '2B+' }
+  ],
+  description: 'We were able to produce content at scale for 3 different ambient / hopecore niches, building content from 5 creations to 150k creations within 4 weeks'
+};
+
 export default function CaseStudiesPage() {
   const [hoveredCard, setHoveredCard] = useState(null);
   const containerRef = useRef(null);
@@ -596,6 +750,1479 @@ export default function CaseStudiesPage() {
         ))}
       </Container>
 
+      {/* Content At Scale Section - Inspired by Multi-Niche Campaign */}
+      <Section className="relative py-20 md:py-32 mt-16 md:mt-24">
+        <Container className="relative z-10">
+          <motion.div
+            className="relative overflow-hidden rounded-3xl bg-black"
+            initial={{ opacity: 0, y: 60 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94] }}
+          >
+            {/* Background Gradient Effects */}
+            <div className="absolute inset-0 overflow-hidden">
+              <motion.div
+                className="absolute top-0 left-1/4 w-[600px] h-[600px] bg-gradient-to-br from-violet-600/20 via-purple-500/10 to-transparent rounded-full blur-3xl"
+                animate={{ scale: [1, 1.2, 1], x: [0, 50, 0] }}
+                transition={{ duration: 15, repeat: Infinity, ease: "easeInOut" }}
+              />
+              <motion.div
+                className="absolute bottom-0 right-1/4 w-[500px] h-[500px] bg-gradient-to-br from-cyan-500/15 via-blue-500/10 to-transparent rounded-full blur-3xl"
+                animate={{ scale: [1, 1.3, 1], y: [0, -30, 0] }}
+                transition={{ duration: 12, repeat: Infinity, ease: "easeInOut", delay: 2 }}
+              />
+            </div>
+
+            <div className="relative p-8 md:p-12 lg:p-16">
+              {/* Top Section - Phone Showcase Grid */}
+              <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 items-center justify-center mb-16">
+                
+                {/* Featured Main Phone - Left Side */}
+                <motion.div
+                  className="relative"
+                  initial={{ opacity: 0, x: -50, scale: 0.9 }}
+                  whileInView={{ opacity: 1, x: 0, scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.7, delay: 0.2 }}
+                >
+                  <motion.div
+                    className="relative group"
+                    whileHover={{ scale: 1.05, y: -10 }}
+                    transition={{ duration: 0.4 }}
+                  >
+                    {/* Phone Glow */}
+                    <motion.div
+                      className="absolute -inset-4 bg-gradient-to-r from-violet-500/40 via-purple-500/40 to-pink-500/40 rounded-[3rem] blur-2xl opacity-60"
+                      animate={{ opacity: [0.4, 0.7, 0.4], scale: [1, 1.05, 1] }}
+                      transition={{ duration: 4, repeat: Infinity }}
+                    />
+                    
+                    {/* Phone Frame */}
+                    <div className="relative bg-gradient-to-b from-slate-800 to-slate-900 rounded-[2.5rem] p-2 shadow-2xl border-4 border-slate-700 w-[180px] md:w-[220px]">
+                      <div className="relative aspect-[9/16] bg-gradient-to-br from-violet-900 via-purple-900 to-black rounded-[2rem] overflow-hidden">
+                        {/* Album Art / Content */}
+                        <div className="absolute inset-0 flex items-center justify-center">
+                          <motion.div
+                            className="relative w-3/4 aspect-square"
+                            animate={{ y: [0, -5, 0], scale: [1, 1.02, 1] }}
+                            transition={{ duration: 4, repeat: Infinity }}
+                          >
+                            <div className="w-full h-full bg-gradient-to-br from-violet-600/50 to-purple-900/50 rounded-xl flex items-center justify-center border border-violet-400/30">
+                              <motion.div
+                                className="text-5xl md:text-6xl"
+                                animate={{ rotate: [0, 360] }}
+                                transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+                              >
+                                🐱
+                              </motion.div>
+                            </div>
+                          </motion.div>
+                        </div>
+                        
+                        {/* Title Overlay */}
+                        <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black via-black/80 to-transparent p-4 pt-12">
+                          <motion.div
+                            className="text-white font-bold text-sm md:text-base"
+                            animate={{ opacity: [0.9, 1, 0.9] }}
+                            transition={{ duration: 3, repeat: Infinity }}
+                          >
+                            NUNCA MUDA?
+                          </motion.div>
+                        </div>
+
+                        {/* Spotify-style player bar */}
+                        <div className="absolute bottom-16 left-4 right-4">
+                          <div className="h-1 bg-white/20 rounded-full overflow-hidden">
+                            <motion.div
+                              className="h-full bg-violet-400 rounded-full"
+                              animate={{ width: ['20%', '80%', '20%'] }}
+                              transition={{ duration: 8, repeat: Infinity }}
+                            />
+                          </div>
+                        </div>
+                      </div>
+                      
+                      {/* Phone Notch */}
+                      <div className="absolute top-4 left-1/2 -translate-x-1/2 w-16 h-5 bg-black rounded-full" />
+                    </div>
+                  </motion.div>
+                </motion.div>
+
+                {/* Content Type Phones Grid - Right Side */}
+                <div className="flex gap-4 md:gap-6 overflow-x-auto pb-4 lg:pb-0">
+                  {contentAtScaleData.contentTypes.map((content, index) => (
+                    <motion.div
+                      key={index}
+                      className="flex flex-col items-center flex-shrink-0"
+                      initial={{ opacity: 0, y: 30, scale: 0.9 }}
+                      whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 0.6, delay: 0.3 + index * 0.1 }}
+                    >
+                      {/* Category Label */}
+                      <motion.div
+                        className="text-[10px] md:text-xs font-bold tracking-wider text-white/70 uppercase mb-3 text-center max-w-[120px]"
+                        animate={{ opacity: [0.7, 1, 0.7] }}
+                        transition={{ duration: 3, repeat: Infinity, delay: index * 0.3 }}
+                      >
+                        {content.title}
+                      </motion.div>
+
+                      {/* Phone Mockup */}
+                      <motion.div
+                        className="relative group cursor-pointer"
+                        whileHover={{ scale: 1.08, y: -12 }}
+                        transition={{ duration: 0.3 }}
+                      >
+                        {/* Glow Effect */}
+                        <motion.div
+                          className={`absolute -inset-2 bg-gradient-to-r ${getContentGradient(content.variant)} rounded-3xl blur-xl opacity-0 group-hover:opacity-50 transition-opacity duration-500`}
+                        />
+                        
+                        {/* Phone Frame */}
+                        <div className="relative bg-black rounded-[1.8rem] p-1.5 shadow-2xl border-2 border-slate-700 w-[100px] md:w-[130px]">
+                          <div className={`relative aspect-[9/16] bg-gradient-to-br ${getContentGradient(content.variant)} rounded-[1.4rem] overflow-hidden`}>
+                            
+                            {/* Content Preview */}
+                            <div className="absolute inset-0 flex items-center justify-center bg-black/40">
+                              <motion.div
+                                className="w-10 h-10 md:w-12 md:h-12 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center"
+                                animate={{ scale: [1, 1.15, 1] }}
+                                transition={{ duration: 2, repeat: Infinity, delay: index * 0.2 }}
+                              >
+                                <div className="w-0 h-0 border-l-[10px] border-l-white border-t-[6px] border-t-transparent border-b-[6px] border-b-transparent ml-1" />
+                              </motion.div>
+                            </div>
+
+                            {/* Mini TikTok UI */}
+                            <div className="absolute right-2 bottom-16 flex flex-col gap-2">
+                              {['❤️', '💬'].map((icon, i) => (
+                                <motion.div
+                                  key={i}
+                                  className="w-6 h-6 bg-white/10 backdrop-blur-sm rounded-full flex items-center justify-center text-xs"
+                                  animate={{ scale: [1, 1.2, 1] }}
+                                  transition={{ duration: 2, repeat: Infinity, delay: i * 0.3 }}
+                                >
+                                  {icon}
+                                </motion.div>
+                              ))}
+                            </div>
+
+                            {/* Progress Bar */}
+                            <div className="absolute bottom-3 left-2 right-2">
+                              <div className="h-0.5 bg-white/30 rounded-full overflow-hidden">
+                                <motion.div
+                                  className="h-full bg-white rounded-full"
+                                  animate={{ width: ['0%', '100%', '0%'] }}
+                                  transition={{ duration: 6 + index * 2, repeat: Infinity }}
+                                />
+                              </div>
+                            </div>
+                          </div>
+                          
+                          {/* Phone Notch */}
+                          <div className="absolute top-2 left-1/2 -translate-x-1/2 w-10 h-3 bg-black rounded-full" />
+                        </div>
+                      </motion.div>
+
+                      {/* Click Link & Subtitle */}
+                      <motion.a
+                        href="#"
+                        className="text-[10px] md:text-xs text-white/50 hover:text-white/80 underline underline-offset-2 transition-colors mt-3"
+                        whileHover={{ scale: 1.05 }}
+                      >
+                        Click for example
+                      </motion.a>
+                      <div className="text-[10px] md:text-xs font-bold text-white/80 mt-1 uppercase tracking-wide">
+                        {content.subtitle}
+                      </div>
+                    </motion.div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Divider Line */}
+              <motion.div
+                className="w-full h-px bg-gradient-to-r from-transparent via-white/20 to-transparent mb-12"
+                initial={{ scaleX: 0 }}
+                whileInView={{ scaleX: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 1, delay: 0.5 }}
+              />
+
+              {/* Bottom Section - Stats & Description */}
+              <div className="flex flex-col lg:flex-row gap-8 lg:gap-16 items-center">
+                
+                {/* Stats Column */}
+                <motion.div
+                  className="flex flex-col gap-2"
+                  initial={{ opacity: 0, x: -30 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6, delay: 0.4 }}
+                >
+                  {contentAtScaleData.stats.map((stat, index) => (
+                    <motion.div
+                      key={stat.label}
+                      className="flex items-baseline gap-2"
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 0.5, delay: 0.5 + index * 0.1 }}
+                    >
+                      <span className="text-white/60 text-sm md:text-base font-bold tracking-wider">
+                        {stat.label}:
+                      </span>
+                      <motion.span
+                        className="text-3xl md:text-4xl lg:text-5xl font-black bg-gradient-to-r from-cyan-400 via-blue-400 to-violet-400 bg-clip-text text-transparent"
+                        animate={{ opacity: [0.9, 1, 0.9] }}
+                        transition={{ duration: 3, repeat: Infinity, delay: index * 0.3 }}
+                      >
+                        {stat.value}
+                      </motion.span>
+                    </motion.div>
+                  ))}
+                </motion.div>
+
+                {/* Description */}
+                <motion.div
+                  className="flex-1"
+                  initial={{ opacity: 0, x: 30 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6, delay: 0.6 }}
+                >
+                  <motion.p
+                    className="text-lg md:text-xl lg:text-2xl text-white/80 leading-relaxed font-medium"
+                    animate={{ opacity: [0.8, 1, 0.8] }}
+                    transition={{ duration: 4, repeat: Infinity }}
+                  >
+                    {contentAtScaleData.description}
+                  </motion.p>
+                  
+                  {/* Highlight Tags */}
+                  <motion.div
+                    className="flex flex-wrap gap-3 mt-6"
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, delay: 0.8 }}
+                  >
+                    {['Multi-Niche Strategy', 'Viral Content', 'Scale Production', 'Rapid Growth'].map((tag, i) => (
+                      <motion.span
+                        key={tag}
+                        className="px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full text-xs md:text-sm font-semibold text-white/80 border border-white/10"
+                        whileHover={{ scale: 1.05, backgroundColor: 'rgba(255,255,255,0.15)' }}
+                        animate={{ y: [0, -3, 0] }}
+                        transition={{ duration: 3, repeat: Infinity, delay: i * 0.2 }}
+                      >
+                        {tag}
+                      </motion.span>
+                    ))}
+                  </motion.div>
+                </motion.div>
+              </div>
+            </div>
+          </motion.div>
+        </Container>
+      </Section>
+
+      {/* LIKE ME - MGEE Section */}
+      <Section className="relative py-20 md:py-32">
+        <Container className="relative z-10">
+          <motion.div
+            className="relative overflow-hidden rounded-3xl bg-black"
+            initial={{ opacity: 0, y: 60 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94] }}
+          >
+            {/* Background Effects */}
+            <div className="absolute inset-0 overflow-hidden">
+              <motion.div
+                className="absolute top-0 left-0 w-[500px] h-[500px] bg-gradient-to-br from-emerald-600/15 via-green-500/10 to-transparent rounded-full blur-3xl"
+                animate={{ scale: [1, 1.2, 1], x: [-50, 0, -50] }}
+                transition={{ duration: 12, repeat: Infinity, ease: "easeInOut" }}
+              />
+              <motion.div
+                className="absolute bottom-0 right-0 w-[400px] h-[400px] bg-gradient-to-br from-cyan-500/15 via-blue-500/10 to-transparent rounded-full blur-3xl"
+                animate={{ scale: [1, 1.3, 1], y: [0, -30, 0] }}
+                transition={{ duration: 10, repeat: Infinity, ease: "easeInOut", delay: 2 }}
+              />
+            </div>
+
+            <div className="relative p-8 md:p-12 lg:p-16">
+              {/* Main Content Grid */}
+              <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+                
+                {/* Left Side - Album Art & Stats */}
+                <motion.div
+                  className="flex flex-col items-center lg:items-start"
+                  initial={{ opacity: 0, x: -50 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.7, delay: 0.2 }}
+                >
+                  {/* Album Cover */}
+                  <motion.div
+                    className="relative mb-8 group"
+                    whileHover={{ scale: 1.03 }}
+                    transition={{ duration: 0.4 }}
+                  >
+                    <motion.div
+                      className="absolute -inset-4 bg-gradient-to-r from-emerald-500/30 via-cyan-500/30 to-blue-500/30 rounded-2xl blur-2xl opacity-60"
+                      animate={{ opacity: [0.4, 0.7, 0.4] }}
+                      transition={{ duration: 4, repeat: Infinity }}
+                    />
+                    <div className="relative w-48 md:w-56 aspect-square bg-gradient-to-br from-slate-800 via-slate-900 to-black rounded-xl overflow-hidden border border-white/10 shadow-2xl">
+                      {/* Car/City Background */}
+                      <div className="absolute inset-0 bg-gradient-to-b from-slate-600/50 via-slate-700/30 to-black" />
+                      
+                      {/* Title Overlay */}
+                      <div className="absolute inset-0 flex flex-col justify-center items-center p-4">
+                        <motion.div
+                          className="text-4xl md:text-5xl font-black text-white tracking-tighter leading-none"
+                          style={{ fontFamily: 'serif' }}
+                          animate={{ textShadow: ['0 0 20px rgba(255,255,255,0.3)', '0 0 40px rgba(255,255,255,0.5)', '0 0 20px rgba(255,255,255,0.3)'] }}
+                          transition={{ duration: 3, repeat: Infinity }}
+                        >
+                          LIKE
+                        </motion.div>
+                        <motion.div
+                          className="text-5xl md:text-6xl font-black bg-gradient-to-r from-emerald-400 via-cyan-400 to-blue-400 bg-clip-text text-transparent tracking-tighter leading-none"
+                          style={{ fontFamily: 'serif', fontStyle: 'italic' }}
+                          animate={{ scale: [1, 1.02, 1] }}
+                          transition={{ duration: 2, repeat: Infinity }}
+                        >
+                          ME
+                        </motion.div>
+                      </div>
+
+                      {/* Parental Advisory Badge */}
+                      <div className="absolute bottom-2 left-2">
+                        <div className="bg-white text-black text-[6px] font-bold px-1.5 py-0.5 tracking-tight">
+                          EXPLICIT
+                        </div>
+                      </div>
+                    </div>
+                  </motion.div>
+
+                  {/* Song Title & Artist */}
+                  <motion.div
+                    className="text-center lg:text-left mb-8"
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, delay: 0.4 }}
+                  >
+                    <h3 className="text-2xl md:text-3xl font-black text-white mb-1">{likeMeData.title}</h3>
+                    <p className="text-lg text-white/60 font-semibold">{likeMeData.artist}</p>
+                  </motion.div>
+
+                  {/* Stats */}
+                  <motion.div
+                    className="flex flex-col gap-2"
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.6, delay: 0.5 }}
+                  >
+                    {likeMeData.stats.map((stat, index) => (
+                      <motion.div
+                        key={stat.label}
+                        className="flex items-baseline gap-2"
+                        initial={{ opacity: 0, x: -20 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.5, delay: 0.6 + index * 0.1 }}
+                      >
+                        <span className="text-white/60 text-sm font-bold tracking-wider">
+                          {stat.label}:
+                        </span>
+                        <motion.span
+                          className="text-3xl md:text-4xl font-black bg-gradient-to-r from-emerald-400 via-cyan-400 to-blue-400 bg-clip-text text-transparent"
+                          animate={{ opacity: [0.9, 1, 0.9] }}
+                          transition={{ duration: 3, repeat: Infinity, delay: index * 0.3 }}
+                        >
+                          {stat.value}
+                        </motion.span>
+                      </motion.div>
+                    ))}
+                  </motion.div>
+                </motion.div>
+
+                {/* Right Side - Content Types & Description */}
+                <motion.div
+                  className="flex flex-col"
+                  initial={{ opacity: 0, x: 50 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.7, delay: 0.3 }}
+                >
+                  {/* Category Headers */}
+                  <div className="flex justify-center gap-8 md:gap-16 mb-6">
+                    {likeMeData.contentTypes.map((content, idx) => (
+                      <motion.span
+                        key={idx}
+                        className="text-xs md:text-sm font-bold tracking-wider text-white/80 uppercase"
+                        initial={{ opacity: 0, y: -10 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ delay: 0.5 + idx * 0.1 }}
+                      >
+                        {content.title}
+                      </motion.span>
+                    ))}
+                  </div>
+
+                  {/* Phone Mockups */}
+                  <div className="flex justify-center gap-6 md:gap-10 mb-8">
+                    {likeMeData.contentTypes.map((content, index) => (
+                      <motion.div
+                        key={index}
+                        className="flex flex-col items-center"
+                        initial={{ opacity: 0, y: 30, scale: 0.9 }}
+                        whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.6, delay: 0.4 + index * 0.15 }}
+                      >
+                        {/* Phone */}
+                        <motion.div
+                          className="relative group cursor-pointer"
+                          whileHover={{ scale: 1.08, y: -12 }}
+                          transition={{ duration: 0.3 }}
+                        >
+                          <motion.div
+                            className={`absolute -inset-3 bg-gradient-to-r ${getContentGradient(content.variant)} rounded-3xl blur-xl opacity-0 group-hover:opacity-50 transition-opacity duration-500`}
+                          />
+                          
+                          <div className="relative bg-black rounded-[2rem] p-1.5 shadow-2xl border-2 border-slate-700 w-[120px] md:w-[150px]">
+                            <div className={`relative aspect-[9/16] bg-gradient-to-br ${getContentGradient(content.variant)} rounded-[1.6rem] overflow-hidden`}>
+                              
+                              {/* TikTok-style UI Overlay */}
+                              <div className="absolute inset-0 bg-black/30">
+                                {/* Top Bar */}
+                                <div className="absolute top-3 left-3 right-3 flex justify-between items-center">
+                                  <div className="flex items-center gap-1">
+                                    <div className="w-6 h-6 bg-white/20 rounded-full" />
+                                    <span className="text-[8px] text-white/80 font-semibold">Following</span>
+                                  </div>
+                                  <div className="text-[8px] text-white font-bold">For You</div>
+                                </div>
+
+                                {/* Play Button */}
+                                <motion.div
+                                  className="absolute inset-0 flex items-center justify-center"
+                                  initial={{ opacity: 0.7 }}
+                                  whileHover={{ opacity: 1 }}
+                                >
+                                  <motion.div
+                                    className="w-12 h-12 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center"
+                                    animate={{ scale: [1, 1.1, 1] }}
+                                    transition={{ duration: 2, repeat: Infinity }}
+                                  >
+                                    <div className="w-0 h-0 border-l-[10px] border-l-white border-t-[6px] border-t-transparent border-b-[6px] border-b-transparent ml-1" />
+                                  </motion.div>
+                                </motion.div>
+
+                                {/* Right Side Icons */}
+                                <div className="absolute right-2 bottom-20 flex flex-col gap-3">
+                                  {[
+                                    { icon: '❤️', count: '45.2K' },
+                                    { icon: '💬', count: '892' },
+                                    { icon: '↗️', count: '2.1K' }
+                                  ].map((item, i) => (
+                                    <motion.div
+                                      key={i}
+                                      className="flex flex-col items-center"
+                                      animate={{ scale: [1, 1.1, 1] }}
+                                      transition={{ duration: 2.5, repeat: Infinity, delay: i * 0.3 }}
+                                    >
+                                      <div className="w-8 h-8 bg-white/15 backdrop-blur-sm rounded-full flex items-center justify-center text-xs">
+                                        {item.icon}
+                                      </div>
+                                      <span className="text-[7px] text-white/80 font-bold mt-0.5">{item.count}</span>
+                                    </motion.div>
+                                  ))}
+                                </div>
+
+                                {/* Bottom Info */}
+                                <div className="absolute bottom-3 left-3 right-10">
+                                  <div className="text-[8px] font-bold text-white mb-0.5">@football_creator</div>
+                                  <div className="text-[7px] text-white/80 line-clamp-2">
+                                    🔥 Insane skills #football #viral
+                                  </div>
+                                </div>
+
+                                {/* Progress Bar */}
+                                <div className="absolute bottom-0 left-0 right-0 h-1 bg-white/20">
+                                  <motion.div
+                                    className="h-full bg-white"
+                                    animate={{ width: ['0%', '100%', '0%'] }}
+                                    transition={{ duration: 8 + index * 2, repeat: Infinity }}
+                                  />
+                                </div>
+                              </div>
+                            </div>
+                            
+                            <div className="absolute top-3 left-1/2 -translate-x-1/2 w-14 h-4 bg-black rounded-full" />
+                          </div>
+                        </motion.div>
+
+                        {/* Labels */}
+                        <motion.a
+                          href="#"
+                          className="text-xs text-white/50 hover:text-white/80 underline underline-offset-2 transition-colors mt-4"
+                          whileHover={{ scale: 1.05 }}
+                        >
+                          Click for example
+                        </motion.a>
+                        <div className="text-xs font-bold text-white/80 mt-1 uppercase tracking-wide">
+                          {content.subtitle}
+                        </div>
+                      </motion.div>
+                    ))}
+                  </div>
+
+                  {/* Description */}
+                  <motion.p
+                    className="text-base md:text-lg text-white/80 leading-relaxed"
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.6, delay: 0.7 }}
+                  >
+                    {likeMeData.description}
+                  </motion.p>
+                </motion.div>
+              </div>
+            </div>
+          </motion.div>
+        </Container>
+      </Section>
+
+      {/* COLD - ALFIE CASTLEY Section */}
+      <Section className="relative py-20 md:py-32">
+        <Container className="relative z-10">
+          <motion.div
+            className="relative overflow-hidden rounded-3xl bg-black"
+            initial={{ opacity: 0, y: 60 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94] }}
+          >
+            {/* Background Effects */}
+            <div className="absolute inset-0 overflow-hidden">
+              <motion.div
+                className="absolute top-1/2 left-1/4 w-[600px] h-[600px] bg-gradient-to-br from-rose-600/15 via-pink-500/10 to-transparent rounded-full blur-3xl"
+                animate={{ scale: [1, 1.2, 1], rotate: [0, 45, 0] }}
+                transition={{ duration: 15, repeat: Infinity, ease: "easeInOut" }}
+              />
+              <motion.div
+                className="absolute top-0 right-0 w-[400px] h-[400px] bg-gradient-to-br from-violet-500/15 via-purple-500/10 to-transparent rounded-full blur-3xl"
+                animate={{ scale: [1, 1.3, 1], x: [0, -30, 0] }}
+                transition={{ duration: 12, repeat: Infinity, ease: "easeInOut", delay: 2 }}
+              />
+            </div>
+
+            <div className="relative p-8 md:p-12 lg:p-16">
+              {/* Top Row - Album & Categories */}
+              <div className="grid lg:grid-cols-12 gap-8 lg:gap-12 items-start mb-12">
+                
+                {/* Album Cover - Left */}
+                <motion.div
+                  className="lg:col-span-3 flex flex-col items-center"
+                  initial={{ opacity: 0, x: -50 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.7, delay: 0.2 }}
+                >
+                  <motion.div
+                    className="relative mb-6 group"
+                    whileHover={{ scale: 1.03 }}
+                    transition={{ duration: 0.4 }}
+                  >
+                    <motion.div
+                      className="absolute -inset-4 bg-gradient-to-r from-rose-500/30 via-violet-500/30 to-purple-500/30 rounded-2xl blur-2xl opacity-50"
+                      animate={{ opacity: [0.3, 0.6, 0.3] }}
+                      transition={{ duration: 4, repeat: Infinity }}
+                    />
+                    <div className="relative w-40 md:w-48 aspect-square bg-black rounded-lg overflow-hidden border border-white/10 shadow-2xl">
+                      {/* Album Art */}
+                      <div className="absolute inset-0 bg-gradient-to-br from-slate-900 to-black" />
+                      
+                      {/* Artist text */}
+                      <div className="absolute top-3 left-3">
+                        <span className="text-[10px] text-white/60 font-medium tracking-wider">ALFIE CASTLEY</span>
+                        <motion.span
+                          className="ml-1 inline-block w-1.5 h-1.5 bg-red-500 rounded-full"
+                          animate={{ opacity: [1, 0.5, 1] }}
+                          transition={{ duration: 1.5, repeat: Infinity }}
+                        />
+                      </div>
+                    </div>
+                  </motion.div>
+
+                  {/* Title & Artist */}
+                  <motion.div
+                    className="text-center"
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, delay: 0.4 }}
+                  >
+                    <h3 className="text-xl md:text-2xl font-black text-white mb-1">{coldData.title} –</h3>
+                    <p className="text-sm text-white/60 font-semibold">{coldData.artist}</p>
+                  </motion.div>
+                </motion.div>
+
+                {/* Categories Grid - Right */}
+                <motion.div
+                  className="lg:col-span-9"
+                  initial={{ opacity: 0, x: 50 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.7, delay: 0.3 }}
+                >
+                  {/* Category Headers */}
+                  <div className="flex flex-wrap justify-center gap-6 md:gap-10 mb-8">
+                    {coldData.contentCategories.map((cat, idx) => (
+                      <motion.div
+                        key={idx}
+                        className="flex flex-col items-center"
+                        initial={{ opacity: 0, y: -20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ delay: 0.4 + idx * 0.1 }}
+                      >
+                        <motion.span
+                          className={`text-sm md:text-base font-black tracking-wider uppercase bg-gradient-to-r ${getContentGradient(cat.variant)} bg-clip-text text-transparent`}
+                          whileHover={{ scale: 1.1 }}
+                        >
+                          {cat.title}
+                        </motion.span>
+                        <motion.a
+                          href="#"
+                          className="text-[10px] md:text-xs text-white/50 hover:text-white/80 underline underline-offset-2 transition-colors mt-1"
+                          whileHover={{ scale: 1.05 }}
+                        >
+                          Click for example
+                        </motion.a>
+                      </motion.div>
+                    ))}
+                  </div>
+
+                  {/* Demo Card */}
+                  <motion.div
+                    className="flex justify-center"
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.6, delay: 0.5 }}
+                  >
+                    <motion.div
+                      className="relative bg-gradient-to-br from-slate-800/80 to-slate-900/80 backdrop-blur-sm rounded-2xl p-4 flex items-center gap-4 border border-white/10 shadow-xl max-w-md"
+                      whileHover={{ scale: 1.03, boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.5)' }}
+                      transition={{ duration: 0.3 }}
+                    >
+                      {/* Album Thumbnail */}
+                      <div className="relative w-20 h-20 md:w-24 md:h-24 rounded-xl overflow-hidden flex-shrink-0 bg-gradient-to-br from-slate-700 to-slate-800">
+                        <div className="absolute inset-0 flex items-center justify-center">
+                          <motion.div
+                            className="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center"
+                            animate={{ scale: [1, 1.1, 1] }}
+                            transition={{ duration: 2, repeat: Infinity }}
+                          >
+                            <span className="text-2xl">🎵</span>
+                          </motion.div>
+                        </div>
+                      </div>
+
+                      {/* Info */}
+                      <div className="flex-1">
+                        <h4 className="text-lg md:text-xl font-bold text-white mb-0.5">{coldData.demoInfo.title}</h4>
+                        <p className="text-sm text-white/60 mb-1">{coldData.demoInfo.artist}</p>
+                        <motion.p
+                          className="text-xs text-cyan-400 font-semibold"
+                          animate={{ opacity: [0.7, 1, 0.7] }}
+                          transition={{ duration: 2, repeat: Infinity }}
+                        >
+                          {coldData.demoInfo.videos}
+                        </motion.p>
+                      </div>
+                    </motion.div>
+                  </motion.div>
+                </motion.div>
+              </div>
+
+              {/* Divider */}
+              <motion.div
+                className="w-full h-px bg-gradient-to-r from-transparent via-white/20 to-transparent mb-10"
+                initial={{ scaleX: 0 }}
+                whileInView={{ scaleX: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 1, delay: 0.5 }}
+              />
+
+              {/* Bottom Row - Stats & Description */}
+              <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
+                {/* Stats */}
+                <motion.div
+                  className="flex flex-col gap-2"
+                  initial={{ opacity: 0, x: -30 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6, delay: 0.6 }}
+                >
+                  {coldData.stats.map((stat, index) => (
+                    <motion.div
+                      key={stat.label}
+                      className="flex items-baseline gap-2"
+                      initial={{ opacity: 0, x: -20 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 0.5, delay: 0.7 + index * 0.1 }}
+                    >
+                      <span className="text-white/60 text-sm font-bold tracking-wider">
+                        {stat.label}:
+                      </span>
+                      <motion.span
+                        className="text-3xl md:text-4xl lg:text-5xl font-black bg-gradient-to-r from-rose-400 via-pink-400 to-violet-400 bg-clip-text text-transparent"
+                        animate={{ opacity: [0.9, 1, 0.9] }}
+                        transition={{ duration: 3, repeat: Infinity, delay: index * 0.3 }}
+                      >
+                        {stat.value}
+                      </motion.span>
+                    </motion.div>
+                  ))}
+                </motion.div>
+
+                {/* Description */}
+                <motion.div
+                  initial={{ opacity: 0, x: 30 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6, delay: 0.7 }}
+                >
+                  <motion.p
+                    className="text-base md:text-lg lg:text-xl text-white/80 leading-relaxed"
+                    animate={{ opacity: [0.8, 1, 0.8] }}
+                    transition={{ duration: 4, repeat: Infinity }}
+                  >
+                    {coldData.description}
+                  </motion.p>
+
+                  {/* Highlight Tags */}
+                  <motion.div
+                    className="flex flex-wrap gap-3 mt-6"
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, delay: 0.9 }}
+                  >
+                    {['Sound Development', 'Viral Growth', '18K Creations', 'Daily Streams'].map((tag, i) => (
+                      <motion.span
+                        key={tag}
+                        className="px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full text-xs md:text-sm font-semibold text-white/80 border border-white/10"
+                        whileHover={{ scale: 1.05, backgroundColor: 'rgba(255,255,255,0.15)' }}
+                        animate={{ y: [0, -3, 0] }}
+                        transition={{ duration: 3, repeat: Infinity, delay: i * 0.2 }}
+                      >
+                        {tag}
+                      </motion.span>
+                    ))}
+                  </motion.div>
+                </motion.div>
+              </div>
+            </div>
+          </motion.div>
+        </Container>
+      </Section>
+
+      {/* TEN YEARS - HENRY MOODIE Section */}
+      <Section className="relative py-20 md:py-32">
+        <Container className="relative z-10">
+          <motion.div
+            className="relative overflow-hidden rounded-3xl bg-black"
+            initial={{ opacity: 0, y: 60 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94] }}
+          >
+            {/* Background Effects */}
+            <div className="absolute inset-0 overflow-hidden">
+              <motion.div
+                className="absolute top-0 left-0 w-[500px] h-[500px] bg-gradient-to-br from-pink-600/15 via-rose-500/10 to-transparent rounded-full blur-3xl"
+                animate={{ scale: [1, 1.2, 1], x: [-30, 20, -30] }}
+                transition={{ duration: 14, repeat: Infinity, ease: "easeInOut" }}
+              />
+              <motion.div
+                className="absolute bottom-0 right-0 w-[400px] h-[400px] bg-gradient-to-br from-violet-500/15 via-purple-500/10 to-transparent rounded-full blur-3xl"
+                animate={{ scale: [1, 1.3, 1], y: [0, -40, 0] }}
+                transition={{ duration: 11, repeat: Infinity, ease: "easeInOut", delay: 2 }}
+              />
+            </div>
+
+            <div className="relative p-8 md:p-12 lg:p-16">
+              {/* Top Row - Album & Categories */}
+              <div className="grid lg:grid-cols-12 gap-8 lg:gap-12 items-start mb-12">
+                
+                {/* Album Cover - Left */}
+                <motion.div
+                  className="lg:col-span-3 flex flex-col items-center"
+                  initial={{ opacity: 0, x: -50 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.7, delay: 0.2 }}
+                >
+                  <motion.div
+                    className="relative mb-6 group"
+                    whileHover={{ scale: 1.03 }}
+                    transition={{ duration: 0.4 }}
+                  >
+                    <motion.div
+                      className="absolute -inset-4 bg-gradient-to-r from-emerald-500/30 via-green-500/30 to-teal-500/30 rounded-2xl blur-2xl opacity-50"
+                      animate={{ opacity: [0.3, 0.6, 0.3] }}
+                      transition={{ duration: 4, repeat: Infinity }}
+                    />
+                    <div className="relative w-40 md:w-48 aspect-square bg-gradient-to-br from-emerald-900/80 via-green-900/60 to-black rounded-lg overflow-hidden border border-white/10 shadow-2xl">
+                      {/* Nature/Forest Background */}
+                      <div className="absolute inset-0 bg-gradient-to-b from-emerald-800/40 via-green-900/50 to-black" />
+                      
+                      {/* Silhouette Figure */}
+                      <div className="absolute inset-0 flex items-end justify-center pb-8">
+                        <motion.div
+                          className="w-16 h-24 bg-black/80 rounded-t-full"
+                          animate={{ y: [0, -3, 0] }}
+                          transition={{ duration: 4, repeat: Infinity }}
+                        />
+                      </div>
+                    </div>
+                  </motion.div>
+
+                  {/* Title & Artist */}
+                  <motion.div
+                    className="text-center"
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, delay: 0.4 }}
+                  >
+                    <h3 className="text-xl md:text-2xl font-black text-white mb-1">{tenYearsData.title} –</h3>
+                    <p className="text-sm text-white/60 font-semibold">{tenYearsData.artist}</p>
+                  </motion.div>
+                </motion.div>
+
+                {/* Categories Grid - Right */}
+                <motion.div
+                  className="lg:col-span-9"
+                  initial={{ opacity: 0, x: 50 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.7, delay: 0.3 }}
+                >
+                  {/* Category Headers */}
+                  <div className="flex flex-wrap justify-center gap-6 md:gap-10 mb-8">
+                    {tenYearsData.contentCategories.map((cat, idx) => (
+                      <motion.div
+                        key={idx}
+                        className="flex flex-col items-center"
+                        initial={{ opacity: 0, y: -20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ delay: 0.4 + idx * 0.1 }}
+                      >
+                        <motion.span
+                          className={`text-sm md:text-base font-black tracking-wider uppercase bg-gradient-to-r ${getContentGradient(cat.variant)} bg-clip-text text-transparent`}
+                          whileHover={{ scale: 1.1 }}
+                        >
+                          {cat.title}
+                        </motion.span>
+                        <motion.a
+                          href="#"
+                          className="text-[10px] md:text-xs text-white/50 hover:text-white/80 underline underline-offset-2 transition-colors mt-1"
+                          whileHover={{ scale: 1.05 }}
+                        >
+                          Click for example
+                        </motion.a>
+                      </motion.div>
+                    ))}
+                  </div>
+
+                  {/* Demo Card */}
+                  <motion.div
+                    className="flex justify-center"
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.6, delay: 0.5 }}
+                  >
+                    <motion.div
+                      className="relative bg-gradient-to-br from-slate-800/80 to-slate-900/80 backdrop-blur-sm rounded-2xl p-4 flex items-center gap-4 border border-white/10 shadow-xl max-w-md"
+                      whileHover={{ scale: 1.03, boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.5)' }}
+                      transition={{ duration: 0.3 }}
+                    >
+                      {/* Album Thumbnail with Play Button */}
+                      <div className="relative w-20 h-20 md:w-24 md:h-24 rounded-xl overflow-hidden flex-shrink-0 bg-gradient-to-br from-slate-700 to-slate-800">
+                        <div className="absolute inset-0 flex items-center justify-center">
+                          <motion.div
+                            className="w-10 h-10 bg-white/30 rounded-full flex items-center justify-center backdrop-blur-sm"
+                            animate={{ scale: [1, 1.1, 1] }}
+                            transition={{ duration: 2, repeat: Infinity }}
+                          >
+                            <div className="w-0 h-0 border-l-[8px] border-l-white border-t-[5px] border-t-transparent border-b-[5px] border-b-transparent ml-1" />
+                          </motion.div>
+                        </div>
+                      </div>
+
+                      {/* Info */}
+                      <div className="flex-1">
+                        <h4 className="text-lg md:text-xl font-bold text-white mb-0.5">{tenYearsData.demoInfo.title}</h4>
+                        <p className="text-sm text-white/60 mb-1">{tenYearsData.demoInfo.artist} · <span className="text-cyan-400">{tenYearsData.demoInfo.videos}</span></p>
+                        <motion.button
+                          className="flex items-center gap-1.5 text-xs text-white/70 hover:text-white transition-colors mt-2"
+                          whileHover={{ scale: 1.05 }}
+                        >
+                          <span className="text-sm">≡</span>
+                          <span>Add to music app</span>
+                        </motion.button>
+                      </div>
+                    </motion.div>
+                  </motion.div>
+                </motion.div>
+              </div>
+
+              {/* Divider */}
+              <motion.div
+                className="w-full h-px bg-gradient-to-r from-transparent via-white/20 to-transparent mb-10"
+                initial={{ scaleX: 0 }}
+                whileInView={{ scaleX: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 1, delay: 0.5 }}
+              />
+
+              {/* Bottom Row - Stats & Description */}
+              <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
+                {/* Stats */}
+                <motion.div
+                  className="flex flex-col gap-2"
+                  initial={{ opacity: 0, x: -30 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6, delay: 0.6 }}
+                >
+                  {tenYearsData.stats.map((stat, index) => (
+                    <motion.div
+                      key={stat.label}
+                      className="flex items-baseline gap-2"
+                      initial={{ opacity: 0, x: -20 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 0.5, delay: 0.7 + index * 0.1 }}
+                    >
+                      <span className="text-white/60 text-sm font-bold tracking-wider">
+                        {stat.label}:
+                      </span>
+                      <motion.span
+                        className="text-3xl md:text-4xl lg:text-5xl font-black bg-gradient-to-r from-pink-400 via-rose-400 to-violet-400 bg-clip-text text-transparent"
+                        animate={{ opacity: [0.9, 1, 0.9] }}
+                        transition={{ duration: 3, repeat: Infinity, delay: index * 0.3 }}
+                      >
+                        {stat.value}
+                      </motion.span>
+                    </motion.div>
+                  ))}
+                </motion.div>
+
+                {/* Description */}
+                <motion.div
+                  initial={{ opacity: 0, x: 30 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6, delay: 0.7 }}
+                >
+                  <motion.p
+                    className="text-base md:text-lg lg:text-xl text-white/80 leading-relaxed"
+                    animate={{ opacity: [0.8, 1, 0.8] }}
+                    transition={{ duration: 4, repeat: Infinity }}
+                  >
+                    {tenYearsData.description}
+                  </motion.p>
+
+                  {/* Highlight Tags */}
+                  <motion.div
+                    className="flex flex-wrap gap-3 mt-6"
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, delay: 0.9 }}
+                  >
+                    {['KDrama Trend', 'Romantic Niche', '8K Creations', '110K Daily Streams'].map((tag, i) => (
+                      <motion.span
+                        key={tag}
+                        className="px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full text-xs md:text-sm font-semibold text-white/80 border border-white/10"
+                        whileHover={{ scale: 1.05, backgroundColor: 'rgba(255,255,255,0.15)' }}
+                        animate={{ y: [0, -3, 0] }}
+                        transition={{ duration: 3, repeat: Infinity, delay: i * 0.2 }}
+                      >
+                        {tag}
+                      </motion.span>
+                    ))}
+                  </motion.div>
+                </motion.div>
+              </div>
+            </div>
+          </motion.div>
+        </Container>
+      </Section>
+
+      {/* WILDFIRE - FUZION Section */}
+      <Section className="relative py-20 md:py-32">
+        <Container className="relative z-10">
+          <motion.div
+            className="relative overflow-hidden rounded-3xl bg-black"
+            initial={{ opacity: 0, y: 60 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94] }}
+          >
+            {/* Background Effects - Fire Theme */}
+            <div className="absolute inset-0 overflow-hidden">
+              <motion.div
+                className="absolute top-0 left-1/4 w-[600px] h-[600px] bg-gradient-to-br from-red-600/20 via-orange-500/15 to-transparent rounded-full blur-3xl"
+                animate={{ scale: [1, 1.3, 1], y: [-20, 20, -20] }}
+                transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
+              />
+              <motion.div
+                className="absolute bottom-0 right-1/4 w-[500px] h-[500px] bg-gradient-to-br from-orange-500/15 via-yellow-500/10 to-transparent rounded-full blur-3xl"
+                animate={{ scale: [1, 1.2, 1], x: [0, 30, 0] }}
+                transition={{ duration: 12, repeat: Infinity, ease: "easeInOut", delay: 2 }}
+              />
+            </div>
+
+            <div className="relative p-8 md:p-12 lg:p-16">
+              {/* Top Row - Album & Categories */}
+              <div className="grid lg:grid-cols-12 gap-8 lg:gap-12 items-start mb-12">
+                
+                {/* Album Cover - Left */}
+                <motion.div
+                  className="lg:col-span-3 flex flex-col items-center"
+                  initial={{ opacity: 0, x: -50 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.7, delay: 0.2 }}
+                >
+                  <motion.div
+                    className="relative mb-6 group"
+                    whileHover={{ scale: 1.03 }}
+                    transition={{ duration: 0.4 }}
+                  >
+                    <motion.div
+                      className="absolute -inset-4 bg-gradient-to-r from-red-500/40 via-orange-500/40 to-yellow-500/30 rounded-2xl blur-2xl opacity-60"
+                      animate={{ opacity: [0.4, 0.7, 0.4], scale: [1, 1.05, 1] }}
+                      transition={{ duration: 3, repeat: Infinity }}
+                    />
+                    <div className="relative w-40 md:w-48 aspect-square bg-gradient-to-br from-red-900 via-orange-900 to-black rounded-lg overflow-hidden border border-orange-500/20 shadow-2xl">
+                      {/* Fire/Explosion Effect */}
+                      <motion.div
+                        className="absolute inset-0 bg-gradient-to-t from-black via-red-900/50 to-orange-500/30"
+                        animate={{ opacity: [0.8, 1, 0.8] }}
+                        transition={{ duration: 2, repeat: Infinity }}
+                      />
+                      
+                      {/* Glow Center */}
+                      <motion.div
+                        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-24 h-24 bg-gradient-radial from-white/40 via-orange-400/30 to-transparent rounded-full blur-xl"
+                        animate={{ scale: [1, 1.3, 1], opacity: [0.5, 0.8, 0.5] }}
+                        transition={{ duration: 2, repeat: Infinity }}
+                      />
+                    </div>
+                  </motion.div>
+
+                  {/* Title & Artist */}
+                  <motion.div
+                    className="text-center"
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, delay: 0.4 }}
+                  >
+                    <h3 className="text-xl md:text-2xl font-black text-white mb-1">{wildfireData.title} –</h3>
+                    <p className="text-sm text-white/60 font-semibold">{wildfireData.artist}</p>
+                  </motion.div>
+                </motion.div>
+
+                {/* Categories Grid - Right */}
+                <motion.div
+                  className="lg:col-span-9"
+                  initial={{ opacity: 0, x: 50 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.7, delay: 0.3 }}
+                >
+                  {/* Category Headers */}
+                  <div className="flex flex-wrap justify-center gap-6 md:gap-10 mb-8">
+                    {wildfireData.contentCategories.map((cat, idx) => (
+                      <motion.div
+                        key={idx}
+                        className="flex flex-col items-center"
+                        initial={{ opacity: 0, y: -20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ delay: 0.4 + idx * 0.1 }}
+                      >
+                        <motion.span
+                          className={`text-sm md:text-base font-black tracking-wider uppercase bg-gradient-to-r ${getContentGradient(cat.variant)} bg-clip-text text-transparent`}
+                          whileHover={{ scale: 1.1 }}
+                        >
+                          {cat.title}
+                        </motion.span>
+                        <motion.a
+                          href="#"
+                          className="text-[10px] md:text-xs text-white/50 hover:text-white/80 underline underline-offset-2 transition-colors mt-1"
+                          whileHover={{ scale: 1.05 }}
+                        >
+                          Click for example
+                        </motion.a>
+                      </motion.div>
+                    ))}
+                  </div>
+
+                  {/* Demo Card */}
+                  <motion.div
+                    className="flex justify-center"
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.6, delay: 0.5 }}
+                  >
+                    <motion.div
+                      className="relative bg-gradient-to-br from-slate-800/80 to-slate-900/80 backdrop-blur-sm rounded-2xl p-4 flex items-center gap-4 border border-orange-500/20 shadow-xl max-w-md"
+                      whileHover={{ scale: 1.03, boxShadow: '0 25px 50px -12px rgba(249, 115, 22, 0.2)' }}
+                      transition={{ duration: 0.3 }}
+                    >
+                      {/* Album Thumbnail with Play Button */}
+                      <div className="relative w-20 h-20 md:w-24 md:h-24 rounded-xl overflow-hidden flex-shrink-0 bg-gradient-to-br from-orange-900 to-red-900">
+                        <motion.div
+                          className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"
+                          animate={{ opacity: [0.5, 0.7, 0.5] }}
+                          transition={{ duration: 2, repeat: Infinity }}
+                        />
+                        <div className="absolute inset-0 flex items-center justify-center">
+                          <motion.div
+                            className="w-10 h-10 bg-white/30 rounded-full flex items-center justify-center backdrop-blur-sm"
+                            animate={{ scale: [1, 1.1, 1] }}
+                            transition={{ duration: 2, repeat: Infinity }}
+                          >
+                            <div className="w-0 h-0 border-l-[8px] border-l-white border-t-[5px] border-t-transparent border-b-[5px] border-b-transparent ml-1" />
+                          </motion.div>
+                        </div>
+                      </div>
+
+                      {/* Info */}
+                      <div className="flex-1">
+                        <h4 className="text-lg md:text-xl font-bold text-white mb-0.5">{wildfireData.demoInfo.title}</h4>
+                        <p className="text-sm text-white/60 mb-1">{wildfireData.demoInfo.artist} · <span className="text-orange-400">{wildfireData.demoInfo.videos}</span></p>
+                        <motion.button
+                          className="flex items-center gap-1.5 text-xs text-white/70 hover:text-white transition-colors mt-2"
+                          whileHover={{ scale: 1.05 }}
+                        >
+                          <span className="text-sm">≡</span>
+                          <span>Add to music app</span>
+                        </motion.button>
+                      </div>
+                    </motion.div>
+                  </motion.div>
+                </motion.div>
+              </div>
+
+              {/* Divider */}
+              <motion.div
+                className="w-full h-px bg-gradient-to-r from-transparent via-orange-500/30 to-transparent mb-10"
+                initial={{ scaleX: 0 }}
+                whileInView={{ scaleX: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 1, delay: 0.5 }}
+              />
+
+              {/* Bottom Row - Stats & Description */}
+              <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
+                {/* Stats */}
+                <motion.div
+                  className="flex flex-col gap-2"
+                  initial={{ opacity: 0, x: -30 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6, delay: 0.6 }}
+                >
+                  {wildfireData.stats.map((stat, index) => (
+                    <motion.div
+                      key={stat.label}
+                      className="flex items-baseline gap-2"
+                      initial={{ opacity: 0, x: -20 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 0.5, delay: 0.7 + index * 0.1 }}
+                    >
+                      <span className="text-white/60 text-sm font-bold tracking-wider">
+                        {stat.label}:
+                      </span>
+                      <motion.span
+                        className="text-3xl md:text-4xl lg:text-5xl font-black bg-gradient-to-r from-red-400 via-orange-400 to-yellow-400 bg-clip-text text-transparent"
+                        animate={{ opacity: [0.9, 1, 0.9] }}
+                        transition={{ duration: 3, repeat: Infinity, delay: index * 0.3 }}
+                      >
+                        {stat.value}
+                      </motion.span>
+                    </motion.div>
+                  ))}
+                </motion.div>
+
+                {/* Description */}
+                <motion.div
+                  initial={{ opacity: 0, x: 30 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6, delay: 0.7 }}
+                >
+                  <motion.p
+                    className="text-base md:text-lg lg:text-xl text-white/80 leading-relaxed"
+                    animate={{ opacity: [0.8, 1, 0.8] }}
+                    transition={{ duration: 4, repeat: Infinity }}
+                  >
+                    {wildfireData.description}
+                  </motion.p>
+
+                  {/* Highlight Tags */}
+                  <motion.div
+                    className="flex flex-wrap gap-3 mt-6"
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, delay: 0.9 }}
+                  >
+                    {['Movie Edits', 'Sports Content', '2 Week Growth', 'Multi-Niche'].map((tag, i) => (
+                      <motion.span
+                        key={tag}
+                        className="px-4 py-2 bg-orange-500/10 backdrop-blur-sm rounded-full text-xs md:text-sm font-semibold text-orange-200 border border-orange-500/20"
+                        whileHover={{ scale: 1.05, backgroundColor: 'rgba(249, 115, 22, 0.2)' }}
+                        animate={{ y: [0, -3, 0] }}
+                        transition={{ duration: 3, repeat: Infinity, delay: i * 0.2 }}
+                      >
+                        {tag}
+                      </motion.span>
+                    ))}
+                  </motion.div>
+                </motion.div>
+              </div>
+            </div>
+          </motion.div>
+        </Container>
+      </Section>
+
+      {/* WATCHIN - NICHOLAS CREUS Section */}
+      <Section className="relative py-20 md:py-32">
+        <Container className="relative z-10">
+          <motion.div
+            className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900"
+            initial={{ opacity: 0, y: 60 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94] }}
+          >
+            {/* Background Effects - Cinematic Theme */}
+            <div className="absolute inset-0 overflow-hidden">
+              <motion.div
+                className="absolute top-0 right-0 w-[500px] h-[500px] bg-gradient-to-br from-cyan-600/15 via-blue-500/10 to-transparent rounded-full blur-3xl"
+                animate={{ scale: [1, 1.2, 1], x: [0, -30, 0] }}
+                transition={{ duration: 15, repeat: Infinity, ease: "easeInOut" }}
+              />
+              <motion.div
+                className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-gradient-to-br from-slate-500/15 via-gray-500/10 to-transparent rounded-full blur-3xl"
+                animate={{ scale: [1, 1.3, 1], y: [0, -40, 0] }}
+                transition={{ duration: 12, repeat: Infinity, ease: "easeInOut", delay: 2 }}
+              />
+            </div>
+
+            <div className="relative p-8 md:p-12 lg:p-16">
+              {/* Top Row - Album & Categories */}
+              <div className="grid lg:grid-cols-12 gap-8 lg:gap-12 items-start mb-12">
+                
+                {/* Album Cover - Left */}
+                <motion.div
+                  className="lg:col-span-3 flex flex-col items-center"
+                  initial={{ opacity: 0, x: -50 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.7, delay: 0.2 }}
+                >
+                  <motion.div
+                    className="relative mb-6 group"
+                    whileHover={{ scale: 1.03 }}
+                    transition={{ duration: 0.4 }}
+                  >
+                    <motion.div
+                      className="absolute -inset-4 bg-gradient-to-r from-cyan-500/30 via-slate-500/30 to-blue-500/30 rounded-2xl blur-2xl opacity-50"
+                      animate={{ opacity: [0.3, 0.6, 0.3] }}
+                      transition={{ duration: 4, repeat: Infinity }}
+                    />
+                    <div className="relative w-40 md:w-48 aspect-square bg-gradient-to-br from-slate-700 via-slate-800 to-black rounded-lg overflow-hidden border border-white/10 shadow-2xl">
+                      {/* Cinematic City Scene */}
+                      <div className="absolute inset-0 bg-gradient-to-b from-cyan-900/30 via-slate-800/50 to-black" />
+                      
+                      {/* Figure Silhouette */}
+                      <div className="absolute inset-0 flex items-center justify-center">
+                        <motion.div
+                          className="relative"
+                          animate={{ y: [0, -5, 0] }}
+                          transition={{ duration: 5, repeat: Infinity }}
+                        >
+                          {/* Person looking at city */}
+                          <div className="w-12 h-20 bg-black/70 rounded-t-lg" />
+                          <div className="absolute -top-2 left-1/2 -translate-x-1/2 w-6 h-6 bg-black/70 rounded-full" />
+                        </motion.div>
+                      </div>
+                      
+                      {/* City lights effect */}
+                      <motion.div
+                        className="absolute bottom-0 left-0 right-0 h-1/3 bg-gradient-to-t from-cyan-500/20 to-transparent"
+                        animate={{ opacity: [0.3, 0.6, 0.3] }}
+                        transition={{ duration: 3, repeat: Infinity }}
+                      />
+                    </div>
+                  </motion.div>
+
+                  {/* Title & Artist */}
+                  <motion.div
+                    className="text-center"
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, delay: 0.4 }}
+                  >
+                    <h3 className="text-xl md:text-2xl font-black text-white mb-1">{watchinData.title} –</h3>
+                    <p className="text-sm text-white/60 font-semibold">{watchinData.artist}</p>
+                  </motion.div>
+                </motion.div>
+
+                {/* Categories Grid - Right */}
+                <motion.div
+                  className="lg:col-span-9 flex flex-col justify-center"
+                  initial={{ opacity: 0, x: 50 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.7, delay: 0.3 }}
+                >
+                  {/* Category Headers */}
+                  <div className="flex flex-wrap justify-center gap-8 md:gap-12">
+                    {watchinData.contentCategories.map((cat, idx) => (
+                      <motion.div
+                        key={idx}
+                        className="flex flex-col items-center"
+                        initial={{ opacity: 0, y: -20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ delay: 0.4 + idx * 0.1 }}
+                      >
+                        <motion.span
+                          className={`text-base md:text-lg font-black tracking-wider uppercase bg-gradient-to-r ${getContentGradient(cat.variant)} bg-clip-text text-transparent`}
+                          whileHover={{ scale: 1.1 }}
+                        >
+                          {cat.title}
+                        </motion.span>
+                        <motion.a
+                          href="#"
+                          className="text-xs text-white/50 hover:text-white/80 underline underline-offset-2 transition-colors mt-2"
+                          whileHover={{ scale: 1.05 }}
+                        >
+                          Click for example
+                        </motion.a>
+                      </motion.div>
+                    ))}
+                  </div>
+                </motion.div>
+              </div>
+
+              {/* Divider */}
+              <motion.div
+                className="w-full h-px bg-gradient-to-r from-transparent via-cyan-500/30 to-transparent mb-10"
+                initial={{ scaleX: 0 }}
+                whileInView={{ scaleX: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 1, delay: 0.5 }}
+              />
+
+              {/* Bottom Row - Stats & Description */}
+              <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
+                {/* Stats */}
+                <motion.div
+                  className="flex flex-col gap-2"
+                  initial={{ opacity: 0, x: -30 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6, delay: 0.6 }}
+                >
+                  {watchinData.stats.map((stat, index) => (
+                    <motion.div
+                      key={stat.label}
+                      className="flex items-baseline gap-2"
+                      initial={{ opacity: 0, x: -20 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 0.5, delay: 0.7 + index * 0.1 }}
+                    >
+                      <span className="text-white/60 text-sm font-bold tracking-wider">
+                        {stat.label}:
+                      </span>
+                      <motion.span
+                        className="text-3xl md:text-4xl lg:text-5xl font-black bg-gradient-to-r from-cyan-400 via-blue-400 to-slate-300 bg-clip-text text-transparent"
+                        animate={{ opacity: [0.9, 1, 0.9] }}
+                        transition={{ duration: 3, repeat: Infinity, delay: index * 0.3 }}
+                      >
+                        {stat.value}
+                      </motion.span>
+                    </motion.div>
+                  ))}
+                </motion.div>
+
+                {/* Description */}
+                <motion.div
+                  initial={{ opacity: 0, x: 30 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6, delay: 0.7 }}
+                >
+                  <motion.p
+                    className="text-base md:text-lg lg:text-xl text-white/80 leading-relaxed"
+                    animate={{ opacity: [0.8, 1, 0.8] }}
+                    transition={{ duration: 4, repeat: Infinity }}
+                  >
+                    {watchinData.description}
+                  </motion.p>
+
+                  {/* Highlight Tags */}
+                  <motion.div
+                    className="flex flex-wrap gap-3 mt-6"
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, delay: 0.9 }}
+                  >
+                    {['Ambient Niche', 'Hopecore', '150K Creations', '2B+ Views'].map((tag, i) => (
+                      <motion.span
+                        key={tag}
+                        className="px-4 py-2 bg-cyan-500/10 backdrop-blur-sm rounded-full text-xs md:text-sm font-semibold text-cyan-200 border border-cyan-500/20"
+                        whileHover={{ scale: 1.05, backgroundColor: 'rgba(6, 182, 212, 0.2)' }}
+                        animate={{ y: [0, -3, 0] }}
+                        transition={{ duration: 3, repeat: Infinity, delay: i * 0.2 }}
+                      >
+                        {tag}
+                      </motion.span>
+                    ))}
+                  </motion.div>
+                </motion.div>
+              </div>
+            </div>
+          </motion.div>
+        </Container>
+      </Section>
+
       {/* Bottom CTA Section */}
       <motion.div
         className="mt-24 md:mt-32 text-center relative z-10"
@@ -662,4 +2289,18 @@ function getPhoneGradient(variant) {
     rose: 'from-rose-400 to-pink-600',
   };
   return gradients[variant] || gradients.blue;
+}
+
+function getContentGradient(variant) {
+  const gradients = {
+    orange: 'from-orange-500 via-amber-500 to-yellow-500',
+    cyan: 'from-cyan-400 via-teal-500 to-emerald-500',
+    emerald: 'from-emerald-400 via-green-500 to-teal-500',
+    slate: 'from-slate-500 via-gray-600 to-zinc-700',
+    violet: 'from-violet-500 via-purple-600 to-fuchsia-600',
+    rose: 'from-rose-400 via-pink-500 to-red-500',
+    blue: 'from-blue-400 via-indigo-500 to-violet-500',
+    pink: 'from-pink-400 via-rose-400 to-red-400',
+  };
+  return gradients[variant] || gradients.cyan;
 }

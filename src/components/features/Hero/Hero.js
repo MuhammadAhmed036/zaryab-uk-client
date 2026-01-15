@@ -131,7 +131,7 @@ const Hero = () => {
 
               {/* CTA Buttons */}
               <div className="flex flex-wrap gap-2 sm:gap-4 justify-center lg:justify-start items-center">
-                <a href="#services">
+                <a href="/services">
                   <Button variant="gradient" size="sm" className="text-xs sm:text-sm px-4 sm:px-6 !py-2 sm:!py-2.5">
                     Our Services
                   </Button>

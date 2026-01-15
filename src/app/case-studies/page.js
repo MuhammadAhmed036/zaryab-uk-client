@@ -56,7 +56,7 @@ const caseStudyCards = [
     id: 1,
     title: '+44',
     subtitle: 'HUGO',
-    logo: '/images/case-studies/logos/+44 - Hugo.jpg',
+    logo: '/images/case-studies/logos/%2B44%20-%20Hugo.jpg',
     cardBg: 'bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900',
     accentGradient: 'from-emerald-400 via-cyan-400 to-blue-500',
     accentColor: 'text-emerald-400',

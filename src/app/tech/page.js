@@ -61,10 +61,10 @@ export default function TechPage() {
             initial="initial"
             whileInView="animate"
             viewport={{ once: true }}
-            className="grid lg:grid-cols-2 gap-12 items-center"
+            className="grid lg:grid-cols-5 gap-12 items-center"
           >
             {/* Content - Left Side */}
-            <motion.div variants={fadeInUp}>
+            <motion.div variants={fadeInUp} className="lg:col-span-2">
               <Heading size="xl" className="mb-6" animate={false}>
                 Internal Database of 10,000+ creators updated every single day.
               </Heading>
@@ -77,7 +77,7 @@ export default function TechPage() {
             </motion.div>
 
             {/* Video - Right Side */}
-            <motion.div variants={fadeInUp}>
+            <motion.div variants={fadeInUp} className="lg:col-span-3">
               <div className="relative aspect-video rounded-2xl overflow-hidden shadow-xl">
                 <iframe
                   src="https://player.vimeo.com/video/1154403206?quality=1080p&autoplay=1&muted=1&loop=1&background=1"
@@ -110,10 +110,10 @@ export default function TechPage() {
             initial="initial"
             whileInView="animate"
             viewport={{ once: true }}
-            className="grid lg:grid-cols-2 gap-12 items-center"
+            className="grid lg:grid-cols-5 gap-12 items-center"
           >
             {/* Video - Left Side */}
-            <motion.div variants={fadeInUp}>
+            <motion.div variants={fadeInUp} className="lg:col-span-3">
               <div className="relative aspect-video rounded-2xl overflow-hidden shadow-xl">
                 <iframe
                   src="https://player.vimeo.com/video/1154405421?quality=1080p&autoplay=1&muted=1&loop=1&background=1"
@@ -128,7 +128,7 @@ export default function TechPage() {
             </motion.div>
 
             {/* Content - Right Side */}
-            <motion.div variants={fadeInUp}>
+            <motion.div variants={fadeInUp} className="lg:col-span-2">
               <Heading size="xl" className="mb-6" animate={false}>
                 We are able to scrape creators under hashtags or sound ids at scale.
               </Heading>
@@ -159,10 +159,10 @@ export default function TechPage() {
             initial="initial"
             whileInView="animate"
             viewport={{ once: true }}
-            className="grid lg:grid-cols-2 gap-12 items-center"
+            className="grid lg:grid-cols-5 gap-12 items-center"
           >
             {/* Content - Left Side */}
-            <motion.div variants={fadeInUp}>
+            <motion.div variants={fadeInUp} className="lg:col-span-2">
               <Heading size="xl" className="mb-6" animate={false}>
                 Automated Influencers Outreach
               </Heading>
@@ -175,7 +175,7 @@ export default function TechPage() {
             </motion.div>
 
             {/* Video - Right Side */}
-            <motion.div variants={fadeInUp}>
+            <motion.div variants={fadeInUp} className="lg:col-span-3">
               <div className="relative aspect-video rounded-2xl overflow-hidden shadow-xl">
                 <iframe
                   src="https://player.vimeo.com/video/1154406369?quality=1080p&autoplay=1&muted=1&loop=1&background=1"

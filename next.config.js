@@ -9,6 +9,10 @@ const nextConfig = {
   experimental: {
     scrollRestoration: true,
   },
+  // Disable ESLint warnings for img elements
+  eslint: {
+    ignoreDuringBuilds: false,
+  },
 };
 
 module.exports = nextConfig;

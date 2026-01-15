@@ -27,8 +27,8 @@ export const metadata = {
   keywords: ['music marketing', 'Gen Z', 'TikTok marketing', 'influencer marketing', 'social media agency', 'music industry'],
   authors: [{ name: 'Soundwave Media' }],
   openGraph: {
-    title: 'Soundwave Media | Gen Z Music Marketing Agency',
-    description: 'A Gen Z focused music marketing agency creating viral campaigns for artists worldwide.',
+    title: 'Music Label | Music Marketing Agency',
+    description: 'Music Label | Music Marketing Agency',
     type: 'website',
     locale: 'en_US',
     siteName: 'Soundwave Media',

@@ -102,7 +102,7 @@ const Hero = () => {
               <div className="mb-2 sm:mb-3">
                 <span className="inline-flex items-center gap-1.5 sm:gap-2 px-2.5 sm:px-4 py-1.5 sm:py-2 rounded-full bg-gradient-to-r from-blue-500/10 to-accent-cyan/10 border border-blue-500/20 text-dark-700 text-[10px] xs:text-xs sm:text-sm font-medium">
                   <span className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-blue-500 rounded-full animate-pulse" />
-                  London or Toronto
+                  London / Toronto
                 </span>
               </div>
 

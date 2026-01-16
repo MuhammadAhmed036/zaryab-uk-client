@@ -17,7 +17,7 @@ const brandsRow1 = [
 const brandsRow2 = [
   { name: 'Isakai Records', logo: '/images/client logos/Isakai records.avif' },
   { name: 'QIA', logo: '/images/client logos/QIA logo.jpg' },
-  { name: 'Robots + Humans', logo: '/images/client logos/Robots + Humans logo.jpg' },
+  { name: 'Robots + Humans', logo: '/images/client logos/Robots-Humans-logo.jpg' },
   { name: 'SoundOn', logo: '/images/client logos/soundon logo.webp' },
   { name: 'The Other Songs', logo: '/images/client logos/The Other Songs logo.png' },
 ];

@@ -55,6 +55,13 @@ const teamMembers = [
     image: '/images/7. Maheen (Marketing Executive).png',
   },
   {
+    name: 'Ashlyin',
+    role: 'Content Director',
+    bio: '',
+    color: 'lime',
+    image: '/images/Ashlyin (Content Director).jpg',
+  },
+  {
     name: 'Maheer Tahir',
     role: 'Data Analyst',
     bio: '',
@@ -80,7 +87,7 @@ const teamMembers = [
     role: 'Marketing Executive',
     bio: '',
     color: 'magenta',
-    image: '/images/10. Tanzeela (Marketing Executive).png',
+    image: '/images/Tanzeela (Marketing Executive).png',
   },
   {
     name: 'Adithya',

@@ -3,7 +3,67 @@
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { Section, Container, Heading, Text } from '@/components/ui';
 import { staggerContainer, fadeInUp, fadeInLeft, fadeInRight } from '@/lib/animations';
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect, useCallback } from 'react';
+
+// Optimized Lazy Video Component with IntersectionObserver
+const LazyVideo = ({ videoUrl, className, style }) => {
+  const [isInView, setIsInView] = useState(false);
+  const [shouldLoad, setShouldLoad] = useState(false);
+  const videoRef = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setIsInView(true);
+            // Delay actual loading slightly for better performance
+            setTimeout(() => setShouldLoad(true), 100);
+          }
+        });
+      },
+      {
+        rootMargin: '50px', // Start loading slightly before entering viewport
+        threshold: 0.1
+      }
+    );
+
+    if (videoRef.current) {
+      observer.observe(videoRef.current);
+    }
+
+    return () => {
+      if (videoRef.current) {
+        observer.unobserve(videoRef.current);
+      }
+    };
+  }, []);
+
+  return (
+    <div ref={videoRef} className={className} style={style}>
+      {shouldLoad ? (
+        <iframe
+          src={videoUrl}
+          className="absolute inset-0 w-full h-full object-cover"
+          frameBorder="0"
+          allow="autoplay; fullscreen; picture-in-picture"
+          loading="lazy"
+          style={{ pointerEvents: 'none' }}
+        />
+      ) : (
+        <div className="absolute inset-0 flex items-center justify-center bg-slate-900/80">
+          <motion.div
+            className="w-10 h-10 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center"
+            animate={{ scale: [1, 1.15, 1] }}
+            transition={{ duration: 2, repeat: Infinity }}
+          >
+            <div className="w-0 h-0 border-l-[10px] border-l-white border-t-[6px] border-t-transparent border-b-[6px] border-b-transparent ml-1" />
+          </motion.div>
+        </div>
+      )}
+    </div>
+  );
+};
 
 const phoneVariants = {
   hidden: { opacity: 0, y: 30, scale: 0.9 },
@@ -68,8 +128,8 @@ const caseStudyCards = [
     ],
     description: 'We were able to produce over 500 football edits within a 3 week period generating 300M+ views and a lot of organic recreations within the football niche. We started the content production at less than 300 video creations.',
     phones: [
-      { type: 'FOOTBALL EDITS', variant: 'emerald', videoUrl: 'https://player.vimeo.com/video/1154665843?title=0&byline=0&portrait=0&badge=0&autoplay=1&muted=1&loop=1&background=1&autopause=0&player_id=0&app_id=58479' },
-      { type: 'LUXURY / MONEY EDITS', variant: 'blue', videoUrl: 'https://player.vimeo.com/video/1154666418?title=0&byline=0&portrait=0&badge=0&autoplay=1&muted=1&loop=1&background=1&autopause=0&player_id=0&app_id=58479' }
+      { type: 'FOOTBALL EDITS', variant: 'emerald', videoUrl: 'https://player.vimeo.com/video/1154665843?title=0&byline=0&portrait=0&badge=0&autoplay=1&muted=1&loop=1&background=1&autopause=0&player_id=0&app_id=58479', tiktokUrl: 'https://www.tiktok.com/@alxxvfx0/video/7516265640336952607?is_from_webapp=1&sender_device=pc&web_id=7551832417540556310' },
+      { type: 'LUXURY / MONEY EDITS', variant: 'blue', videoUrl: 'https://player.vimeo.com/video/1154666418?title=0&byline=0&portrait=0&badge=0&autoplay=1&muted=1&loop=1&background=1&autopause=0&player_id=0&app_id=58479', tiktokUrl: 'https://www.tiktok.com/@8eatrizfitas/video/7512541678587104534?is_from_webapp=1&sender_device=pc&web_id=7551832417540556310' }
     ]
   },
   {
@@ -88,10 +148,53 @@ const caseStudyCards = [
     ],
     description: 'We developed content strategy for a debut song by an artist from scratch resulting in over 8K video recreations and over 1M streams. Growing his monthly listeners from 300 to 30K+ within a month.',
     phones: [
-      { type: 'INFLUENCER TRENDY', variant: 'cyan', videoUrl: 'https://player.vimeo.com/video/1154672634?title=0&byline=0&portrait=0&badge=0&autoplay=1&muted=1&loop=1&background=1&autopause=0&player_id=0&app_id=58479' },
-      { type: 'AI CONTENT', variant: 'violet', imageUrl: '/images/case-studies/logos/ssstik.io_1768472924865.webp' },
-      { type: 'FOOTBALL EDITS', variant: 'emerald', videoUrl: 'https://player.vimeo.com/video/1154673899?title=0&byline=0&portrait=0&badge=0&autoplay=1&muted=1&loop=1&background=1&autopause=0&player_id=0&app_id=58479' },
-      { type: 'MOVIE EDITS', variant: 'rose', videoUrl: 'https://player.vimeo.com/video/1154673939?title=0&byline=0&portrait=0&badge=0&autoplay=1&muted=1&loop=1&background=1&autopause=0&player_id=0&app_id=58479' }
+      { type: 'INFLUENCER TRENDY', variant: 'cyan', videoUrl: 'https://player.vimeo.com/video/1154672634?title=0&byline=0&portrait=0&badge=0&autoplay=1&muted=1&loop=1&background=1&autopause=0&player_id=0&app_id=58479', tiktokUrl: 'https://www.tiktok.com/@st_rayyn/video/7502498211114847510?is_from_webapp=1&sender_device=pc' },
+      { type: 'AI CONTENT', variant: 'violet', imageUrl: '/images/case-studies/logos/ssstik.io_1768472924865.webp', tiktokUrl: 'https://www.tiktok.com/@777luxrich/photo/7502114116564290822?is_from_webapp=1&sender_device=pc' },
+      { type: 'FOOTBALL EDITS', variant: 'emerald', videoUrl: 'https://player.vimeo.com/video/1154673899?title=0&byline=0&portrait=0&badge=0&autoplay=1&muted=1&loop=1&background=1&autopause=0&player_id=0&app_id=58479', tiktokUrl: 'https://www.tiktok.com/@aqurdz/video/7474352236265688342?is_from_webapp=1&sender_device=pc' },
+      { type: 'MOVIE EDITS', variant: 'rose', videoUrl: 'https://player.vimeo.com/video/1154673939?title=0&byline=0&portrait=0&badge=0&autoplay=1&muted=1&loop=1&background=1&autopause=0&player_id=0&app_id=58479', tiktokUrl: 'https://www.tiktok.com/@flamexfilms/video/7451672916648938774?is_from_webapp=1&sender_device=pc' }
+    ]
+  },
+  {
+    id: 3,
+    title: 'FU & UF',
+    subtitle: 'SKYNEWMAN',
+    logo: '/images/case-studies/logos/FU & UF - Skynewman.png',
+    cardBg: 'bg-gradient-to-br from-purple-900 via-fuchsia-900 to-pink-900',
+    accentGradient: 'from-fuchsia-400 via-pink-400 to-rose-500',
+    accentColor: 'text-fuchsia-400',
+    glowColor: 'shadow-fuchsia-500/20',
+    stats: [
+      { label: 'STREAMS', value: '12M' },
+      { label: 'VIDEOS', value: '5K+' },
+      { label: 'VIEWS', value: '100M+' }
+    ],
+    description: 'We were able to scale content across a wide range of niches such as quotes, anime edits, movie edits, and real life influencers, stacking up more than 5,000 UGC within 2 weeks and accumulating over 100M views.',
+    phones: [
+      { type: 'QUOTES', variant: 'fuchsia', videoUrl: 'https://player.vimeo.com/video/1155956874?autoplay=1&muted=1&loop=1&background=1&autopause=0&title=0&byline=0&portrait=0', tiktokUrl: 'https://www.tiktok.com/@inniz/video/7573741812511165727?is_from_webapp=1&sender_device=pc&web_id=7551832417540556310' },
+      { type: 'ANIME EDITS', variant: 'pink', videoUrl: 'https://player.vimeo.com/video/1155957951?autoplay=1&muted=1&loop=1&background=1&autopause=0&title=0&byline=0&portrait=0', tiktokUrl: 'https://www.tiktok.com/@hokage_sama86/video/7563635884935908664?is_from_webapp=1&sender_device=pc&web_id=7551832417540556310' },
+      { type: 'MOVIE EDITS', variant: 'rose', videoUrl: 'https://player.vimeo.com/video/1155958177?autoplay=1&muted=1&loop=1&background=1&autopause=0&title=0&byline=0&portrait=0', tiktokUrl: 'https://www.tiktok.com/@sxnddddd/video/7566650009534467350?is_from_webapp=1&sender_device=pc&web_id=7551832417540556310' },
+      { type: 'REAL LIFE INFLUENCERS', variant: 'violet', videoUrl: 'https://player.vimeo.com/video/1155958302?autoplay=1&muted=1&loop=1&background=1&autopause=0&title=0&byline=0&portrait=0', tiktokUrl: 'https://www.tiktok.com/@gutocesarmendes/video/7564220715273145608?is_from_webapp=1&sender_device=pc&web_id=7551832417540556310' }
+    ]
+  },
+  {
+    id: 4,
+    title: 'GO',
+    subtitle: 'KARRI & KEHLANI',
+    logo: '/images/case-studies/logos/Go - Karri & Kehlani.jpeg',
+    cardBg: 'bg-gradient-to-br from-orange-900 via-amber-900 to-yellow-900',
+    accentGradient: 'from-orange-400 via-amber-400 to-yellow-500',
+    accentColor: 'text-orange-400',
+    glowColor: 'shadow-orange-500/20',
+    stats: [
+      { label: 'STREAMS', value: '6M' },
+      { label: 'VIDEOS', value: '1000+' },
+      { label: 'VIEWS', value: '20M+' }
+    ],
+    description: 'We were able to scale content across a wide range of niches such as quotes, anime edits, movie edits, and real life influencers, stacking up more than 5,000 UGC within 2 weeks and accumulating over 100M views. We scaled this classic track mainly across the dance niche while also testing out meme and brainrot content.',
+    phones: [
+      { type: 'DANCE CONTENT', variant: 'orange', videoUrl: 'https://player.vimeo.com/video/1155964318?autoplay=1&muted=1&loop=1&background=1&autopause=0&title=0&byline=0&portrait=0', tiktokUrl: 'https://www.tiktok.com/@4iiii.8/video/7566206509495880978?is_from_webapp=1&sender_device=pc&web_id=7551832417540556310' },
+      { type: 'MEME CONTENT', variant: 'amber', videoUrl: 'https://player.vimeo.com/video/1155964454?autoplay=1&muted=1&loop=1&background=1&autopause=0&title=0&byline=0&portrait=0', tiktokUrl: 'https://www.tiktok.com/@jaydanotpinkettsmith/video/7558233786471714062?is_from_webapp=1&sender_device=pc&web_id=7551832417540556310' },
+      { type: 'BRAINROT CONTENT', variant: 'yellow', videoUrl: 'https://player.vimeo.com/video/1155964536?autoplay=1&muted=1&loop=1&background=1&autopause=0&title=0&byline=0&portrait=0', tiktokUrl: 'https://www.tiktok.com/@ratatadance8/video/7567412076843470102?is_from_webapp=1&sender_device=pc&web_id=7551832417540556310' }
     ]
   }
 ];
@@ -110,25 +213,29 @@ const contentAtScaleData = {
       title: 'UNEXPECTED EDITS TEMPLATE',
       subtitle: 'CAR EDITS',
       variant: 'orange',
-      videoUrl: 'https://player.vimeo.com/video/1154675480?title=0&byline=0&portrait=0&badge=0&autoplay=1&muted=1&loop=1&background=1&autopause=0&player_id=0&app_id=58479'
+      videoUrl: 'https://player.vimeo.com/video/1154675480?title=0&byline=0&portrait=0&badge=0&autoplay=1&muted=1&loop=1&background=1&autopause=0&player_id=0&app_id=58479',
+      tiktokUrl: 'https://www.tiktok.com/@hamdiaep/video/7469165677220269344?is_from_webapp=1&sender_device=pc'
     },
     {
       title: 'MEME DANCE VIDEOS',
       subtitle: 'MEME DANCE EDITS',
       variant: 'cyan',
-      videoUrl: 'https://player.vimeo.com/video/1154675586?title=0&byline=0&portrait=0&badge=0&autoplay=1&muted=1&loop=1&background=1&autopause=0&player_id=0&app_id=58479'
+      videoUrl: 'https://player.vimeo.com/video/1154675586?title=0&byline=0&portrait=0&badge=0&autoplay=1&muted=1&loop=1&background=1&autopause=0&player_id=0&app_id=58479',
+      tiktokUrl: 'https://www.tiktok.com/@r.boysz/video/7469156425533639968?is_from_webapp=1&sender_device=pc'
     },
     {
       title: 'FOOTBALL EDITS',
       subtitle: 'FOOTBALL EDITS',
       variant: 'emerald',
-      videoUrl: 'https://player.vimeo.com/video/1154675639?title=0&byline=0&portrait=0&badge=0&autoplay=1&muted=1&loop=1&background=1&autopause=0&player_id=0&app_id=58479'
+      videoUrl: 'https://player.vimeo.com/video/1154675639?title=0&byline=0&portrait=0&badge=0&autoplay=1&muted=1&loop=1&background=1&autopause=0&player_id=0&app_id=58479',
+      tiktokUrl: 'https://www.tiktok.com/@dkrfut/video/7461305683632196869?is_from_webapp=1&sender_device=pc&web_id=7551832417540556310'
     },
     {
       title: 'MOVIE/SERIES EDITS',
       subtitle: 'FOOTBALL EDITS',
       variant: 'slate',
-      videoUrl: 'https://player.vimeo.com/video/1154675694?title=0&byline=0&portrait=0&badge=0&autoplay=1&muted=1&loop=1&background=1&autopause=0&player_id=0&app_id=58479'
+      videoUrl: 'https://player.vimeo.com/video/1154675694?title=0&byline=0&portrait=0&badge=0&autoplay=1&muted=1&loop=1&background=1&autopause=0&player_id=0&app_id=58479',
+      tiktokUrl: 'https://www.tiktok.com/@hulk2003.s/video/7477583973762354437?is_from_webapp=1&sender_device=pc&web_id=7551832417540556310'
     }
   ],
   stats: [
@@ -149,13 +256,15 @@ const likeMeData = {
       title: 'FOOTBALL EDITS',
       subtitle: 'FOOTBALL EDITS',
       variant: 'emerald',
-      videoUrl: 'https://player.vimeo.com/video/1154677024?title=0&byline=0&portrait=0&badge=0&autoplay=1&muted=1&loop=1&background=1&autopause=0&player_id=0&app_id=58479'
+      videoUrl: 'https://player.vimeo.com/video/1154677024?title=0&byline=0&portrait=0&badge=0&autoplay=1&muted=1&loop=1&background=1&autopause=0&player_id=0&app_id=58479',
+      tiktokUrl: 'https://www.tiktok.com/@shh74t/video/7469870426416532758?is_from_webapp=1&sender_device=pc'
     },
     {
       title: 'INTERVIEW EDITS',
       subtitle: 'UNEXPECTED FOOTBALL EDITS',
       variant: 'cyan',
-      videoUrl: 'https://player.vimeo.com/video/1154677107?title=0&byline=0&portrait=0&badge=0&autoplay=1&muted=1&loop=1&background=1&autopause=0&player_id=0&app_id=58479'
+      videoUrl: 'https://player.vimeo.com/video/1154677107?title=0&byline=0&portrait=0&badge=0&autoplay=1&muted=1&loop=1&background=1&autopause=0&player_id=0&app_id=58479',
+      tiktokUrl: 'https://www.tiktok.com/@_.dja9/video/7458327066644122902?is_from_webapp=1&sender_device=pc&web_id=7551832417540556310'
     }
   ],
   stats: [
@@ -177,10 +286,10 @@ const coldData = {
     videos: '18.1k videos'
   },
   contentCategories: [
-    { title: 'MOVIE EDITS', variant: 'rose', videoUrl: 'https://player.vimeo.com/video/1154668617?title=0&byline=0&portrait=0&badge=0&autoplay=1&muted=1&loop=1&background=1&autopause=0&player_id=0&app_id=58479' },
-    { title: 'ANIME EDITS', variant: 'violet', videoUrl: 'https://player.vimeo.com/video/1154668822?title=0&byline=0&portrait=0&badge=0&autoplay=1&muted=1&loop=1&background=1&autopause=0&player_id=0&app_id=58479' },
-    { title: 'INFLUENCER CONTENT', variant: 'cyan', videoUrl: 'https://player.vimeo.com/video/1154669787?title=0&byline=0&portrait=0&badge=0&autoplay=1&muted=1&loop=1&background=1&autopause=0&player_id=0&app_id=58479' },
-    { title: 'LYRICAL CONTENT', variant: 'emerald', videoUrl: 'https://player.vimeo.com/video/1154669717?title=0&byline=0&portrait=0&badge=0&autoplay=1&muted=1&loop=1&background=1&autopause=0&player_id=0&app_id=58479' }
+    { title: 'MOVIE EDITS', variant: 'rose', videoUrl: 'https://player.vimeo.com/video/1154668617?title=0&byline=0&portrait=0&badge=0&autoplay=1&muted=1&loop=1&background=1&autopause=0&player_id=0&app_id=58479', tiktokUrl: 'https://www.tiktok.com/@nylanbaee/video/7557056773069262136' },
+    { title: 'ANIME EDITS', variant: 'violet', videoUrl: 'https://player.vimeo.com/video/1154668822?title=0&byline=0&portrait=0&badge=0&autoplay=1&muted=1&loop=1&background=1&autopause=0&player_id=0&app_id=58479', tiktokUrl: 'https://www.tiktok.com/@w.kman_/video/7557349240687660296' },
+    { title: 'INFLUENCER CONTENT', variant: 'cyan', videoUrl: 'https://player.vimeo.com/video/1154669787?title=0&byline=0&portrait=0&badge=0&autoplay=1&muted=1&loop=1&background=1&autopause=0&player_id=0&app_id=58479', tiktokUrl: 'https://www.tiktok.com/@just.lyricssx/video/7564123664082423062' },
+    { title: 'LYRICAL CONTENT', variant: 'emerald', videoUrl: 'https://player.vimeo.com/video/1154669717?title=0&byline=0&portrait=0&badge=0&autoplay=1&muted=1&loop=1&background=1&autopause=0&player_id=0&app_id=58479', tiktokUrl: 'https://www.tiktok.com/@ksmalicsi/video/7559947031939255553?is_from_webapp=1&sender_device=pc' }
   ],
   stats: [
     { label: 'SREAMS', value: '8M' },
@@ -202,10 +311,10 @@ const tenYearsData = {
     hasAddToMusic: true
   },
   contentCategories: [
-    { title: 'MOVIE EDITS', variant: 'rose', videoUrl: 'https://player.vimeo.com/video/1154682303?title=0&byline=0&portrait=0&badge=0&?autoplay=1&muted=1&loop=1&background=1&autopause=0&player_id=0&app_id=58479' },
-    { title: 'KDRAMA EDITS', variant: 'violet', videoUrl: 'https://player.vimeo.com/video/1154682349?title=0&byline=0&portrait=0&badge=0&?autoplay=1&muted=1&loop=1&background=1&autopause=0&player_id=0&app_id=58479' },
-    { title: 'ROMANTIC QUOTES', variant: 'pink', videoUrl: 'https://player.vimeo.com/video/1154682412?title=0&byline=0&portrait=0&badge=0&?autoplay=1&muted=1&loop=1&background=1&autopause=0&player_id=0&app_id=58479' },
-    { title: 'INFLUENCER CONTENT', variant: 'cyan', videoUrl: 'https://player.vimeo.com/video/1154682591?title=0&byline=0&portrait=0&badge=0&?autoplay=1&muted=1&loop=1&background=1&autopause=0&player_id=0&app_id=58479' }
+    { title: 'MOVIE EDITS', variant: 'rose', videoUrl: 'https://player.vimeo.com/video/1154682303?title=0&byline=0&portrait=0&badge=0&?autoplay=1&muted=1&loop=1&background=1&autopause=0&player_id=0&app_id=58479', tiktokUrl: 'https://www.tiktok.com/@parkerius.ae/video/7575542660929195286?is_from_webapp=1&sender_device=pc' },
+    { title: 'KDRAMA EDITS', variant: 'violet', videoUrl: 'https://player.vimeo.com/video/1154682349?title=0&byline=0&portrait=0&badge=0&?autoplay=1&muted=1&loop=1&background=1&autopause=0&player_id=0&app_id=58479', tiktokUrl: 'https://www.tiktok.com/@kitcsh/video/7570676890160319762?is_from_webapp=1&sender_device=pc' },
+    { title: 'ROMANTIC QUOTES', variant: 'pink', videoUrl: 'https://player.vimeo.com/video/1154682412?title=0&byline=0&portrait=0&badge=0&?autoplay=1&muted=1&loop=1&background=1&autopause=0&player_id=0&app_id=58479', tiktokUrl: 'https://www.tiktok.com/@inniz/video/7565645520169930015?is_from_webapp=1&sender_device=pc' },
+    { title: 'INFLUENCER CONTENT', variant: 'cyan', videoUrl: 'https://player.vimeo.com/video/1154682591?title=0&byline=0&portrait=0&badge=0&?autoplay=1&muted=1&loop=1&background=1&autopause=0&player_id=0&app_id=58479', tiktokUrl: 'https://www.tiktok.com/@addriianaa.sr/video/7570143633383509270' }
   ],
   stats: [
     { label: 'SREAMS', value: '3M' },
@@ -227,10 +336,10 @@ const wildfireData = {
     hasAddToMusic: true
   },
   contentCategories: [
-    { title: 'MOVIE EDITS', variant: 'rose', videoUrl: 'https://player.vimeo.com/video/1154684553?title=0&byline=0&portrait=0&badge=0&?autoplay=1&muted=1&loop=1&background=1&autopause=0&player_id=0&app_id=58479' },
-    { title: 'ANIME EDITS', variant: 'violet', videoUrl: 'https://player.vimeo.com/video/1154686102?title=0&byline=0&portrait=0&badge=0&?autoplay=1&muted=1&loop=1&background=1&autopause=0&player_id=0&app_id=58479' },
-    { title: 'FOOTBALL EDITS', variant: 'emerald', videoUrl: 'https://player.vimeo.com/video/1154688182?title=0&byline=0&portrait=0&badge=0&?autoplay=1&muted=1&loop=1&background=1&autopause=0&player_id=0&app_id=58479' },
-    { title: 'INFLUENCER CONTENT', variant: 'cyan', videoUrl: 'https://player.vimeo.com/video/1154684750?title=0&byline=0&portrait=0&badge=0&?autoplay=1&muted=1&loop=1&background=1&autopause=0&player_id=0&app_id=58479' }
+    { title: 'MOVIE EDITS', variant: 'rose', videoUrl: 'https://player.vimeo.com/video/1154684553?title=0&byline=0&portrait=0&badge=0&?autoplay=1&muted=1&loop=1&background=1&autopause=0&player_id=0&app_id=58479', tiktokUrl: 'https://www.tiktok.com/@onxlychoi/video/7573794634648898838' },
+    { title: 'ANIME EDITS', variant: 'violet', videoUrl: 'https://player.vimeo.com/video/1154686102?title=0&byline=0&portrait=0&badge=0&?autoplay=1&muted=1&loop=1&background=1&autopause=0&player_id=0&app_id=58479', tiktokUrl: 'https://www.tiktok.com/@nelyrall/video/7571913211243515147' },
+    { title: 'FOOTBALL EDITS', variant: 'emerald', videoUrl: 'https://player.vimeo.com/video/1154688182?title=0&byline=0&portrait=0&badge=0&?autoplay=1&muted=1&loop=1&background=1&autopause=0&player_id=0&app_id=58479', tiktokUrl: 'https://www.tiktok.com/@kairo.tm/video/7571907919613119766' },
+    { title: 'INFLUENCER CONTENT', variant: 'cyan', videoUrl: 'https://player.vimeo.com/video/1154684750?title=0&byline=0&portrait=0&badge=0&?autoplay=1&muted=1&loop=1&background=1&autopause=0&player_id=0&app_id=58479', tiktokUrl: 'https://www.tiktok.com/@asyokka1/video/7570779752001244427?is_from_webapp=1&sender_device=pc' }
   ],
   stats: [
     { label: 'SREAMS', value: '5M' },
@@ -246,9 +355,10 @@ const watchinData = {
   artist: 'NICHOLAS CREUS',
   logo: '/images/case-studies/logos/Watchin - Nicholas Creus.png',
   contentCategories: [
-    { title: 'AESTHETIC CONTENT', variant: 'slate' },
-    { title: 'SCENEIC CONTENT', variant: 'cyan' },
-    { title: 'MOVIE/SERIES EDITS', variant: 'violet' }
+    { title: 'INFLUENCER SCENIC CONTENT', variant: 'slate', videoUrl: 'https://player.vimeo.com/video/1155978565?autoplay=1&muted=1&loop=1&background=1&autopause=0&title=0&byline=0&portrait=0', tiktokUrl: 'https://www.tiktok.com/@robynsadventures/video/7570553637445897490?is_from_webapp=1&sender_device=pc&web_id=7551832417540556310' },
+    { title: 'AESTHETIC CONTENT', variant: 'cyan', videoUrl: 'https://player.vimeo.com/video/1155978783?autoplay=1&muted=1&loop=1&background=1&autopause=0&title=0&byline=0&portrait=0', tiktokUrl: 'https://www.tiktok.com/@xtinieee_/video/7559548150105607432?is_from_webapp=1&sender_device=pc&web_id=7551832417540556310' },
+    { title: 'HOPECORE MOVIE EDITS', variant: 'violet', videoUrl: 'https://player.vimeo.com/video/1155978866?autoplay=1&muted=1&loop=1&background=1&autopause=0&title=0&byline=0&portrait=0', tiktokUrl: 'https://www.tiktok.com/@thecinecouplee/video/7565608138884549896?is_from_webapp=1&sender_device=pc&web_id=7551832417540556310' },
+    { title: 'QUOTES', variant: 'rose', videoUrl: 'https://player.vimeo.com/video/1155978933?autoplay=1&muted=1&loop=1&background=1&autopause=0&title=0&byline=0&portrait=0', tiktokUrl: 'https://www.tiktok.com/@thesurrealseeker/video/7567210354946706718?is_from_webapp=1&sender_device=pc&web_id=7551832417540556310' }
   ],
   stats: [
     { label: 'SREAMS', value: '2.2M' },
@@ -463,7 +573,7 @@ export default function CaseStudiesPage() {
                         <img 
                           src={study.logo} 
                           alt={`${study.title} logo`}
-                          className="h-16 md:h-20 w-auto object-contain"
+                          className="h-32 md:h-40 lg:h-48 w-auto object-contain"
                         />
                       </motion.div>
                     )}
@@ -553,14 +663,8 @@ export default function CaseStudiesPage() {
                     className={`grid ${study.phones.length === 2 ? 'grid-cols-2' : 'grid-cols-2'} gap-6`}
                     variants={staggerContainer}
                   >
-                    {study.phones.map((video, videoIndex) => (
-                      <motion.div
-                        key={videoIndex}
-                        custom={videoIndex}
-                        variants={phoneVariants}
-                        whileHover="hover"
-                        className="group/video"
-                      >
+                    {study.phones.map((video, videoIndex) => {
+                      const PhoneContent = (
                         <motion.div className="relative">
                           {/* Phone Glow Effect */}
                           <motion.div
@@ -574,80 +678,10 @@ export default function CaseStudiesPage() {
                               
                               {/* Embedded Vimeo Video */}
                               {video.videoUrl ? (
-                                <div className="absolute inset-0 rounded-[1.5rem] overflow-hidden">
-                                  <iframe
-                                    src={video.videoUrl}
-                                    className="w-full h-full object-cover"
-                                    frameBorder="0"
-                                    allow="autoplay; fullscreen; picture-in-picture"
-                                    allowFullScreen
-                                    title={`${video.type} Video`}
-                                  />
-                                  
-                                  {/* Video Overlay UI */}
-                                  <div className="absolute inset-0 pointer-events-none">
-                                    {/* Live Indicator */}
-                                    <motion.div
-                                      className="absolute top-4 right-4 flex items-center gap-1.5 bg-black/70 backdrop-blur-sm px-2.5 py-1 rounded-full"
-                                      animate={{ opacity: [1, 0.8, 1] }}
-                                      transition={{ duration: 2, repeat: Infinity }}
-                                    >
-                                      <motion.div
-                                        className="w-2 h-2 bg-red-500 rounded-full"
-                                        animate={{ scale: [1, 1.3, 1] }}
-                                        transition={{ duration: 1, repeat: Infinity }}
-                                      />
-                                      <span className="text-[10px] font-bold text-white">LIVE</span>
-                                    </motion.div>
-
-                                    {/* TikTok-style side icons */}
-                                    <div className="absolute right-3 bottom-20 flex flex-col gap-3">
-                                      {[
-                                        { icon: '❤️', count: '2.5K' },
-                                        { icon: '💬', count: '345' },
-                                        { icon: '↗️', count: '1.2K' }
-                                      ].map((item, i) => (
-                                        <motion.div
-                                          key={i}
-                                          className="flex flex-col items-center"
-                                          animate={{ scale: [1, 1.1, 1] }}
-                                          transition={{ duration: 3, repeat: Infinity, delay: i * 0.4 }}
-                                        >
-                                          <div className="w-9 h-9 bg-white/15 backdrop-blur-sm rounded-full flex items-center justify-center text-sm shadow-lg">
-                                            {item.icon}
-                                          </div>
-                                          <span className="text-[8px] text-white/90 font-bold mt-1">{item.count}</span>
-                                        </motion.div>
-                                      ))}
-                                    </div>
-
-                                    {/* Progress Bar */}
-                                    <div className="absolute bottom-4 left-4 right-4">
-                                      <div className="h-1 bg-white/30 rounded-full overflow-hidden backdrop-blur-sm">
-                                        <motion.div
-                                          className="h-full bg-white rounded-full"
-                                          animate={{ width: ['0%', '100%', '0%'] }}
-                                          transition={{ duration: 15, repeat: Infinity }}
-                                        />
-                                      </div>
-                                    </div>
-
-                                    {/* Video Title Overlay */}
-                                    <div className="absolute bottom-12 left-4 right-16">
-                                      <motion.div
-                                        initial={{ opacity: 0, y: 10 }}
-                                        animate={{ opacity: 1, y: 0 }}
-                                        className="text-white"
-                                      >
-                                        <div className="text-[10px] font-bold mb-1">@football_edits</div>
-                                        <div className="text-[9px] opacity-90 line-clamp-2">
-                                          Amazing football skills compilation 🔥 
-                                          #football #skills #viral
-                                        </div>
-                                      </motion.div>
-                                    </div>
-                                  </div>
-                                </div>
+                                <LazyVideo
+                                  videoUrl={video.videoUrl}
+                                  className="absolute inset-0 rounded-[1.5rem] overflow-hidden"
+                                />
                               ) : video.imageUrl ? (
                                 /* Static Image Content */
                                 <div className="absolute inset-0 rounded-[1.5rem] overflow-hidden">
@@ -769,6 +803,23 @@ export default function CaseStudiesPage() {
                             <div className="absolute top-4 left-1/2 -translate-x-1/2 w-20 h-6 bg-black rounded-full" />
                           </div>
                         </motion.div>
+                      );
+
+                      return (
+                        <motion.div
+                          key={videoIndex}
+                          custom={videoIndex}
+                          variants={phoneVariants}
+                          whileHover="hover"
+                          className="group/video"
+                        >
+                          {video.tiktokUrl ? (
+                            <a href={video.tiktokUrl} target="_blank" rel="noopener noreferrer" className="block">
+                              {PhoneContent}
+                            </a>
+                          ) : (
+                            PhoneContent
+                          )}
                         
                         {/* Video Label */}
                         <motion.div
@@ -776,7 +827,16 @@ export default function CaseStudiesPage() {
                           animate={hoveredCard === study.id ? { y: [0, -3, 0] } : {}}
                           transition={{ duration: 2, repeat: Infinity, delay: videoIndex * 0.2 }}
                         >
-                          {video.videoUrl ? (
+                          {video.tiktokUrl ? (
+                            <a 
+                              href={video.tiktokUrl} 
+                              target="_blank" 
+                              rel="noopener noreferrer"
+                              className="text-xs text-white/50 hover:text-white/80 underline underline-offset-2 transition-colors"
+                            >
+                              View on TikTok
+                            </a>
+                          ) : video.videoUrl ? (
                             <a 
                               href={video.videoUrl.replace('player.vimeo.com/video/', 'vimeo.com/')} 
                               target="_blank" 
@@ -791,7 +851,8 @@ export default function CaseStudiesPage() {
                           <div className="text-sm font-bold text-white/90 mt-1">{video.type}</div>
                         </motion.div>
                       </motion.div>
-                    ))}
+                      );
+                    })}
                   </motion.div>
                 </motion.div>
               </div>
@@ -892,8 +953,11 @@ export default function CaseStudiesPage() {
                       </motion.div>
 
                       {/* Phone Mockup */}
-                      <motion.div
-                        className="relative group cursor-pointer"
+                      <motion.a
+                        href={content.tiktokUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="relative group cursor-pointer block"
                         whileHover={{ scale: 1.08, y: -12 }}
                         transition={{ duration: 0.3 }}
                       >
@@ -908,15 +972,10 @@ export default function CaseStudiesPage() {
                             
                             {/* Video or Content Preview */}
                             {content.videoUrl ? (
-                              <div className="absolute inset-0 rounded-[1.4rem] overflow-hidden">
-                                <iframe
-                                  src={content.videoUrl}
-                                  className="w-full h-full object-cover"
-                                  frameBorder="0"
-                                  allow="autoplay; fullscreen; picture-in-picture"
-                                  allowFullScreen
-                                  title={`${content.subtitle} Video`}
-                                />
+                              <>\n                              <LazyVideo
+                                videoUrl={content.videoUrl}
+                                className="absolute inset-0 rounded-[1.4rem] overflow-hidden"
+                              />
                                 
                                 {/* Mini Video Overlay UI */}
                                 <div className="absolute inset-0 pointer-events-none">
@@ -945,7 +1004,7 @@ export default function CaseStudiesPage() {
                                     </div>
                                   </div>
                                 </div>
-                              </div>
+                              </>
                             ) : (
                               /* Fallback Content Preview */
                               <div className="absolute inset-0 flex items-center justify-center bg-black/40">
@@ -988,7 +1047,7 @@ export default function CaseStudiesPage() {
                           {/* Phone Notch */}
                           <div className="absolute top-2 left-1/2 -translate-x-1/2 w-10 h-3 bg-black rounded-full" />
                         </div>
-                      </motion.div>
+                      </motion.a>
 
                       {/* Click Link & Subtitle */}
                       <motion.a
@@ -1260,8 +1319,11 @@ export default function CaseStudiesPage() {
                         transition={{ duration: 0.6, delay: 0.4 + index * 0.15 }}
                       >
                         {/* Phone */}
-                        <motion.div
-                          className="relative group cursor-pointer"
+                        <motion.a
+                          href={content.tiktokUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="relative group cursor-pointer block"
                           whileHover={{ scale: 1.08, y: -12 }}
                           transition={{ duration: 0.3 }}
                         >
@@ -1274,49 +1336,10 @@ export default function CaseStudiesPage() {
                               
                               {/* Video or TikTok-style UI Overlay */}
                               {content.videoUrl ? (
-                                <div className="absolute inset-0 rounded-[1.6rem] overflow-hidden">
-                                  <iframe
-                                    src={content.videoUrl}
-                                    className="w-full h-full object-cover"
-                                    frameBorder="0"
-                                    allow="autoplay; fullscreen; picture-in-picture"
-                                    allowFullScreen
-                                    title={`${content.subtitle} Video`}
-                                  />
-                                  
-                                  {/* Video Overlay UI */}
-                                  <div className="absolute inset-0 pointer-events-none">
-                                    {/* Right Side Icons */}
-                                    <div className="absolute right-2 bottom-20 flex flex-col gap-3">
-                                      {[
-                                        { icon: '❤️', count: '45.2K' },
-                                        { icon: '💬', count: '892' },
-                                        { icon: '↗️', count: '2.1K' }
-                                      ].map((item, i) => (
-                                        <motion.div
-                                          key={i}
-                                          className="flex flex-col items-center"
-                                          animate={{ scale: [1, 1.1, 1] }}
-                                          transition={{ duration: 2.5, repeat: Infinity, delay: i * 0.3 }}
-                                        >
-                                          <div className="w-8 h-8 bg-white/15 backdrop-blur-sm rounded-full flex items-center justify-center text-xs">
-                                            {item.icon}
-                                          </div>
-                                          <span className="text-[7px] text-white/80 font-bold mt-0.5">{item.count}</span>
-                                        </motion.div>
-                                      ))}
-                                    </div>
-
-                                    {/* Progress Bar */}
-                                    <div className="absolute bottom-0 left-0 right-0 h-1 bg-white/20">
-                                      <motion.div
-                                        className="h-full bg-white"
-                                        animate={{ width: ['0%', '100%', '0%'] }}
-                                        transition={{ duration: 8 + index * 2, repeat: Infinity }}
-                                      />
-                                    </div>
-                                  </div>
-                                </div>
+                                <LazyVideo
+                                  videoUrl={content.videoUrl}
+                                  className="absolute inset-0 rounded-[1.6rem] overflow-hidden"
+                                />
                               ) : (
                                 /* Fallback TikTok-style UI */
                                 <div className="absolute inset-0 bg-black/30">
@@ -1387,7 +1410,7 @@ export default function CaseStudiesPage() {
                             
                             <div className="absolute top-3 left-1/2 -translate-x-1/2 w-14 h-4 bg-black rounded-full" />
                           </div>
-                        </motion.div>
+                        </motion.a>
 
                         {/* Labels */}
                         <motion.a
@@ -1542,8 +1565,11 @@ export default function CaseStudiesPage() {
                         transition={{ duration: 0.6, delay: 0.5 + index * 0.1 }}
                       >
                         {/* Phone */}
-                        <motion.div
-                          className="relative group cursor-pointer"
+                        <motion.a
+                          href={cat.tiktokUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="relative group cursor-pointer block"
                           whileHover={{ scale: 1.08, y: -12 }}
                           transition={{ duration: 0.3 }}
                         >
@@ -1556,14 +1582,10 @@ export default function CaseStudiesPage() {
                               
                               {/* Video Content */}
                               {cat.videoUrl ? (
-                                <div className="absolute inset-0 rounded-[1.6rem] overflow-hidden">
-                                  <iframe
-                                    src={cat.videoUrl}
-                                    className="w-full h-full object-cover"
-                                    frameBorder="0"
-                                    allow="autoplay; fullscreen; picture-in-picture"
-                                    allowFullScreen
-                                    title={`${cat.title} Video`}
+                                <>
+                                  <LazyVideo
+                                    videoUrl={cat.videoUrl}
+                                    className="absolute inset-0 rounded-[1.6rem] overflow-hidden"
                                   />
                                   
                                   {/* Video Overlay UI */}
@@ -1593,7 +1615,7 @@ export default function CaseStudiesPage() {
                                       </div>
                                     </div>
                                   </div>
-                                </div>
+                                </>
                               ) : (
                                 /* Fallback */
                                 <div className="absolute inset-0 flex items-center justify-center bg-black/40">
@@ -1611,7 +1633,7 @@ export default function CaseStudiesPage() {
                             {/* Phone Notch */}
                             <div className="absolute top-2 left-1/2 -translate-x-1/2 w-10 h-3 bg-black rounded-full" />
                           </div>
-                        </motion.div>
+                        </motion.a>
 
                         {/* Category Label */}
                         <div className="text-[10px] md:text-xs font-bold text-white/80 mt-3 uppercase tracking-wide text-center">
@@ -1828,8 +1850,11 @@ export default function CaseStudiesPage() {
                         transition={{ duration: 0.6, delay: 0.5 + index * 0.1 }}
                       >
                         {/* Phone */}
-                        <motion.div
-                          className="relative group cursor-pointer"
+                        <motion.a
+                          href={cat.tiktokUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="relative group cursor-pointer block"
                           whileHover={{ scale: 1.08, y: -12 }}
                           transition={{ duration: 0.3 }}
                         >
@@ -1842,14 +1867,10 @@ export default function CaseStudiesPage() {
                               
                               {/* Video Content */}
                               {cat.videoUrl ? (
-                                <div className="absolute inset-0 rounded-[1.6rem] overflow-hidden">
-                                  <iframe
-                                    src={cat.videoUrl}
-                                    className="w-full h-full object-cover"
-                                    frameBorder="0"
-                                    allow="autoplay; fullscreen; picture-in-picture"
-                                    allowFullScreen
-                                    title={`${cat.title} Video`}
+                                <>
+                                  <LazyVideo
+                                    videoUrl={cat.videoUrl}
+                                    className="absolute inset-0 rounded-[1.6rem] overflow-hidden"
                                   />
                                   
                                   {/* Video Overlay UI */}
@@ -1879,7 +1900,7 @@ export default function CaseStudiesPage() {
                                       </div>
                                     </div>
                                   </div>
-                                </div>
+                                </>
                               ) : (
                                 /* Fallback */
                                 <div className="absolute inset-0 flex items-center justify-center bg-black/40">
@@ -1897,7 +1918,7 @@ export default function CaseStudiesPage() {
                             {/* Phone Notch */}
                             <div className="absolute top-2 left-1/2 -translate-x-1/2 w-10 h-3 bg-black rounded-full" />
                           </div>
-                        </motion.div>
+                        </motion.a>
 
                         {/* Category Label */}
                         <div className="text-[10px] md:text-xs font-bold text-white/80 mt-3 uppercase tracking-wide text-center">
@@ -2116,8 +2137,11 @@ export default function CaseStudiesPage() {
                         transition={{ duration: 0.6, delay: 0.5 + index * 0.1 }}
                       >
                         {/* Phone */}
-                        <motion.div
-                          className="relative group cursor-pointer"
+                        <motion.a
+                          href={cat.tiktokUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="relative group cursor-pointer block"
                           whileHover={{ scale: 1.08, y: -12 }}
                           transition={{ duration: 0.3 }}
                         >
@@ -2130,14 +2154,10 @@ export default function CaseStudiesPage() {
                               
                               {/* Video Content */}
                               {cat.videoUrl ? (
-                                <div className="absolute inset-0 rounded-[1.6rem] overflow-hidden">
-                                  <iframe
-                                    src={cat.videoUrl}
-                                    className="w-full h-full object-cover"
-                                    frameBorder="0"
-                                    allow="autoplay; fullscreen; picture-in-picture"
-                                    allowFullScreen
-                                    title={`${cat.title} Video`}
+                                <>
+                                  <LazyVideo
+                                    videoUrl={cat.videoUrl}
+                                    className="absolute inset-0 rounded-[1.6rem] overflow-hidden"
                                   />
                                   
                                   {/* Video Overlay UI */}
@@ -2167,7 +2187,7 @@ export default function CaseStudiesPage() {
                                       </div>
                                     </div>
                                   </div>
-                                </div>
+                                </>
                               ) : (
                                 /* Fallback */
                                 <div className="absolute inset-0 flex items-center justify-center bg-black/40">
@@ -2185,7 +2205,7 @@ export default function CaseStudiesPage() {
                             {/* Phone Notch */}
                             <div className="absolute top-2 left-1/2 -translate-x-1/2 w-10 h-3 bg-black rounded-full" />
                           </div>
-                        </motion.div>
+                        </motion.a>
 
                         {/* Category Label */}
                         <div className="text-[10px] md:text-xs font-bold text-white/80 mt-3 uppercase tracking-wide text-center">
@@ -2378,29 +2398,10 @@ export default function CaseStudiesPage() {
                   viewport={{ once: true }}
                   transition={{ duration: 0.7, delay: 0.3 }}
                 >
-                  {/* Category Headers */}
-                  <div className="flex flex-wrap justify-center gap-8 md:gap-12">
-                    {watchinData.contentCategories.map((cat, idx) => (
-                      <motion.div
-                        key={idx}
-                        className="flex flex-col items-center"
-                        initial={{ opacity: 0, y: -20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        transition={{ delay: 0.4 + idx * 0.1 }}
-                      >
-                        <motion.span
-                          className={`text-base md:text-lg font-black tracking-wider uppercase bg-gradient-to-r ${getContentGradient(cat.variant)} bg-clip-text text-transparent`}
-                          whileHover={{ scale: 1.1 }}
-                        >
-                          {cat.title}
-                        </motion.span>
-                      </motion.div>
-                    ))}
-                  </div>
 
-                  {/* Phone Mockups - Videos to be added later */}
+                  {/* Phone Mockups with Videos */}
                   <div className="flex flex-wrap justify-center gap-6 mt-8">
-                    {[0, 1, 2, 3].map((index) => (
+                    {watchinData.contentCategories.map((cat, index) => (
                       <motion.div
                         key={index}
                         className="flex flex-col items-center"
@@ -2409,9 +2410,24 @@ export default function CaseStudiesPage() {
                         viewport={{ once: true }}
                         transition={{ duration: 0.6, delay: 0.5 + index * 0.1 }}
                       >
-                        {/* Phone */}
+                        {/* Category Title Above Phone */}
                         <motion.div
-                          className="relative group cursor-pointer"
+                          className="mb-3 text-center px-2"
+                          initial={{ opacity: 0, y: -10 }}
+                          whileInView={{ opacity: 1, y: 0 }}
+                          transition={{ delay: 0.6 + index * 0.1 }}
+                        >
+                          <span className={`text-[10px] md:text-xs font-black tracking-wider uppercase bg-gradient-to-r ${getContentGradient(cat.variant)} bg-clip-text text-transparent whitespace-nowrap`}>
+                            {cat.title}
+                          </span>
+                        </motion.div>
+
+                        {/* Phone */}
+                        <motion.a
+                          href={cat.tiktokUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="relative group cursor-pointer block"
                           whileHover={{ scale: 1.08, y: -12 }}
                           transition={{ duration: 0.3 }}
                         >
@@ -2422,24 +2438,21 @@ export default function CaseStudiesPage() {
                           <div className="relative bg-black rounded-[2rem] p-1.5 shadow-2xl border-2 border-slate-700 w-[100px] md:w-[130px]">
                             <div className="relative aspect-[9/16] bg-gradient-to-br from-slate-700 via-slate-800 to-slate-900 rounded-[1.6rem] overflow-hidden">
                               
-                              {/* Placeholder */}
-                              <div className="absolute inset-0 flex items-center justify-center bg-slate-900/80">
-                                <motion.div
-                                  className="w-10 h-10 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center"
-                                  animate={{ scale: [1, 1.15, 1] }}
-                                  transition={{ duration: 2, repeat: Infinity }}
-                                >
-                                  <div className="w-0 h-0 border-l-[10px] border-l-white border-t-[6px] border-t-transparent border-b-[6px] border-b-transparent ml-1" />
-                                </motion.div>
-                              </div>
+                              {/* Video */}
+                              {cat.videoUrl && (
+                                <LazyVideo
+                                  videoUrl={cat.videoUrl}
+                                  className="absolute inset-0 rounded-[1.4rem] overflow-hidden"
+                                />
+                              )}
                             </div>
                             
                             {/* Phone Notch */}
-                            <div className="absolute top-2 left-1/2 -translate-x-1/2 w-10 h-3 bg-black rounded-full" />
+                            <div className="absolute top-2 left-1/2 -translate-x-1/2 w-10 h-3 bg-black rounded-full z-10" />
                           </div>
-                        </motion.div>
+                        </motion.a>
 
-                        {/* Placeholder Label */}
+                        {/* Video Label Below Phone */}
                         <div className="text-[10px] md:text-xs font-bold text-white/50 mt-3 uppercase tracking-wide text-center">
                           Video {index + 1}
                         </div>

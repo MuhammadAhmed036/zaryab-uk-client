@@ -66,12 +66,12 @@ export default function TechPage() {
             {/* Content - Left Side */}
             <motion.div variants={fadeInUp} className="lg:col-span-2">
               <Heading size="xl" className="mb-6" animate={false}>
-                Internal Database of 10,000+ creators updated every single day.
+                Automated Influencers Outreach
               </Heading>
               <div className="space-y-4 text-dark-600">
                 <Text size="base" animate={false}>
-                  Our internal tool Z-engine allows us to track performance of 10,000+ creators which enables us to 
-                  collaborate with the best performing and cost efficient creators in our network
+                  Our internally built tool allows us to outreach creators at scale using automated bulk emails 
+                  and AI, and filter creators based on price, average views, and more.
                 </Text>
               </div>
             </motion.div>
@@ -130,12 +130,12 @@ export default function TechPage() {
             {/* Content - Right Side */}
             <motion.div variants={fadeInUp} className="lg:col-span-2">
               <Heading size="xl" className="mb-6" animate={false}>
-                We are able to scrape creators under hashtags or sound ids at scale.
+                Internal Database of 10,000+ creators updated every single day.
               </Heading>
               <div className="space-y-4 text-dark-600">
                 <Text size="base" animate={false}>
-                  Our tool enable us to scrape creators under sounds or hashtags/topics, and filter based off 
-                  average views performance across latest videos while automating outreach.
+                  Our internal tool Z-engine allows us to track performance of 10,000+ creators which enables us to 
+                  collaborate with the best performing and cost efficient creators in our network
                 </Text>
               </div>
             </motion.div>
@@ -164,12 +164,12 @@ export default function TechPage() {
             {/* Content - Left Side */}
             <motion.div variants={fadeInUp} className="lg:col-span-2">
               <Heading size="xl" className="mb-6" animate={false}>
-                Automated Influencers Outreach
+                We are able to scrape creators under hashtags or sound ids at scale.
               </Heading>
               <div className="space-y-4 text-dark-600">
                 <Text size="base" animate={false}>
-                  Our internally built tool allows us to outreach creators at scale using automated bulk emails 
-                  and AI, and filter creators based on price, average views, and more.
+                  Our tool enable us to scrape creators under sounds or hashtags/topics, and filter based off 
+                  average views performance across latest videos while automating outreach.
                 </Text>
               </div>
             </motion.div>

@@ -23,32 +23,38 @@ const MediaGrid = () => {
     { 
       id: 1, 
       src: 'https://player.vimeo.com/video/1154252112?autoplay=1&muted=1&loop=1&background=1&autopause=0&title=0&byline=0&portrait=0',
-      title: 'BRAINROT'
+      title: 'BRAINROT',
+      link: 'https://www.tiktok.com/@ratatadance8/video/7567038449996369174?is_from_webapp=1&sender_device=pc&web_id=7551832417540556310'
     },
     { 
       id: 2, 
       src: 'https://player.vimeo.com/video/1154252594?autoplay=1&muted=1&loop=1&background=1&autopause=0&title=0&byline=0&portrait=0',
-      title: 'DANCERS'
+      title: 'DANCERS',
+      link: 'https://www.tiktok.com/@nastuyshkakristmas/video/7549616560113978642?is_from_webapp=1&sender_device=pc&web_id=7551832417540556310'
     },
     { 
       id: 3, 
       src: 'https://player.vimeo.com/video/1154252893?autoplay=1&muted=1&loop=1&background=1&autopause=0&title=0&byline=0&portrait=0',
-      title: 'CAR EDITS'
+      title: 'CAR EDITS',
+      link: 'https://www.tiktok.com/@nitrovoltx/video/7533264161728449814?is_from_webapp=1&sender_device=pc&web_id=7551832417540556310'
     },
     { 
       id: 4, 
       src: 'https://player.vimeo.com/video/1154253346?autoplay=1&muted=1&loop=1&background=1&autopause=0&title=0&byline=0&portrait=0',
-      title: 'MOVIE EDITS'
+      title: 'MOVIE EDITS',
+      link: 'https://www.tiktok.com/@rshamrok/video/7587761386999024952?is_from_webapp=1&sender_device=pc&web_id=7551832417540556310'
     },
     { 
       id: 5, 
       src: 'https://player.vimeo.com/video/1154258411?autoplay=1&muted=1&loop=1&background=1&autopause=0&title=0&byline=0&portrait=0',
-      title: 'NICHE COMMUNITIES'
+      title: 'NICHE COMMUNITIES',
+      link: 'https://www.tiktok.com/@posterboyren/video/7583687210856189196?is_from_webapp=1&sender_device=pc&web_id=7551832417540556310'
     },
     { 
       id: 6, 
       src: 'https://player.vimeo.com/video/1154258826?autoplay=1&muted=1&loop=1&background=1&autopause=0&title=0&byline=0&portrait=0',
-      title: 'LIP-SYNC'
+      title: 'LIP-SYNC',
+      link: 'https://www.tiktok.com/@user561782009/video/7585555947440000278?is_from_webapp=1&sender_device=pc&web_id=7551832417540556310'
     },
   ], []);
 
@@ -129,10 +135,17 @@ const MediaGrid = () => {
             }}
             whileTap={{ scale: 0.98 }}
           >
-            {/* Video Card - Responsive sizing */}
-            <div 
-              className="relative w-[85px] h-[140px] xs:w-[100px] xs:h-[165px] sm:w-[120px] sm:h-[200px] md:w-[140px] md:h-[230px] lg:w-[150px] lg:h-[250px] rounded-lg xs:rounded-xl sm:rounded-2xl overflow-hidden shadow-xl group cursor-pointer"
+            {/* Clickable Link Wrapper */}
+            <a 
+              href={video.link} 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="block"
             >
+              {/* Video Card - Responsive sizing */}
+              <div 
+                className="relative w-[85px] h-[140px] xs:w-[100px] xs:h-[165px] sm:w-[120px] sm:h-[200px] md:w-[140px] md:h-[230px] lg:w-[150px] lg:h-[250px] rounded-lg xs:rounded-xl sm:rounded-2xl overflow-hidden shadow-xl group cursor-pointer"
+              >
               {/* Animated Border Gradient on Hover */}
               <motion.div 
                 className="absolute -inset-[2px] rounded-lg xs:rounded-xl sm:rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"
@@ -224,7 +237,8 @@ const MediaGrid = () => {
 
               {/* Glow Effect */}
               <div className="absolute -inset-4 bg-gradient-to-r from-blue-600/0 via-accent-cyan/20 to-blue-600/0 rounded-3xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10" />
-            </div>
+              </div>
+            </a>
           </motion.div>
         ))}
       </motion.div>

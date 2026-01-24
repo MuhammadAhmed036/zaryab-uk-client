@@ -129,7 +129,7 @@ const caseStudyCards = [
     description: 'We were able to produce over 500 football edits within a 3 week period generating 300M+ views and a lot of organic recreations within the football niche. We started the content production at less than 300 video creations.',
     phones: [
       { type: 'FOOTBALL EDITS', variant: 'emerald', videoUrl: 'https://player.vimeo.com/video/1154665843?title=0&byline=0&portrait=0&badge=0&autoplay=1&muted=1&loop=1&background=1&autopause=0&player_id=0&app_id=58479', tiktokUrl: 'https://www.tiktok.com/@alxxvfx0/video/7516265640336952607?is_from_webapp=1&sender_device=pc&web_id=7551832417540556310' },
-      { type: 'LUXURY / MONEY EDITS', variant: 'blue', videoUrl: 'https://player.vimeo.com/video/1154666418?title=0&byline=0&portrait=0&badge=0&autoplay=1&muted=1&loop=1&background=1&autopause=0&player_id=0&app_id=58479', tiktokUrl: 'https://www.tiktok.com/@8eatrizfitas/video/7512541678587104534?is_from_webapp=1&sender_device=pc&web_id=7551832417540556310' }
+      { type: 'INFLUENCER CONTENT', variant: 'blue', videoUrl: 'https://player.vimeo.com/video/1154666418?title=0&byline=0&portrait=0&badge=0&autoplay=1&muted=1&loop=1&background=1&autopause=0&player_id=0&app_id=58479', tiktokUrl: 'https://www.tiktok.com/@8eatrizfitas/video/7512541678587104534?is_from_webapp=1&sender_device=pc&web_id=7551832417540556310' }
     ]
   },
   {
@@ -149,7 +149,7 @@ const caseStudyCards = [
     description: 'We developed content strategy for a debut song by an artist from scratch resulting in over 8K video recreations and over 1M streams. Growing his monthly listeners from 300 to 30K+ within a month.',
     phones: [
       { type: 'INFLUENCER TRENDY', variant: 'cyan', videoUrl: 'https://player.vimeo.com/video/1154672634?title=0&byline=0&portrait=0&badge=0&autoplay=1&muted=1&loop=1&background=1&autopause=0&player_id=0&app_id=58479', tiktokUrl: 'https://www.tiktok.com/@st_rayyn/video/7502498211114847510?is_from_webapp=1&sender_device=pc' },
-      { type: 'AI CONTENT', variant: 'violet', imageUrl: '/images/case-studies/logos/ssstik.io_1768472924865.webp', tiktokUrl: 'https://www.tiktok.com/@777luxrich/photo/7502114116564290822?is_from_webapp=1&sender_device=pc' },
+      { type: 'LUXURY/AESTHETIC CONTENT', variant: 'violet', imageUrl: '/images/case-studies/logos/ssstik.io_1768472924865.webp', tiktokUrl: 'https://www.tiktok.com/@777luxrich/photo/7502114116564290822?is_from_webapp=1&sender_device=pc' },
       { type: 'FOOTBALL EDITS', variant: 'emerald', videoUrl: 'https://player.vimeo.com/video/1154673899?title=0&byline=0&portrait=0&badge=0&autoplay=1&muted=1&loop=1&background=1&autopause=0&player_id=0&app_id=58479', tiktokUrl: 'https://www.tiktok.com/@aqurdz/video/7474352236265688342?is_from_webapp=1&sender_device=pc' },
       { type: 'MOVIE EDITS', variant: 'rose', videoUrl: 'https://player.vimeo.com/video/1154673939?title=0&byline=0&portrait=0&badge=0&autoplay=1&muted=1&loop=1&background=1&autopause=0&player_id=0&app_id=58479', tiktokUrl: 'https://www.tiktok.com/@flamexfilms/video/7451672916648938774?is_from_webapp=1&sender_device=pc' }
     ]
@@ -231,8 +231,8 @@ const contentAtScaleData = {
       tiktokUrl: 'https://www.tiktok.com/@dkrfut/video/7461305683632196869?is_from_webapp=1&sender_device=pc&web_id=7551832417540556310'
     },
     {
-      title: 'MOVIE/SERIES EDITS',
-      subtitle: 'FOOTBALL EDITS',
+      title: 'MOVIE EDITS',
+      subtitle: 'MOVIE EDITS',
       variant: 'slate',
       videoUrl: 'https://player.vimeo.com/video/1154675694?title=0&byline=0&portrait=0&badge=0&autoplay=1&muted=1&loop=1&background=1&autopause=0&player_id=0&app_id=58479',
       tiktokUrl: 'https://www.tiktok.com/@hulk2003.s/video/7477583973762354437?is_from_webapp=1&sender_device=pc&web_id=7551832417540556310'
@@ -288,8 +288,8 @@ const coldData = {
   contentCategories: [
     { title: 'MOVIE EDITS', variant: 'rose', videoUrl: 'https://player.vimeo.com/video/1154668617?title=0&byline=0&portrait=0&badge=0&autoplay=1&muted=1&loop=1&background=1&autopause=0&player_id=0&app_id=58479', tiktokUrl: 'https://www.tiktok.com/@nylanbaee/video/7557056773069262136' },
     { title: 'ANIME EDITS', variant: 'violet', videoUrl: 'https://player.vimeo.com/video/1154668822?title=0&byline=0&portrait=0&badge=0&autoplay=1&muted=1&loop=1&background=1&autopause=0&player_id=0&app_id=58479', tiktokUrl: 'https://www.tiktok.com/@w.kman_/video/7557349240687660296' },
-    { title: 'INFLUENCER CONTENT', variant: 'cyan', videoUrl: 'https://player.vimeo.com/video/1154669787?title=0&byline=0&portrait=0&badge=0&autoplay=1&muted=1&loop=1&background=1&autopause=0&player_id=0&app_id=58479', tiktokUrl: 'https://www.tiktok.com/@just.lyricssx/video/7564123664082423062' },
-    { title: 'LYRICAL CONTENT', variant: 'emerald', videoUrl: 'https://player.vimeo.com/video/1154669717?title=0&byline=0&portrait=0&badge=0&autoplay=1&muted=1&loop=1&background=1&autopause=0&player_id=0&app_id=58479', tiktokUrl: 'https://www.tiktok.com/@ksmalicsi/video/7559947031939255553?is_from_webapp=1&sender_device=pc' }
+    { title: 'LYRICAL CONTENT', variant: 'cyan', videoUrl: 'https://player.vimeo.com/video/1154669787?title=0&byline=0&portrait=0&badge=0&autoplay=1&muted=1&loop=1&background=1&autopause=0&player_id=0&app_id=58479', tiktokUrl: 'https://www.tiktok.com/@just.lyricssx/video/7564123664082423062' },
+    { title: 'INFLUENCER CONTENT', variant: 'emerald', videoUrl: 'https://player.vimeo.com/video/1154669717?title=0&byline=0&portrait=0&badge=0&autoplay=1&muted=1&loop=1&background=1&autopause=0&player_id=0&app_id=58479', tiktokUrl: 'https://www.tiktok.com/@ksmalicsi/video/7559947031939255553?is_from_webapp=1&sender_device=pc' }
   ],
   stats: [
     { label: 'SREAMS', value: '8M' },
@@ -486,8 +486,8 @@ export default function CaseStudiesPage() {
               className="text-lg md:text-xl text-slate-600 max-w-2xl mx-auto leading-relaxed"
             >
               Real results from viral campaigns.{' '}
-              <span className="text-blue-600 font-semibold">See how we transformed brands</span>{' '}
-              into digital phenomena.
+              <span className="text-blue-600 font-semibold">See how we made different singles go viral.</span>{' '}
+              
             </motion.p>
 
             {/* Floating Stats Preview */}
@@ -498,9 +498,9 @@ export default function CaseStudiesPage() {
               className="flex justify-center gap-8 md:gap-16 mt-12"
             >
               {[
-                { value: '500M+', label: 'Total Views' },
-                { value: '10K+', label: 'Videos Created' },
-                { value: '5M+', label: 'Streams Generated' }
+                { value: '110B+', label: 'Total Views' },
+                { value: '1M+', label: 'Videos Created' },
+                { value: '1B+', label: 'Streams Generated' }
               ].map((stat, index) => (
                 <motion.div
                   key={stat.label}
@@ -2452,10 +2452,7 @@ export default function CaseStudiesPage() {
                           </div>
                         </motion.a>
 
-                        {/* Video Label Below Phone */}
-                        <div className="text-[10px] md:text-xs font-bold text-white/50 mt-3 uppercase tracking-wide text-center">
-                          Video {index + 1}
-                        </div>
+                        
                       </motion.div>
                     ))}
                   </div>

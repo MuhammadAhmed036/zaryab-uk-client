@@ -214,7 +214,7 @@ export default function TeamPage() {
                   transition={{ delay: 0.2, type: 'spring', stiffness: 200 }}
                 >
                   <h3 className="font-display font-black text-6xl md:text-7xl text-dark-900">
-                    10+
+                    5
                   </h3>
                 </motion.div>
               </div>
@@ -238,7 +238,7 @@ export default function TeamPage() {
                   transition={{ delay: 0.3, type: 'spring', stiffness: 200 }}
                 >
                   <h3 className="font-display font-black text-6xl md:text-7xl text-dark-900">
-                    5K+
+                    10K+
                   </h3>
                 </motion.div>
               </div>
@@ -262,12 +262,12 @@ export default function TeamPage() {
                   transition={{ delay: 0.4, type: 'spring', stiffness: 200 }}
                 >
                   <h3 className="font-display font-black text-6xl md:text-7xl text-dark-900">
-                    5
+                    110B+
                   </h3>
                 </motion.div>
               </div>
               <p className="font-display font-bold text-lg md:text-xl text-accent-cyan uppercase tracking-wide">
-                COUNTRIES COVERED
+                VIEWS
               </p>
             </motion.div>
 
@@ -286,12 +286,12 @@ export default function TeamPage() {
                   transition={{ delay: 0.5, type: 'spring', stiffness: 200 }}
                 >
                   <h3 className="font-display font-black text-6xl md:text-7xl text-dark-900">
-                    300M+
+                    1B+
                   </h3>
                 </motion.div>
               </div>
               <p className="font-display font-bold text-lg md:text-xl text-accent-cyan uppercase tracking-wide">
-                VIEWS
+                STREAMS
               </p>
             </motion.div>
           </motion.div>

@@ -80,11 +80,13 @@ export default function TechPage() {
             <motion.div variants={fadeInUp} className="lg:col-span-3">
               <div className="relative aspect-video rounded-2xl overflow-hidden shadow-xl">
                 <iframe
-                  src="https://player.vimeo.com/video/1154403206?quality=1080p&autoplay=1&muted=1&loop=1&background=1"
+                  src="https://player.vimeo.com/video/1154403206?title=0&byline=0&portrait=0&badge=0&autoplay=1&muted=1&loop=1&autopause=0"
                   className="absolute inset-0 w-full h-full"
-                  allow="autoplay; fullscreen; picture-in-picture"
+                  allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
                   allowFullScreen
                   frameBorder="0"
+                  referrerPolicy="strict-origin-when-cross-origin"
+                  loading="eager"
                   style={{ border: 'none' }}
                   title="Z-engine Database Demo"
                 />
@@ -116,11 +118,13 @@ export default function TechPage() {
             <motion.div variants={fadeInUp} className="lg:col-span-3">
               <div className="relative aspect-video rounded-2xl overflow-hidden shadow-xl">
                 <iframe
-                  src="https://player.vimeo.com/video/1154405421?quality=1080p&autoplay=1&muted=1&loop=1&background=1"
+                  src="https://player.vimeo.com/video/1154405421?title=0&byline=0&portrait=0&badge=0&autoplay=1&muted=1&loop=1&autopause=0"
                   className="absolute inset-0 w-full h-full"
-                  allow="autoplay; fullscreen; picture-in-picture"
+                  allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
                   allowFullScreen
                   frameBorder="0"
+                  referrerPolicy="strict-origin-when-cross-origin"
+                  loading="eager"
                   style={{ border: 'none' }}
                   title="Creator Scraping Demo"
                 />
@@ -178,11 +182,13 @@ export default function TechPage() {
             <motion.div variants={fadeInUp} className="lg:col-span-3">
               <div className="relative aspect-video rounded-2xl overflow-hidden shadow-xl">
                 <iframe
-                  src="https://player.vimeo.com/video/1154406369?quality=1080p&autoplay=1&muted=1&loop=1&background=1"
+                  src="https://player.vimeo.com/video/1154406369?title=0&byline=0&portrait=0&badge=0&autoplay=1&muted=1&loop=1&autopause=0"
                   className="absolute inset-0 w-full h-full"
-                  allow="autoplay; fullscreen; picture-in-picture"
+                  allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
                   allowFullScreen
                   frameBorder="0"
+                  referrerPolicy="strict-origin-when-cross-origin"
+                  loading="eager"
                   style={{ border: 'none' }}
                   title="Automated Outreach Demo"
                 />

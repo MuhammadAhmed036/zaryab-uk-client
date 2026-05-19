@@ -29,7 +29,7 @@ const stats = [
     label: 'Campaigns',
     variant: 'lime',
     mediaType: 'video',
-    mediaSrc: 'https://player.vimeo.com/video/1053014687?autoplay=1&loop=1&background=1',
+    mediaSrc: 'https://player.vimeo.com/video/1053014687?autoplay=1&muted=1&loop=1&background=1',
   },
   {
     value: 110,

@@ -22,37 +22,37 @@ const MediaGrid = () => {
   const allVideos = useMemo(() => [
     { 
       id: 1, 
-      src: 'https://player.vimeo.com/video/1154252112?autoplay=1&muted=1&loop=1&background=1&autopause=0&title=0&byline=0&portrait=0',
+      src: 'https://player.vimeo.com/video/1154252112?title=0&byline=0&portrait=0&badge=0&autoplay=1&muted=1&loop=1&autopause=0',
       title: 'BRAINROT',
       link: 'https://www.tiktok.com/@ratatadance8/video/7567038449996369174?is_from_webapp=1&sender_device=pc&web_id=7551832417540556310'
     },
     { 
       id: 2, 
-      src: 'https://player.vimeo.com/video/1154252594?autoplay=1&muted=1&loop=1&background=1&autopause=0&title=0&byline=0&portrait=0',
+      src: 'https://player.vimeo.com/video/1154252594?title=0&byline=0&portrait=0&badge=0&autoplay=1&muted=1&loop=1&autopause=0',
       title: 'DANCERS',
       link: 'https://www.tiktok.com/@nastuyshkakristmas/video/7549616560113978642?is_from_webapp=1&sender_device=pc&web_id=7551832417540556310'
     },
     { 
       id: 3, 
-      src: 'https://player.vimeo.com/video/1154252893?autoplay=1&muted=1&loop=1&background=1&autopause=0&title=0&byline=0&portrait=0',
+      src: 'https://player.vimeo.com/video/1154252893?title=0&byline=0&portrait=0&badge=0&autoplay=1&muted=1&loop=1&autopause=0',
       title: 'CAR EDITS',
       link: 'https://www.tiktok.com/@nitrovoltx/video/7533264161728449814?is_from_webapp=1&sender_device=pc&web_id=7551832417540556310'
     },
     { 
       id: 4, 
-      src: 'https://player.vimeo.com/video/1154253346?autoplay=1&muted=1&loop=1&background=1&autopause=0&title=0&byline=0&portrait=0',
+      src: 'https://player.vimeo.com/video/1154253346?title=0&byline=0&portrait=0&badge=0&autoplay=1&muted=1&loop=1&autopause=0',
       title: 'MOVIE EDITS',
       link: 'https://www.tiktok.com/@rshamrok/video/7587761386999024952?is_from_webapp=1&sender_device=pc&web_id=7551832417540556310'
     },
     { 
       id: 5, 
-      src: 'https://player.vimeo.com/video/1154258411?autoplay=1&muted=1&loop=1&background=1&autopause=0&title=0&byline=0&portrait=0',
+      src: 'https://player.vimeo.com/video/1154258411?title=0&byline=0&portrait=0&badge=0&autoplay=1&muted=1&loop=1&autopause=0',
       title: 'NICHE COMMUNITIES',
       link: 'https://www.tiktok.com/@posterboyren/video/7583687210856189196?is_from_webapp=1&sender_device=pc&web_id=7551832417540556310'
     },
     { 
       id: 6, 
-      src: 'https://player.vimeo.com/video/1154258826?autoplay=1&muted=1&loop=1&background=1&autopause=0&title=0&byline=0&portrait=0',
+      src: 'https://player.vimeo.com/video/1154258826?title=0&byline=0&portrait=0&badge=0&autoplay=1&muted=1&loop=1&autopause=0',
       title: 'LIP-SYNC',
       link: 'https://www.tiktok.com/@user561782009/video/7585555947440000278?is_from_webapp=1&sender_device=pc&web_id=7551832417540556310'
     },
@@ -170,9 +170,11 @@ const MediaGrid = () => {
                   <iframe
                     src={video.src}
                     className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
-                    allow="autoplay; fullscreen; picture-in-picture; clipboard-write"
+                    allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
                     allowFullScreen
                     frameBorder="0"
+                    referrerPolicy="strict-origin-when-cross-origin"
+                    loading="eager"
                     style={{ 
                       border: 'none',
                       width: '200%',

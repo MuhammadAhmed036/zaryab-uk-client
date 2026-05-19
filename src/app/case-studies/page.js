@@ -5,6 +5,15 @@ import { Section, Container, Heading, Text } from '@/components/ui';
 import { staggerContainer, fadeInUp, fadeInLeft, fadeInRight } from '@/lib/animations';
 import { useState, useRef, useEffect, useCallback } from 'react';
 
+const normalizeVimeoEmbedUrl = (videoUrl) => {
+  if (!videoUrl) return videoUrl;
+
+  const match = videoUrl.match(/player\.vimeo\.com\/video\/(\d+)/);
+  if (!match) return videoUrl;
+
+  return `https://player.vimeo.com/video/${match[1]}?title=0&byline=0&portrait=0&badge=0&autoplay=1&muted=1&loop=1&autopause=0`;
+};
+
 // Optimized Lazy Video Component with IntersectionObserver
 const LazyVideo = ({ videoUrl, className, style }) => {
   const [isInView, setIsInView] = useState(false);
@@ -43,12 +52,13 @@ const LazyVideo = ({ videoUrl, className, style }) => {
     <div ref={videoRef} className={className} style={style}>
       {shouldLoad ? (
         <iframe
-          src={videoUrl}
+          src={normalizeVimeoEmbedUrl(videoUrl)}
           className="absolute inset-0 w-full h-full object-cover"
           frameBorder="0"
-          allow="autoplay; fullscreen; picture-in-picture"
-          loading="lazy"
-          style={{ pointerEvents: 'none' }}
+          allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
+          loading="eager"
+          referrerPolicy="strict-origin-when-cross-origin"
+          style={{ pointerEvents: 'none', border: 'none' }}
         />
       ) : (
         <div className="absolute inset-0 flex items-center justify-center bg-slate-900/80">
@@ -311,10 +321,10 @@ const tenYearsData = {
     hasAddToMusic: true
   },
   contentCategories: [
-    { title: 'MOVIE EDITS', variant: 'rose', videoUrl: 'https://player.vimeo.com/video/1154682303?title=0&byline=0&portrait=0&badge=0&?autoplay=1&muted=1&loop=1&background=1&autopause=0&player_id=0&app_id=58479', tiktokUrl: 'https://www.tiktok.com/@parkerius.ae/video/7575542660929195286?is_from_webapp=1&sender_device=pc' },
-    { title: 'KDRAMA EDITS', variant: 'violet', videoUrl: 'https://player.vimeo.com/video/1154682349?title=0&byline=0&portrait=0&badge=0&?autoplay=1&muted=1&loop=1&background=1&autopause=0&player_id=0&app_id=58479', tiktokUrl: 'https://www.tiktok.com/@kitcsh/video/7570676890160319762?is_from_webapp=1&sender_device=pc' },
-    { title: 'ROMANTIC QUOTES', variant: 'pink', videoUrl: 'https://player.vimeo.com/video/1154682412?title=0&byline=0&portrait=0&badge=0&?autoplay=1&muted=1&loop=1&background=1&autopause=0&player_id=0&app_id=58479', tiktokUrl: 'https://www.tiktok.com/@inniz/video/7565645520169930015?is_from_webapp=1&sender_device=pc' },
-    { title: 'INFLUENCER CONTENT', variant: 'cyan', videoUrl: 'https://player.vimeo.com/video/1154682591?title=0&byline=0&portrait=0&badge=0&?autoplay=1&muted=1&loop=1&background=1&autopause=0&player_id=0&app_id=58479', tiktokUrl: 'https://www.tiktok.com/@addriianaa.sr/video/7570143633383509270' }
+    { title: 'MOVIE EDITS', variant: 'rose', videoUrl: 'https://player.vimeo.com/video/1154682303?title=0&byline=0&portrait=0&badge=0&autoplay=1&muted=1&loop=1&background=1&autopause=0&player_id=0&app_id=58479', tiktokUrl: 'https://www.tiktok.com/@parkerius.ae/video/7575542660929195286?is_from_webapp=1&sender_device=pc' },
+    { title: 'KDRAMA EDITS', variant: 'violet', videoUrl: 'https://player.vimeo.com/video/1154682349?title=0&byline=0&portrait=0&badge=0&autoplay=1&muted=1&loop=1&background=1&autopause=0&player_id=0&app_id=58479', tiktokUrl: 'https://www.tiktok.com/@kitcsh/video/7570676890160319762?is_from_webapp=1&sender_device=pc' },
+    { title: 'ROMANTIC QUOTES', variant: 'pink', videoUrl: 'https://player.vimeo.com/video/1154682412?title=0&byline=0&portrait=0&badge=0&autoplay=1&muted=1&loop=1&background=1&autopause=0&player_id=0&app_id=58479', tiktokUrl: 'https://www.tiktok.com/@inniz/video/7565645520169930015?is_from_webapp=1&sender_device=pc' },
+    { title: 'INFLUENCER CONTENT', variant: 'cyan', videoUrl: 'https://player.vimeo.com/video/1154682591?title=0&byline=0&portrait=0&badge=0&autoplay=1&muted=1&loop=1&background=1&autopause=0&player_id=0&app_id=58479', tiktokUrl: 'https://www.tiktok.com/@addriianaa.sr/video/7570143633383509270' }
   ],
   stats: [
     { label: 'SREAMS', value: '3M' },
@@ -336,10 +346,10 @@ const wildfireData = {
     hasAddToMusic: true
   },
   contentCategories: [
-    { title: 'MOVIE EDITS', variant: 'rose', videoUrl: 'https://player.vimeo.com/video/1154684553?title=0&byline=0&portrait=0&badge=0&?autoplay=1&muted=1&loop=1&background=1&autopause=0&player_id=0&app_id=58479', tiktokUrl: 'https://www.tiktok.com/@onxlychoi/video/7573794634648898838' },
-    { title: 'ANIME EDITS', variant: 'violet', videoUrl: 'https://player.vimeo.com/video/1154686102?title=0&byline=0&portrait=0&badge=0&?autoplay=1&muted=1&loop=1&background=1&autopause=0&player_id=0&app_id=58479', tiktokUrl: 'https://www.tiktok.com/@nelyrall/video/7571913211243515147' },
-    { title: 'FOOTBALL EDITS', variant: 'emerald', videoUrl: 'https://player.vimeo.com/video/1154688182?title=0&byline=0&portrait=0&badge=0&?autoplay=1&muted=1&loop=1&background=1&autopause=0&player_id=0&app_id=58479', tiktokUrl: 'https://www.tiktok.com/@kairo.tm/video/7571907919613119766' },
-    { title: 'INFLUENCER CONTENT', variant: 'cyan', videoUrl: 'https://player.vimeo.com/video/1154684750?title=0&byline=0&portrait=0&badge=0&?autoplay=1&muted=1&loop=1&background=1&autopause=0&player_id=0&app_id=58479', tiktokUrl: 'https://www.tiktok.com/@asyokka1/video/7570779752001244427?is_from_webapp=1&sender_device=pc' }
+    { title: 'MOVIE EDITS', variant: 'rose', videoUrl: 'https://player.vimeo.com/video/1154684553?title=0&byline=0&portrait=0&badge=0&autoplay=1&muted=1&loop=1&background=1&autopause=0&player_id=0&app_id=58479', tiktokUrl: 'https://www.tiktok.com/@onxlychoi/video/7573794634648898838' },
+    { title: 'ANIME EDITS', variant: 'violet', videoUrl: 'https://player.vimeo.com/video/1154686102?title=0&byline=0&portrait=0&badge=0&autoplay=1&muted=1&loop=1&background=1&autopause=0&player_id=0&app_id=58479', tiktokUrl: 'https://www.tiktok.com/@nelyrall/video/7571913211243515147' },
+    { title: 'FOOTBALL EDITS', variant: 'emerald', videoUrl: 'https://player.vimeo.com/video/1154688182?title=0&byline=0&portrait=0&badge=0&autoplay=1&muted=1&loop=1&background=1&autopause=0&player_id=0&app_id=58479', tiktokUrl: 'https://www.tiktok.com/@kairo.tm/video/7571907919613119766' },
+    { title: 'INFLUENCER CONTENT', variant: 'cyan', videoUrl: 'https://player.vimeo.com/video/1154684750?title=0&byline=0&portrait=0&badge=0&autoplay=1&muted=1&loop=1&background=1&autopause=0&player_id=0&app_id=58479', tiktokUrl: 'https://www.tiktok.com/@asyokka1/video/7570779752001244427?is_from_webapp=1&sender_device=pc' }
   ],
   stats: [
     { label: 'SREAMS', value: '5M' },
@@ -664,6 +674,8 @@ export default function CaseStudiesPage() {
                     variants={staggerContainer}
                   >
                     {study.phones.map((video, videoIndex) => {
+                      const normalizedVideoUrl = normalizeVimeoEmbedUrl(video.videoUrl);
+
                       const PhoneContent = (
                         <motion.div className="relative">
                           {/* Phone Glow Effect */}
@@ -679,7 +691,7 @@ export default function CaseStudiesPage() {
                               {/* Embedded Vimeo Video */}
                               {video.videoUrl ? (
                                 <LazyVideo
-                                  videoUrl={video.videoUrl}
+                                    videoUrl={normalizedVideoUrl}
                                   className="absolute inset-0 rounded-[1.5rem] overflow-hidden"
                                 />
                               ) : video.imageUrl ? (
@@ -838,7 +850,7 @@ export default function CaseStudiesPage() {
                             </a>
                           ) : video.videoUrl ? (
                             <a 
-                              href={video.videoUrl.replace('player.vimeo.com/video/', 'vimeo.com/')} 
+                              href={normalizedVideoUrl.replace('player.vimeo.com/video/', 'vimeo.com/')} 
                               target="_blank" 
                               rel="noopener noreferrer"
                               className="text-xs text-white/50 hover:text-white/80 underline underline-offset-2 transition-colors"

@@ -80,7 +80,7 @@ export default function TechPage() {
             <motion.div variants={fadeInUp} className="lg:col-span-3">
               <div className="relative aspect-video rounded-2xl overflow-hidden shadow-xl">
                 <iframe
-                  src="https://player.vimeo.com/video/1154403206?title=0&byline=0&portrait=0&badge=0&autoplay=1&muted=1&loop=1&autopause=0"
+                  src="https://cinema8.com/video/dJ24dLpD?autoplay=1&muted=1&loop=1&controls=0"
                   className="absolute inset-0 w-full h-full"
                   allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
                   allowFullScreen
@@ -118,7 +118,7 @@ export default function TechPage() {
             <motion.div variants={fadeInUp} className="lg:col-span-3">
               <div className="relative aspect-video rounded-2xl overflow-hidden shadow-xl">
                 <iframe
-                  src="https://player.vimeo.com/video/1154405421?title=0&byline=0&portrait=0&badge=0&autoplay=1&muted=1&loop=1&autopause=0"
+                  src="https://cinema8.com/video/zX0EVZ0J?autoplay=1&muted=1&loop=1&controls=0"
                   className="absolute inset-0 w-full h-full"
                   allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
                   allowFullScreen
@@ -182,7 +182,7 @@ export default function TechPage() {
             <motion.div variants={fadeInUp} className="lg:col-span-3">
               <div className="relative aspect-video rounded-2xl overflow-hidden shadow-xl">
                 <iframe
-                  src="https://player.vimeo.com/video/1154406369?title=0&byline=0&portrait=0&badge=0&autoplay=1&muted=1&loop=1&autopause=0"
+                  src="https://cinema8.com/video/dJ24d3pD?autoplay=1&muted=1&loop=1&controls=0"
                   className="absolute inset-0 w-full h-full"
                   allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
                   allowFullScreen

@@ -19,6 +19,9 @@ const brandsRow2 = [
   { name: 'QIA', logo: '/images/client logos/QIA logo.jpg' },
   { name: 'Robots + Humans', logo: '/images/client logos/Robots-Humans-logo.jpg' },
   { name: 'SoundOn', logo: '/images/client logos/soundon logo.webp' },
+  { name: 'NWS Music Group', logo: '/images/client logos/nws.jpeg' },
+  { name: 'RCA', logo: '/images/client logos/rca.jpeg' },
+  { name: 'Universal Music Group', logo: '/images/client logos/universal music.png' },
   { name: 'The Other Songs', logo: '/images/client logos/The Other Songs logo.png' },
 ];
 
@@ -205,8 +208,8 @@ const Brands = () => {
           className="flex flex-wrap justify-center gap-4 sm:gap-8 md:gap-16"
         >
           {[
-            { value: '7800+', label: 'Creators' },
-            { value: '10M$+', label: 'Spent on creators' },
+            { value: '10000+', label: 'Creators' },
+            { value: '16M$+', label: 'Spent on creators' },
             { value: '50+', label: 'Record Labels' },
           ].map((stat, i) => (
             <motion.div

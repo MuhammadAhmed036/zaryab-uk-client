@@ -122,11 +122,146 @@ const statVariants = {
 };
 
 const caseStudyCards = [
+  // Latest case studies (screenshots provided) - appear on top
+  {
+    id: 100,
+    title: 'NOBLE',
+    subtitle: 'F3MIII',
+    logo: '/images/case-studies/logos/NOBLE - F3MIII.png',
+    cardBg: 'bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900',
+    accentGradient: 'from-slate-400 via-gray-300 to-white',
+    accentColor: 'text-slate-300',
+    glowColor: 'shadow-slate-500/20',
+    stats: [
+      { label: 'STREAMS', value: '62M+' },
+      { label: 'VIDEOS', value: '2K+' },
+      { label: 'VIEWS', value: '150M+' }
+    ],
+    description: 'We developed this sound from 2k creations to 50k+ within 4 weeks, driving the song from 10k daily streams to 1.4M daily streams. Placeholder case study — videos and logo to be added.',
+    phones: [
+      { type: 'INFLUENCERS', variant: 'blue', imageUrl: '/images/reel1.jpg' },
+      { type: 'QUOTES', variant: 'violet', imageUrl: '/images/Billboard.avif' },
+      { type: 'MOVIE/SERIES', variant: 'rose', imageUrl: '/images/TikTok Top 50 entries.avif' },
+      { type: 'LYRICS', variant: 'cyan', imageUrl: '/images/Copy of Music Case studies.png' }
+    ]
+  },
+  {
+    id: 101,
+    title: 'MY DESTINY',
+    subtitle: 'DELINQUENT & KCAT',
+    logo: '/images/case-studies/logos/MY DESTINY.png',
+    cardBg: 'bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900',
+    accentGradient: 'from-amber-400 via-orange-400 to-yellow-400',
+    accentColor: 'text-amber-300',
+    glowColor: 'shadow-amber-500/20',
+    stats: [
+      { label: 'STREAMS', value: '2.5M+' },
+      { label: 'VIDEOS', value: '500+' },
+      { label: 'VIEWS', value: '50M+' }
+    ],
+    description: 'Scaled content from 5k creations to 17k+ within 1 week, driving the song from 30k daily streams to 150k daily streams. Placeholder content — add videos/logos later.',
+    phones: [
+      { type: 'FOOTBALL', variant: 'emerald', imageUrl: '/images/Copy of Music Case studies.png' },
+      { type: 'AESTHETIC', variant: 'violet', imageUrl: '/images/Copy of Music Case studies (2).png' },
+      { type: 'QUOTES', variant: 'pink', imageUrl: '/images/Billboard.avif' },
+      { type: 'LYRICS', variant: 'cyan', imageUrl: '/images/TikTok Top 50 entries.avif' }
+    ]
+  },
+  {
+    id: 102,
+    title: 'RITMO',
+    subtitle: 'RAFFA FL',
+    logo: '/images/case-studies/logos/RITMO - RAFFA FL.png',
+    cardBg: 'bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900',
+    accentGradient: 'from-pink-400 via-rose-400 to-red-400',
+    accentColor: 'text-pink-300',
+    glowColor: 'shadow-pink-500/20',
+    stats: [
+      { label: 'STREAMS', value: '100M+' },
+      { label: 'VIDEOS', value: '1000+' },
+      { label: 'VIEWS', value: '202M+' }
+    ],
+    description: 'We developed this sound from 5k creations to 19k+ within a month across 4 different sound versions, making the song viral again. Placeholder assets.',
+    phones: [
+      { type: 'MODELLING EDITS', variant: 'violet', imageUrl: '/images/artist slideshow/karri-kehlani-scaled.jpg' },
+      { type: 'INFLUENCERS', variant: 'blue', imageUrl: '/images/artist slideshow/IMG_6629.webp' },
+      { type: 'QUOTES', variant: 'rose', imageUrl: '/images/artist slideshow/MK-Neil-Favila-759x500.jpg' },
+      { type: 'MOOD EDITS', variant: 'cyan', imageUrl: '/images/artist slideshow/Skye-1-e1764693337176.jpg' },
+      { type: 'LYRICS', variant: 'emerald', imageUrl: '/images/artist slideshow/channels4_profile (2).jpg' }
+    ]
+  },
+  {
+    id: 103,
+    title: 'TOUCH',
+    subtitle: 'CHRYSTAL',
+    logo: '/images/case-studies/logos/TOUCH.png',
+    cardBg: 'bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900',
+    accentGradient: 'from-blue-400 via-cyan-400 to-emerald-400',
+    accentColor: 'text-cyan-300',
+    glowColor: 'shadow-cyan-500/20',
+    stats: [
+      { label: 'STREAMS', value: '1M+' },
+      { label: 'VIDEOS', value: '1K+' },
+      { label: 'VIEWS', value: '49M+' }
+    ],
+    description: 'We developed this sound from 20k creations to 34k within 2 weeks, resulting in the sound trending at top across charts. Placeholder entry for latest case studies.',
+    phones: [
+      { type: 'INFLUENCERS', variant: 'blue', imageUrl: '/images/reel1.jpg' },
+      { type: 'AESTHETIC', variant: 'cyan', imageUrl: '/images/influtik-1-6.png' },
+      { type: 'QUOTES', variant: 'rose', imageUrl: '/images/ahslyn.png' },
+      { type: 'MOVIE/SERIES', variant: 'violet', imageUrl: '/images/adithya.png' },
+      { type: 'LYRICS', variant: 'emerald', imageUrl: '/images/asim.png' }
+    ]
+  },
+  {
+    id: 104,
+    title: 'JUST THE WAY YOU ARE',
+    subtitle: 'MILKY',
+    logo: '/images/case-studies/logos/JUST THE WAY.png',
+    cardBg: 'bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900',
+    accentGradient: 'from-indigo-400 via-blue-400 to-cyan-400',
+    accentColor: 'text-indigo-300',
+    glowColor: 'shadow-indigo-500/20',
+    stats: [
+      { label: 'STREAMS', value: '30M+' },
+      { label: 'VIDEOS', value: '200+' },
+      { label: 'VIEWS', value: '14M+' }
+    ],
+    description: 'Scaled content across high converting niches including real life creators and lyrical videos, generating 14M+ views within a week. Placeholder assets to be added.',
+    phones: [
+      { type: 'INFLUENCERS', variant: 'emerald', imageUrl: '/images/hugh taylor.png' },
+      { type: 'LYRICALS', variant: 'cyan', imageUrl: '/images/Zaryab.png' },
+      { type: 'QUOTES', variant: 'rose', imageUrl: '/images/zeeshan.png' },
+      { type: 'AESTHETIC', variant: 'violet', imageUrl: '/images/Muhammad Ahmad (Marketing Executive).png' }
+    ]
+  },
+  {
+    id: 105,
+    title: 'ICEMAN',
+    subtitle: 'CENTRAL CEE',
+    logo: '/images/case-studies/logos/ICEMAN.png',
+    cardBg: 'bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900',
+    accentGradient: 'from-slate-400 via-gray-300 to-white',
+    accentColor: 'text-slate-300',
+    glowColor: 'shadow-slate-500/20',
+    stats: [
+      { label: 'STREAMS', value: '9M+' },
+      { label: 'VIDEOS', value: '200+' },
+      { label: 'VIEWS', value: '13M+' }
+    ],
+    description: 'We scaled content from 500 UGC to 1500 UGCs within a week generating over 13M views across multiple edit categories. Placeholder case study ready for assets.',
+    phones: [
+      { type: 'INFLUENCERS', variant: 'emerald', imageUrl: '/images/Maheen Fatima (Marketing Executive).png' },
+      { type: 'FOOTBALL EDITS', variant: 'emerald', imageUrl: '/images/Abdullah Mudassar (Head of marketing & operations) 2.png' },
+      { type: 'UGC', variant: 'cyan', imageUrl: '/images/9.Shahmir Adnan (Marketing Executive).png' },
+      { type: 'MOOD EDITS', variant: 'violet', imageUrl: '/images/7. Maheen (Marketing Executive).png' }
+    ]
+  },
   {
     id: 1,
     title: '+44',
     subtitle: 'HUGO',
-    logo: '/images/case-studies/logos/%2B44%20-%20Hugo.jpg',
+    logo: '/images/case-studies/logos/+44 - Hugo.jpg',
     cardBg: 'bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900',
     accentGradient: 'from-emerald-400 via-cyan-400 to-blue-500',
     accentColor: 'text-emerald-400',
@@ -654,11 +789,11 @@ export default function CaseStudiesPage() {
                   viewport={{ once: true }}
                 >
                   {/* Category Labels */}
-                  <div className="flex justify-center gap-6 mb-6">
-                    {study.phones.slice(0, 2).map((video, idx) => (
+                  <div className="flex flex-wrap justify-center gap-3 md:gap-6 mb-6">
+                    {study.phones.map((video, idx) => (
                       <motion.span
                         key={idx}
-                        className="text-xs font-bold tracking-wider text-white/60 uppercase"
+                        className="text-xs font-bold tracking-wider text-white/60 uppercase text-center"
                         initial={{ opacity: 0, y: -10 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.5 + idx * 0.1 }}
@@ -670,11 +805,12 @@ export default function CaseStudiesPage() {
 
                   {/* Phone Mockups */}
                   <motion.div
-                    className={`grid ${study.phones.length === 2 ? 'grid-cols-2' : 'grid-cols-2'} gap-6`}
+                    className="flex flex-wrap justify-center gap-4 md:gap-6"
                     variants={staggerContainer}
                   >
                     {study.phones.map((video, videoIndex) => {
                       const normalizedVideoUrl = normalizeVimeoEmbedUrl(video.videoUrl);
+                      const exampleHref = video.tiktokUrl || (video.videoUrl ? normalizedVideoUrl.replace('player.vimeo.com/video/', 'vimeo.com/') : null);
 
                       const PhoneContent = (
                         <motion.div className="relative">
@@ -823,7 +959,7 @@ export default function CaseStudiesPage() {
                           custom={videoIndex}
                           variants={phoneVariants}
                           whileHover="hover"
-                          className="group/video"
+                          className="group/video w-[150px] sm:w-[165px] md:w-[175px] lg:w-[180px] flex-none"
                         >
                           {video.tiktokUrl ? (
                             <a href={video.tiktokUrl} target="_blank" rel="noopener noreferrer" className="block">
@@ -839,26 +975,19 @@ export default function CaseStudiesPage() {
                           animate={hoveredCard === study.id ? { y: [0, -3, 0] } : {}}
                           transition={{ duration: 2, repeat: Infinity, delay: videoIndex * 0.2 }}
                         >
-                          {video.tiktokUrl ? (
-                            <a 
-                              href={video.tiktokUrl} 
-                              target="_blank" 
+                          {exampleHref ? (
+                            <a
+                              href={exampleHref}
+                              target="_blank"
                               rel="noopener noreferrer"
                               className="text-xs text-white/50 hover:text-white/80 underline underline-offset-2 transition-colors"
                             >
-                              View on TikTok
-                            </a>
-                          ) : video.videoUrl ? (
-                            <a 
-                              href={normalizedVideoUrl.replace('player.vimeo.com/video/', 'vimeo.com/')} 
-                              target="_blank" 
-                              rel="noopener noreferrer"
-                              className="text-xs text-white/50 hover:text-white/80 underline underline-offset-2 transition-colors"
-                            >
+                              Click for example
                             </a>
                           ) : (
-                            <a href="#" className="text-xs text-white/50 hover:text-white/80 underline underline-offset-2 transition-colors">
-                            </a>
+                            <span className="text-xs text-white/50 underline underline-offset-2">
+                              Click for example
+                            </span>
                           )}
                           <div className="text-sm font-bold text-white/90 mt-1">{video.type}</div>
                         </motion.div>

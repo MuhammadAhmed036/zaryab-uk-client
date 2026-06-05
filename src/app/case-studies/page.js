@@ -137,7 +137,7 @@ const caseStudyCards = [
       { label: 'VIDEOS', value: '2K+' },
       { label: 'VIEWS', value: '150M+' }
     ],
-    description: 'We developed this sound from 2k creations to 50k+ within 4 weeks, driving the song from 10k daily streams to 1.4M daily streams. Placeholder case study — videos and logo to be added.',
+    description: 'We developed this sound from 2k creations to 50k+ within 4 weeks, driving the song from 10k daily streams to 1.4M daily streams.',
     phones: [
       { type: 'INFLUENCERS', variant: 'blue', videoUrl: 'https://cinema8.com/video/vD52N0rX?autoplay=1&muted=1&loop=1&controls=0', tiktokUrl: 'https://www.tiktok.com/@roberthatis/video/7618197114039930134' },
       { type: 'QUOTES', variant: 'violet', videoUrl: 'https://cinema8.com/video/xDZzPEKD?autoplay=1&muted=1&loop=1&controls=0', tiktokUrl: 'https://www.tiktok.com/@onlyupset_/video/7613912442975931661' },
@@ -159,11 +159,11 @@ const caseStudyCards = [
       { label: 'VIDEOS', value: '500+' },
       { label: 'VIEWS', value: '50M+' }
     ],
-    description: 'Scaled content from 5k creations to 17k+ within 1 week, driving the song from 30k daily streams to 150k daily streams. Placeholder content — add videos/logos later.',
+    description: 'We developed this sound from 5k creations to 17k+ within 1 week, driving the song from 30k daily streams to 150k daily streams.',
     phones: [
       { type: 'FOOTBALL', variant: 'emerald', videoUrl: 'https://cinema8.com/video/ADxE0MLX?autoplay=1&muted=1&loop=1&controls=0', tiktokUrl: 'https://www.tiktok.com/@judeology1/video/7638260373849722134?is_from_webapp=1' },
       { type: 'AESTHETIC', variant: 'violet', videoUrl: 'https://cinema8.com/video/YDpYPZ3X?autoplay=1&muted=1&loop=1&controls=0', tiktokUrl: 'https://www.tiktok.com/@trendy.dynasty/video/7639052991378590996?is_from_webapp=1' },
-      { type: 'QUOTES', variant: 'pink', videoUrl: 'https://cinema8.com/video/4JyLGd7X?autoplay=1&muted=1&loop=1&controls=0', tiktokUrl: 'https://www.tiktok.com/@onxlyvision/video/7637964155810532621?is_from_webapp=1' },
+      { type: 'MOVIE/SERIES', variant: 'pink', videoUrl: 'https://cinema8.com/video/4JyLGd7X?autoplay=1&muted=1&loop=1&controls=0', tiktokUrl: 'https://www.tiktok.com/@onxlyvision/video/7637964155810532621?is_from_webapp=1' },
       { type: 'LYRICS', variant: 'cyan', videoUrl: 'https://cinema8.com/video/AJE7o9ED?autoplay=1&muted=1&loop=1&controls=0', tiktokUrl: 'https://www.tiktok.com/@nstalgiah/video/7640049775320026389?is_from_webapp=1&web_id=7639684004392666626' }
     ]
   },
@@ -181,12 +181,12 @@ const caseStudyCards = [
       { label: 'VIDEOS', value: '1000+' },
       { label: 'VIEWS', value: '202M+' }
     ],
-    description: 'We developed this sound from 5k creations to 19k+ within a month across 4 different sound versions, making the song viral again. Placeholder assets.',
+    description: 'We developed this sound from 5k creations to 19k+ within a month across 4 different sound versions, making an old song viral again.',
     phones: [
       { type: 'MODELLING EDITS', variant: 'violet', videoUrl: 'https://cinema8.com/video/kDl1MldX?autoplay=1&muted=1&loop=1&controls=0', tiktokUrl: 'https://www.tiktok.com/@z4ybund/video/7626466015387421959?is_from_webapp=1' },
       { type: 'INFLUENCERS', variant: 'blue', videoUrl: 'https://cinema8.com/video/7DNKebrX?autoplay=1&muted=1&loop=1&controls=0', tiktokUrl: 'https://www.tiktok.com/@ohristine/video/7631659991472016654?lang=en-GB' },
-      { type: 'QUOTES', variant: 'rose', videoUrl: 'https://cinema8.com/video/zJANdzGO?autoplay=1&muted=1&loop=1&controls=0', tiktokUrl: 'https://www.tiktok.com/@teresa_chavez.ge/video/7637536944112651527?is_from_webapp=1' },
-      { type: 'MOOD EDITS', variant: 'cyan', videoUrl: 'https://cinema8.com/video/0DkYVoQJ?autoplay=1&muted=1&loop=1&controls=0', tiktokUrl: 'https://www.tiktok.com/@housemusic.is.life/video/7635407313989307681' },
+      { type: 'MOVIE/SERIES', variant: 'rose', videoUrl: 'https://cinema8.com/video/zJANdzGO?autoplay=1&muted=1&loop=1&controls=0', tiktokUrl: 'https://www.tiktok.com/@teresa_chavez.ge/video/7637536944112651527?is_from_webapp=1' },
+      { type: 'AESTHETIC EDITS', variant: 'cyan', videoUrl: 'https://cinema8.com/video/0DkYVoQJ?autoplay=1&muted=1&loop=1&controls=0', tiktokUrl: 'https://www.tiktok.com/@housemusic.is.life/video/7635407313989307681' },
       { type: 'LYRICS', variant: 'emerald', videoUrl: 'https://cinema8.com/video/kDl1MZNX?autoplay=1&muted=1&loop=1&controls=0', tiktokUrl: 'https://www.tiktok.com/@sketchlyric/video/7634595819940826400?lang=en-GB' }
     ]
   },
@@ -204,12 +204,12 @@ const caseStudyCards = [
       { label: 'VIDEOS', value: '1K+' },
       { label: 'VIEWS', value: '49M+' }
     ],
-    description: 'We developed this sound from 20k creations to 34k within 2 weeks, resulting in the sound trending at top across charts. Placeholder entry for latest case studies.',
+    description: 'We developed this sound from 20k creations to 34k within 2 weeks, resulting in the sound trending at top 2 across the TikTok Top 50 charts both acorss the UK and Canada.',
     phones: [
       { type: 'INFLUENCERS', variant: 'blue', videoUrl: 'https://cinema8.com/video/EDgjRygO?autoplay=1&muted=1&loop=1&controls=0', tiktokUrl: 'https://www.tiktok.com/@davidmaluco_/video/7598668517076077826?is_from_webapp=1&web_id=7608883123070027286' },
-      { type: 'AESTHETIC', variant: 'cyan', videoUrl: 'https://cinema8.com/video/GDnE8jaO?autoplay=1&muted=1&loop=1&controls=0', tiktokUrl: 'https://www.tiktok.com/@trendy.dynasty/video/7601549161049148692?is_from_webapp=1&web_id=7608883123070027286' },
-      { type: 'QUOTES', variant: 'rose', videoUrl: 'https://cinema8.com/video/MXBz8neX?autoplay=1&muted=1&loop=1&controls=0', tiktokUrl: 'https://www.tiktok.com/@parkerius.ae/video/7594864209549135126?is_from_webapp=1&web_id=7608883123070027286' },
-      { type: 'MOVIE/SERIES', variant: 'violet', videoUrl: 'https://cinema8.com/video/EDgjR4oO?autoplay=1&muted=1&loop=1&controls=0', tiktokUrl: 'https://www.tiktok.com/@sdr_gfx_by_david_camasta/video/7597416720881454358?is_from_webapp=1&web_id=7608883123070027286' },
+      { type: 'AESTHETIC EDITS', variant: 'cyan', videoUrl: 'https://cinema8.com/video/GDnE8jaO?autoplay=1&muted=1&loop=1&controls=0', tiktokUrl: 'https://www.tiktok.com/@trendy.dynasty/video/7601549161049148692?is_from_webapp=1&web_id=7608883123070027286' },
+      { type: 'MOVIE/SERIES', variant: 'rose', videoUrl: 'https://cinema8.com/video/MXBz8neX?autoplay=1&muted=1&loop=1&controls=0', tiktokUrl: 'https://www.tiktok.com/@parkerius.ae/video/7594864209549135126?is_from_webapp=1&web_id=7608883123070027286' },
+      { type: 'AI CONTENT', variant: 'violet', videoUrl: 'https://cinema8.com/video/EDgjR4oO?autoplay=1&muted=1&loop=1&controls=0', tiktokUrl: 'https://www.tiktok.com/@sdr_gfx_by_david_camasta/video/7597416720881454358?is_from_webapp=1&web_id=7608883123070027286' },
       { type: 'LYRICS', variant: 'emerald', videoUrl: 'https://cinema8.com/video/xDZzPZgD?autoplay=1&muted=1&loop=1&controls=0', tiktokUrl: 'https://www.tiktok.com/@irionyxxlyrics/video/7597363421310487815?is_from_webapp=1&web_id=7608883123070027286' }
     ]
   },
@@ -227,12 +227,12 @@ const caseStudyCards = [
       { label: 'VIDEOS', value: '200+' },
       { label: 'VIEWS', value: '14M+' }
     ],
-    description: 'Scaled content across high converting niches including real life creators and lyrical videos, generating 14M+ views within a week. Placeholder assets to be added.',
+    description: 'We scaled content for the track across high converting niches including real life creators, lyrical video, and quotes. Generating 14M+ views within a week with just over 200 videos.',
     phones: [
       { type: 'INFLUENCERS', variant: 'emerald', videoUrl: 'https://cinema8.com/video/vJzKe88O?autoplay=1&muted=1&loop=1&controls=0', tiktokUrl: 'https://www.tiktok.com/@bellacezarp/video/7610030021863836946?is_from_webapp=1&sender_device=pc&web_id=7608883123070027286' },
       { type: 'LYRICALS', variant: 'cyan', videoUrl: 'https://cinema8.com/video/jJLB0nrD?autoplay=1&muted=1&loop=1&controls=0', tiktokUrl: 'https://www.tiktok.com/@nstalgiah/video/7609044097210567957?is_from_webapp=1&web_id=7608883123070027286' },
-      { type: 'QUOTES', variant: 'rose', videoUrl: 'https://cinema8.com/video/xDZzPwKD?autoplay=1&muted=1&loop=1&controls=0', tiktokUrl: 'https://www.tiktok.com/@hamdiaep/video/7469165677220269344' },
-      { type: 'AESTHETIC', variant: 'violet', videoUrl: 'https://www.tiktok.com/@flamexfilms/video/7469122437163142422?autoplay=1&muted=1&loop=1&controls=0', tiktokUrl: 'https://www.tiktok.com/@flamexfilms/video/7469122437163142422' }
+      { type: 'MOVIE EDITS', variant: 'rose', videoUrl: 'https://cinema8.com/video/xDZzPwKD?autoplay=1&muted=1&loop=1&controls=0', tiktokUrl: 'https://www.tiktok.com/@hamdiaep/video/7469165677220269344' },
+      { type: 'QUOTES', variant: 'violet', videoUrl: 'https://www.tiktok.com/@flamexfilms/video/7469122437163142422?autoplay=1&muted=1&loop=1&controls=0', tiktokUrl: 'https://www.tiktok.com/@flamexfilms/video/7469122437163142422' }
     ]
   },
   {
@@ -249,12 +249,12 @@ const caseStudyCards = [
       { label: 'VIDEOS', value: '200+' },
       { label: 'VIEWS', value: '13M+' }
     ],
-    description: 'We scaled content from 500 UGC to 1500 UGCs within a week generating over 13M views across multiple edit categories. Placeholder case study ready for assets.',
+    description: 'We scaled content from 500 UGC to 1500 UGCs within a week generating over 13M views across Real life creators, NBA edits, Football edits, and Movie edits.',
     phones: [
       { type: 'INFLUENCERS', variant: 'emerald', videoUrl: 'https://cinema8.com/video/1Ob20knO?autoplay=1&muted=1&loop=1&controls=0', tiktokUrl: 'https://www.tiktok.com/@justkhiza/video/7608632508695055638?is_from_webapp=1&web_id=7608883123070027286' },
-      { type: 'FOOTBALL EDITS', variant: 'emerald', videoUrl: 'https://cinema8.com/video/oJKxabPO?autoplay=1&muted=1&loop=1&controls=0', tiktokUrl: 'https://www.tiktok.com/@nivalvfx/video/7608748547923692807?is_from_webapp=1&web_id=7608883123070027286' },
-      { type: 'UGC', variant: 'cyan', videoUrl: 'https://www.tiktok.com/@tett3z/video/7609245386863152406?autoplay=1&muted=1&loop=1&controls=0', tiktokUrl: 'https://www.tiktok.com/@tett3z/video/7609245386863152406'  },
-      { type: 'MOOD EDITS', variant: 'violet', videoUrl: 'https://cinema8.com/video/oJKxagQO?autoplay=1&muted=1&loop=1&controls=0', tiktokUrl: 'https://www.tiktok.com/@9i_my/video/7609396653526764807?is_from_webapp=1&web_id=7608883123070027286' }
+      { type: 'NBA EDITS', variant: 'emerald', videoUrl: 'https://cinema8.com/video/oJKxabPO?autoplay=1&muted=1&loop=1&controls=0', tiktokUrl: 'https://www.tiktok.com/@nivalvfx/video/7608748547923692807?is_from_webapp=1&web_id=7608883123070027286' },
+      { type: 'FOOTBALL EDITS', variant: 'cyan', videoUrl: 'https://www.tiktok.com/@tett3z/video/7609245386863152406?autoplay=1&muted=1&loop=1&controls=0', tiktokUrl: 'https://www.tiktok.com/@tett3z/video/7609245386863152406'  },
+      { type: 'MOVIE EDITS', variant: 'violet', videoUrl: 'https://cinema8.com/video/oJKxagQO?autoplay=1&muted=1&loop=1&controls=0', tiktokUrl: 'https://www.tiktok.com/@9i_my/video/7609396653526764807?is_from_webapp=1&web_id=7608883123070027286' }
     ]
   },
   {

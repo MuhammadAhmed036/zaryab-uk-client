@@ -273,8 +273,8 @@ const caseStudyCards = [
     ],
     description: 'We were able to produce over 500 football edits within a 3 week period generating 300M+ views and a lot of organic recreations within the football niche. We started the content production at less than 300 video creations.',
     phones: [
-      { type: 'FOOTBALL EDITS', variant: 'emerald', videoUrl: 'https://player.vimeo.com/video/1154665843?title=0&byline=0&portrait=0&badge=0&autoplay=1&muted=1&loop=1&background=1&autopause=0&player_id=0&app_id=58479', tiktokUrl: 'https://www.tiktok.com/@alxxvfx0/video/7516265640336952607?is_from_webapp=1&sender_device=pc&web_id=7551832417540556310' },
-      { type: 'INFLUENCER CONTENT', variant: 'blue', videoUrl: 'https://player.vimeo.com/video/1154666418?title=0&byline=0&portrait=0&badge=0&autoplay=1&muted=1&loop=1&background=1&autopause=0&player_id=0&app_id=58479', tiktokUrl: 'https://www.tiktok.com/@8eatrizfitas/video/7512541678587104534?is_from_webapp=1&sender_device=pc&web_id=7551832417540556310' }
+      { type: 'FOOTBALL EDITS', variant: 'emerald', videoUrl: 'https://cinema8.com/video/WD9W3nqJ?autoplay=1&muted=1&loop=1&controls=0', tiktokUrl: 'https://www.tiktok.com/@alxxvfx0/video/7516265640336952607?is_from_webapp=1&sender_device=pc&web_id=7551832417540556310' },
+      { type: 'INFLUENCER CONTENT', variant: 'blue', videoUrl: 'https://cinema8.com/video/rJvAm98X?autoplay=1&muted=1&loop=1&controls=0', tiktokUrl: 'https://www.tiktok.com/@8eatrizfitas/video/7512541678587104534?is_from_webapp=1&sender_device=pc&web_id=7551832417540556310' }
     ]
   },
   {
@@ -293,10 +293,10 @@ const caseStudyCards = [
     ],
     description: 'We developed content strategy for a debut song by an artist from scratch resulting in over 8K video recreations and over 1M streams. Growing his monthly listeners from 300 to 30K+ within a month.',
     phones: [
-      { type: 'INFLUENCER TRENDY', variant: 'cyan', videoUrl: 'https://player.vimeo.com/video/1154672634?title=0&byline=0&portrait=0&badge=0&autoplay=1&muted=1&loop=1&background=1&autopause=0&player_id=0&app_id=58479', tiktokUrl: 'https://www.tiktok.com/@st_rayyn/video/7502498211114847510?is_from_webapp=1&sender_device=pc' },
-      { type: 'LUXURY/AESTHETIC CONTENT', variant: 'violet', imageUrl: '/images/case-studies/logos/ssstik.io_1768472924865.webp', tiktokUrl: 'https://www.tiktok.com/@777luxrich/photo/7502114116564290822?is_from_webapp=1&sender_device=pc' },
-      { type: 'FOOTBALL EDITS', variant: 'emerald', videoUrl: 'https://player.vimeo.com/video/1154673899?title=0&byline=0&portrait=0&badge=0&autoplay=1&muted=1&loop=1&background=1&autopause=0&player_id=0&app_id=58479', tiktokUrl: 'https://www.tiktok.com/@aqurdz/video/7474352236265688342?is_from_webapp=1&sender_device=pc' },
-      { type: 'MOVIE EDITS', variant: 'rose', videoUrl: 'https://player.vimeo.com/video/1154673939?title=0&byline=0&portrait=0&badge=0&autoplay=1&muted=1&loop=1&background=1&autopause=0&player_id=0&app_id=58479', tiktokUrl: 'https://www.tiktok.com/@flamexfilms/video/7451672916648938774?is_from_webapp=1&sender_device=pc' }
+      { type: 'INFLUENCER TRENDY', variant: 'cyan', videoUrl: 'https://cinema8.com/video/zJANdBQO?autoplay=1&muted=1&loop=1&controls=0', tiktokUrl: 'https://www.tiktok.com/@st_rayyn/video/7502498211114847510?is_from_webapp=1&sender_device=pc' },
+      { type: 'LUXURY/AESTHETIC CONTENT', variant: 'violet', videoUrl: 'https://cinema8.com/video/YDpYPGGX?autoplay=1&muted=1&loop=1&controls=0', tiktokUrl: 'https://www.tiktok.com/@777luxrich/photo/7502114116564290822?is_from_webapp=1&sender_device=pc' },
+      { type: 'FOOTBALL EDITS', variant: 'emerald', videoUrl: 'https://cinema8.com/video/GDnE8mgO?autoplay=1&muted=1&loop=1&controls=0', tiktokUrl: 'https://www.tiktok.com/@aqurdz/video/7474352236265688342?is_from_webapp=1&sender_device=pc' },
+      { type: 'MOVIE EDITS', variant: 'rose', videoUrl: 'https://cinema8.com/video/rJvAmlRX?autoplay=1&muted=1&loop=1&controls=0', tiktokUrl: 'https://www.tiktok.com/@flamexfilms/video/7451672916648938774?is_from_webapp=1&sender_device=pc' }
     ]
   },
   {
@@ -315,10 +315,10 @@ const caseStudyCards = [
     ],
     description: 'We were able to scale content across a wide range of niches such as quotes, anime edits, movie edits, and real life influencers, stacking up more than 5,000 UGC within 2 weeks and accumulating over 100M views.',
     phones: [
-      { type: 'QUOTES', variant: 'fuchsia', videoUrl: 'https://player.vimeo.com/video/1155956874?autoplay=1&muted=1&loop=1&background=1&autopause=0&title=0&byline=0&portrait=0', tiktokUrl: 'https://www.tiktok.com/@inniz/video/7573741812511165727?is_from_webapp=1&sender_device=pc&web_id=7551832417540556310' },
-      { type: 'ANIME EDITS', variant: 'pink', videoUrl: 'https://player.vimeo.com/video/1155957951?autoplay=1&muted=1&loop=1&background=1&autopause=0&title=0&byline=0&portrait=0', tiktokUrl: 'https://www.tiktok.com/@hokage_sama86/video/7563635884935908664?is_from_webapp=1&sender_device=pc&web_id=7551832417540556310' },
-      { type: 'MOVIE EDITS', variant: 'rose', videoUrl: 'https://player.vimeo.com/video/1155958177?autoplay=1&muted=1&loop=1&background=1&autopause=0&title=0&byline=0&portrait=0', tiktokUrl: 'https://www.tiktok.com/@sxnddddd/video/7566650009534467350?is_from_webapp=1&sender_device=pc&web_id=7551832417540556310' },
-      { type: 'REAL LIFE INFLUENCERS', variant: 'violet', videoUrl: 'https://player.vimeo.com/video/1155958302?autoplay=1&muted=1&loop=1&background=1&autopause=0&title=0&byline=0&portrait=0', tiktokUrl: 'https://www.tiktok.com/@gutocesarmendes/video/7564220715273145608?is_from_webapp=1&sender_device=pc&web_id=7551832417540556310' }
+      { type: 'QUOTES', variant: 'fuchsia', videoUrl: 'https://cinema8.com/video/zX4MNraJ?autoplay=1&muted=1&loop=1&controls=0', tiktokUrl: 'https://www.tiktok.com/@inniz/video/7573741812511165727?is_from_webapp=1&sender_device=pc&web_id=7551832417540556310' },
+      { type: 'ANIME EDITS', variant: 'pink', videoUrl: 'https://cinema8.com/video/vJzKeRYO?autoplay=1&muted=1&loop=1&controls=0', tiktokUrl: 'https://www.tiktok.com/@hokage_sama86/video/7563635884935908664?is_from_webapp=1&sender_device=pc&web_id=7551832417540556310' },
+      { type: 'MOVIE EDITS', variant: 'rose', videoUrl: 'https://cinema8.com/video/YDpYPgkX?autoplay=1&muted=1&loop=1&controls=0', tiktokUrl: 'https://www.tiktok.com/@sxnddddd/video/7566650009534467350?is_from_webapp=1&sender_device=pc&web_id=7551832417540556310' },
+      { type: 'REAL LIFE INFLUENCERS', variant: 'violet', videoUrl: 'https://cinema8.com/video/AJE7oGaD?autoplay=1&muted=1&loop=1&controls=0', tiktokUrl: 'https://www.tiktok.com/@gutocesarmendes/video/7564220715273145608?is_from_webapp=1&sender_device=pc&web_id=7551832417540556310' }
     ]
   },
   {
@@ -337,9 +337,9 @@ const caseStudyCards = [
     ],
     description: 'We were able to scale content across a wide range of niches such as quotes, anime edits, movie edits, and real life influencers, stacking up more than 5,000 UGC within 2 weeks and accumulating over 100M views. We scaled this classic track mainly across the dance niche while also testing out meme and brainrot content.',
     phones: [
-      { type: 'DANCE CONTENT', variant: 'orange', videoUrl: 'https://player.vimeo.com/video/1155964318?autoplay=1&muted=1&loop=1&background=1&autopause=0&title=0&byline=0&portrait=0', tiktokUrl: 'https://www.tiktok.com/@4iiii.8/video/7566206509495880978?is_from_webapp=1&sender_device=pc&web_id=7551832417540556310' },
-      { type: 'MEME CONTENT', variant: 'amber', videoUrl: 'https://player.vimeo.com/video/1155964454?autoplay=1&muted=1&loop=1&background=1&autopause=0&title=0&byline=0&portrait=0', tiktokUrl: 'https://www.tiktok.com/@jaydanotpinkettsmith/video/7558233786471714062?is_from_webapp=1&sender_device=pc&web_id=7551832417540556310' },
-      { type: 'BRAINROT CONTENT', variant: 'yellow', videoUrl: 'https://player.vimeo.com/video/1155964536?autoplay=1&muted=1&loop=1&background=1&autopause=0&title=0&byline=0&portrait=0', tiktokUrl: 'https://www.tiktok.com/@ratatadance8/video/7567412076843470102?is_from_webapp=1&sender_device=pc&web_id=7551832417540556310' }
+      { type: 'DANCE CONTENT', variant: 'orange', videoUrl: 'https://cinema8.com/video/VX37NAoX?autoplay=1&muted=1&loop=1&controls=0', tiktokUrl: 'https://www.tiktok.com/@4iiii.8/video/7566206509495880978?is_from_webapp=1&sender_device=pc&web_id=7551832417540556310' },
+      { type: 'MEME CONTENT', variant: 'amber', videoUrl: 'https://cinema8.com/video/zJANdgaO?autoplay=1&muted=1&loop=1&controls=0', tiktokUrl: 'https://www.tiktok.com/@jaydanotpinkettsmith/video/7558233786471714062?is_from_webapp=1&sender_device=pc&web_id=7551832417540556310' },
+      { type: 'BRAINROT CONTENT', variant: 'yellow', videoUrl: 'https://cinema8.com/video/nOYYwxnO?autoplay=1&muted=1&loop=1&controls=0', tiktokUrl: 'https://www.tiktok.com/@ratatadance8/video/7567412076843470102?is_from_webapp=1&sender_device=pc&web_id=7551832417540556310' }
     ]
   }
 ];
@@ -358,28 +358,28 @@ const contentAtScaleData = {
       title: 'UNEXPECTED EDITS TEMPLATE',
       subtitle: 'CAR EDITS',
       variant: 'orange',
-      videoUrl: 'https://player.vimeo.com/video/1154675480?title=0&byline=0&portrait=0&badge=0&autoplay=1&muted=1&loop=1&background=1&autopause=0&player_id=0&app_id=58479',
+      videoUrl: 'https://cinema8.com/video/ADQ9RkBD?autoplay=1&muted=1&loop=1&controls=0',
       tiktokUrl: 'https://www.tiktok.com/@hamdiaep/video/7469165677220269344?is_from_webapp=1&sender_device=pc'
     },
     {
       title: 'MEME DANCE VIDEOS',
       subtitle: 'MEME DANCE EDITS',
       variant: 'cyan',
-      videoUrl: 'https://player.vimeo.com/video/1154675586?title=0&byline=0&portrait=0&badge=0&autoplay=1&muted=1&loop=1&background=1&autopause=0&player_id=0&app_id=58479',
+      videoUrl: 'https://cinema8.com/video/vD52N82X?autoplay=1&muted=1&loop=1&controls=0',
       tiktokUrl: 'https://www.tiktok.com/@r.boysz/video/7469156425533639968?is_from_webapp=1&sender_device=pc'
     },
     {
       title: 'FOOTBALL EDITS',
       subtitle: 'FOOTBALL EDITS',
       variant: 'emerald',
-      videoUrl: 'https://player.vimeo.com/video/1154675639?title=0&byline=0&portrait=0&badge=0&autoplay=1&muted=1&loop=1&background=1&autopause=0&player_id=0&app_id=58479',
+      videoUrl: 'https://cinema8.com/video/LJRZkLaJ?autoplay=1&muted=1&loop=1&controls=0',
       tiktokUrl: 'https://www.tiktok.com/@dkrfut/video/7461305683632196869?is_from_webapp=1&sender_device=pc&web_id=7551832417540556310'
     },
     {
       title: 'MOVIE EDITS',
       subtitle: 'MOVIE EDITS',
       variant: 'slate',
-      videoUrl: 'https://player.vimeo.com/video/1154675694?title=0&byline=0&portrait=0&badge=0&autoplay=1&muted=1&loop=1&background=1&autopause=0&player_id=0&app_id=58479',
+      videoUrl: 'https://cinema8.com/video/kDl1M75X?autoplay=1&muted=1&loop=1&controls=0',
       tiktokUrl: 'https://www.tiktok.com/@hulk2003.s/video/7477583973762354437?is_from_webapp=1&sender_device=pc&web_id=7551832417540556310'
     }
   ],
@@ -401,14 +401,14 @@ const likeMeData = {
       title: 'FOOTBALL EDITS',
       subtitle: 'FOOTBALL EDITS',
       variant: 'emerald',
-      videoUrl: 'https://player.vimeo.com/video/1154677024?title=0&byline=0&portrait=0&badge=0&autoplay=1&muted=1&loop=1&background=1&autopause=0&player_id=0&app_id=58479',
+      videoUrl: 'https://cinema8.com/video/vD52NKLX?autoplay=1&muted=1&loop=1&controls=0',
       tiktokUrl: 'https://www.tiktok.com/@shh74t/video/7469870426416532758?is_from_webapp=1&sender_device=pc'
     },
     {
       title: 'INTERVIEW EDITS',
       subtitle: 'UNEXPECTED FOOTBALL EDITS',
       variant: 'cyan',
-      videoUrl: 'https://player.vimeo.com/video/1154677107?title=0&byline=0&portrait=0&badge=0&autoplay=1&muted=1&loop=1&background=1&autopause=0&player_id=0&app_id=58479',
+      videoUrl: 'https://cinema8.com/video/GDnE8vzO?autoplay=1&muted=1&loop=1&controls=0',
       tiktokUrl: 'https://www.tiktok.com/@_.dja9/video/7458327066644122902?is_from_webapp=1&sender_device=pc&web_id=7551832417540556310'
     }
   ],
@@ -431,10 +431,10 @@ const coldData = {
     videos: '18.1k videos'
   },
   contentCategories: [
-    { title: 'MOVIE EDITS', variant: 'rose', videoUrl: 'https://player.vimeo.com/video/1154668617?title=0&byline=0&portrait=0&badge=0&autoplay=1&muted=1&loop=1&background=1&autopause=0&player_id=0&app_id=58479', tiktokUrl: 'https://www.tiktok.com/@nylanbaee/video/7557056773069262136' },
-    { title: 'ANIME EDITS', variant: 'violet', videoUrl: 'https://player.vimeo.com/video/1154668822?title=0&byline=0&portrait=0&badge=0&autoplay=1&muted=1&loop=1&background=1&autopause=0&player_id=0&app_id=58479', tiktokUrl: 'https://www.tiktok.com/@w.kman_/video/7557349240687660296' },
-    { title: 'LYRICAL CONTENT', variant: 'cyan', videoUrl: 'https://player.vimeo.com/video/1154669787?title=0&byline=0&portrait=0&badge=0&autoplay=1&muted=1&loop=1&background=1&autopause=0&player_id=0&app_id=58479', tiktokUrl: 'https://www.tiktok.com/@just.lyricssx/video/7564123664082423062' },
-    { title: 'INFLUENCER CONTENT', variant: 'emerald', videoUrl: 'https://player.vimeo.com/video/1154669717?title=0&byline=0&portrait=0&badge=0&autoplay=1&muted=1&loop=1&background=1&autopause=0&player_id=0&app_id=58479', tiktokUrl: 'https://www.tiktok.com/@ksmalicsi/video/7559947031939255553?is_from_webapp=1&sender_device=pc' }
+    { title: 'MOVIE EDITS', variant: 'rose', videoUrl: 'https://cinema8.com/video/zO1LARWJ?autoplay=1&muted=1&loop=1&controls=0', tiktokUrl: 'https://www.tiktok.com/@nylanbaee/video/7557056773069262136' },
+    { title: 'ANIME EDITS', variant: 'violet', videoUrl: 'https://cinema8.com/video/BDmedxqD?autoplay=1&muted=1&loop=1&controls=0', tiktokUrl: 'https://www.tiktok.com/@w.kman_/video/7557349240687660296' },
+    { title: 'LYRICAL CONTENT', variant: 'cyan', videoUrl: 'https://cinema8.com/video/YDpYP42X?autoplay=1&muted=1&loop=1&controls=0', tiktokUrl: 'https://www.tiktok.com/@just.lyricssx/video/7564123664082423062' },
+    { title: 'INFLUENCER CONTENT', variant: 'emerald', videoUrl: 'https://cinema8.com/video/jXaxaByD?autoplay=1&muted=1&loop=1&controls=0', tiktokUrl: 'https://www.tiktok.com/@ksmalicsi/video/7559947031939255553?is_from_webapp=1&sender_device=pc' }
   ],
   stats: [
     { label: 'SREAMS', value: '8M' },
@@ -456,10 +456,10 @@ const tenYearsData = {
     hasAddToMusic: true
   },
   contentCategories: [
-    { title: 'MOVIE EDITS', variant: 'rose', videoUrl: 'https://player.vimeo.com/video/1154682303?title=0&byline=0&portrait=0&badge=0&autoplay=1&muted=1&loop=1&background=1&autopause=0&player_id=0&app_id=58479', tiktokUrl: 'https://www.tiktok.com/@parkerius.ae/video/7575542660929195286?is_from_webapp=1&sender_device=pc' },
-    { title: 'KDRAMA EDITS', variant: 'violet', videoUrl: 'https://player.vimeo.com/video/1154682349?title=0&byline=0&portrait=0&badge=0&autoplay=1&muted=1&loop=1&background=1&autopause=0&player_id=0&app_id=58479', tiktokUrl: 'https://www.tiktok.com/@kitcsh/video/7570676890160319762?is_from_webapp=1&sender_device=pc' },
-    { title: 'ROMANTIC QUOTES', variant: 'pink', videoUrl: 'https://player.vimeo.com/video/1154682412?title=0&byline=0&portrait=0&badge=0&autoplay=1&muted=1&loop=1&background=1&autopause=0&player_id=0&app_id=58479', tiktokUrl: 'https://www.tiktok.com/@inniz/video/7565645520169930015?is_from_webapp=1&sender_device=pc' },
-    { title: 'INFLUENCER CONTENT', variant: 'cyan', videoUrl: 'https://player.vimeo.com/video/1154682591?title=0&byline=0&portrait=0&badge=0&autoplay=1&muted=1&loop=1&background=1&autopause=0&player_id=0&app_id=58479', tiktokUrl: 'https://www.tiktok.com/@addriianaa.sr/video/7570143633383509270' }
+    { title: 'MOVIE EDITS', variant: 'rose', videoUrl: 'https://cinema8.com/video/vD52NonX?autoplay=1&muted=1&loop=1&controls=0', tiktokUrl: 'https://www.tiktok.com/@parkerius.ae/video/7575542660929195286?is_from_webapp=1&sender_device=pc' },
+    { title: 'KDRAMA EDITS', variant: 'violet', videoUrl: 'https://cinema8.com/video/zX0ENQyJ?autoplay=1&muted=1&loop=1&controls=0', tiktokUrl: 'https://www.tiktok.com/@kitcsh/video/7570676890160319762?is_from_webapp=1&sender_device=pc' },
+    { title: 'ROMANTIC QUOTES', variant: 'pink', videoUrl: 'https://cinema8.com/video/rJV6M7LJ?autoplay=1&muted=1&loop=1&controls=0', tiktokUrl: 'https://www.tiktok.com/@inniz/video/7565645520169930015?is_from_webapp=1&sender_device=pc' },
+    { title: 'INFLUENCER CONTENT', variant: 'cyan', videoUrl: 'https://cinema8.com/video/rXGZWmoD?autoplay=1&muted=1&loop=1&controls=0', tiktokUrl: 'https://www.tiktok.com/@addriianaa.sr/video/7570143633383509270' }
   ],
   stats: [
     { label: 'SREAMS', value: '3M' },
@@ -481,10 +481,10 @@ const wildfireData = {
     hasAddToMusic: true
   },
   contentCategories: [
-    { title: 'MOVIE EDITS', variant: 'rose', videoUrl: 'https://player.vimeo.com/video/1154684553?title=0&byline=0&portrait=0&badge=0&autoplay=1&muted=1&loop=1&background=1&autopause=0&player_id=0&app_id=58479', tiktokUrl: 'https://www.tiktok.com/@onxlychoi/video/7573794634648898838' },
-    { title: 'ANIME EDITS', variant: 'violet', videoUrl: 'https://player.vimeo.com/video/1154686102?title=0&byline=0&portrait=0&badge=0&autoplay=1&muted=1&loop=1&background=1&autopause=0&player_id=0&app_id=58479', tiktokUrl: 'https://www.tiktok.com/@nelyrall/video/7571913211243515147' },
-    { title: 'FOOTBALL EDITS', variant: 'emerald', videoUrl: 'https://player.vimeo.com/video/1154688182?title=0&byline=0&portrait=0&badge=0&autoplay=1&muted=1&loop=1&background=1&autopause=0&player_id=0&app_id=58479', tiktokUrl: 'https://www.tiktok.com/@kairo.tm/video/7571907919613119766' },
-    { title: 'INFLUENCER CONTENT', variant: 'cyan', videoUrl: 'https://player.vimeo.com/video/1154684750?title=0&byline=0&portrait=0&badge=0&autoplay=1&muted=1&loop=1&background=1&autopause=0&player_id=0&app_id=58479', tiktokUrl: 'https://www.tiktok.com/@asyokka1/video/7570779752001244427?is_from_webapp=1&sender_device=pc' }
+    { title: 'MOVIE EDITS', variant: 'rose', videoUrl: 'https://cinema8.com/video/WDez37EX?autoplay=1&muted=1&loop=1&controls=0', tiktokUrl: 'https://www.tiktok.com/@onxlychoi/video/7573794634648898838' },
+    { title: 'ANIME EDITS', variant: 'violet', videoUrl: 'https://cinema8.com/video/dJ24Nk7D?autoplay=1&muted=1&loop=1&controls=0', tiktokUrl: 'https://www.tiktok.com/@nelyrall/video/7571913211243515147' },
+    { title: 'FOOTBALL EDITS', variant: 'emerald', videoUrl: 'https://cinema8.com/video/kDl1M6NX?autoplay=1&muted=1&loop=1&controls=0', tiktokUrl: 'https://www.tiktok.com/@kairo.tm/video/7571907919613119766' },
+    { title: 'INFLUENCER CONTENT', variant: 'cyan', videoUrl: 'https://cinema8.com/video/AJE7ogKD?autoplay=1&muted=1&loop=1&controls=0', tiktokUrl: 'https://www.tiktok.com/@asyokka1/video/7570779752001244427?is_from_webapp=1&sender_device=pc' }
   ],
   stats: [
     { label: 'SREAMS', value: '5M' },
@@ -500,10 +500,10 @@ const watchinData = {
   artist: 'NICHOLAS CREUS',
   logo: '/images/case-studies/logos/Watchin - Nicholas Creus.png',
   contentCategories: [
-    { title: 'INFLUENCER SCENIC CONTENT', variant: 'slate', videoUrl: 'https://player.vimeo.com/video/1155978565?autoplay=1&muted=1&loop=1&background=1&autopause=0&title=0&byline=0&portrait=0', tiktokUrl: 'https://www.tiktok.com/@robynsadventures/video/7570553637445897490?is_from_webapp=1&sender_device=pc&web_id=7551832417540556310' },
-    { title: 'AESTHETIC CONTENT', variant: 'cyan', videoUrl: 'https://player.vimeo.com/video/1155978783?autoplay=1&muted=1&loop=1&background=1&autopause=0&title=0&byline=0&portrait=0', tiktokUrl: 'https://www.tiktok.com/@xtinieee_/video/7559548150105607432?is_from_webapp=1&sender_device=pc&web_id=7551832417540556310' },
-    { title: 'HOPECORE MOVIE EDITS', variant: 'violet', videoUrl: 'https://player.vimeo.com/video/1155978866?autoplay=1&muted=1&loop=1&background=1&autopause=0&title=0&byline=0&portrait=0', tiktokUrl: 'https://www.tiktok.com/@thecinecouplee/video/7565608138884549896?is_from_webapp=1&sender_device=pc&web_id=7551832417540556310' },
-    { title: 'QUOTES', variant: 'rose', videoUrl: 'https://player.vimeo.com/video/1155978933?autoplay=1&muted=1&loop=1&background=1&autopause=0&title=0&byline=0&portrait=0', tiktokUrl: 'https://www.tiktok.com/@thesurrealseeker/video/7567210354946706718?is_from_webapp=1&sender_device=pc&web_id=7551832417540556310' }
+    { title: 'INFLUENCER SCENIC CONTENT', variant: 'slate', videoUrl: 'https://cinema8.com/video/nOYYw7aO?autoplay=1&muted=1&loop=1&controls=0', tiktokUrl: 'https://www.tiktok.com/@robynsadventures/video/7570553637445897490?is_from_webapp=1&sender_device=pc&web_id=7551832417540556310' },
+    { title: 'AESTHETIC CONTENT', variant: 'cyan', videoUrl: 'https://cinema8.com/video/6JM9GggJ?autoplay=1&muted=1&loop=1&controls=0', tiktokUrl: 'https://www.tiktok.com/@xtinieee_/video/7559548150105607432?is_from_webapp=1&sender_device=pc&web_id=7551832417540556310' },
+    { title: 'HOPECORE MOVIE EDITS', variant: 'violet', videoUrl: 'https://cinema8.com/video/EDgjRdgO?autoplay=1&muted=1&loop=1&controls=0', tiktokUrl: 'https://www.tiktok.com/@thecinecouplee/video/7565608138884549896?is_from_webapp=1&sender_device=pc&web_id=7551832417540556310' },
+    { title: 'QUOTES', variant: 'rose', videoUrl: 'https://cinema8.com/video/LJRZkApJ?autoplay=1&muted=1&loop=1&controls=0', tiktokUrl: 'https://www.tiktok.com/@thesurrealseeker/video/7567210354946706718?is_from_webapp=1&sender_device=pc&web_id=7551832417540556310' }
   ],
   stats: [
     { label: 'SREAMS', value: '2.2M' },

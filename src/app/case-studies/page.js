@@ -232,7 +232,7 @@ const caseStudyCards = [
       { type: 'INFLUENCERS', variant: 'emerald', videoUrl: 'https://cinema8.com/video/vJzKe88O?autoplay=1&muted=1&loop=1&controls=0', tiktokUrl: 'https://www.tiktok.com/@bellacezarp/video/7610030021863836946?is_from_webapp=1&sender_device=pc&web_id=7608883123070027286' },
       { type: 'LYRICALS', variant: 'cyan', videoUrl: 'https://cinema8.com/video/jJLB0nrD?autoplay=1&muted=1&loop=1&controls=0', tiktokUrl: 'https://www.tiktok.com/@nstalgiah/video/7609044097210567957?is_from_webapp=1&web_id=7608883123070027286' },
       { type: 'MOVIE EDITS', variant: 'rose', videoUrl: 'https://cinema8.com/video/xDZzPwKD?autoplay=1&muted=1&loop=1&controls=0', tiktokUrl: 'https://www.tiktok.com/@hamdiaep/video/7469165677220269344' },
-      { type: 'QUOTES', variant: 'violet', videoUrl: 'https://www.tiktok.com/@flamexfilms/video/7469122437163142422?autoplay=1&muted=1&loop=1&controls=0', tiktokUrl: 'https://www.tiktok.com/@flamexfilms/video/7469122437163142422' }
+      { type: 'QUOTES', variant: 'violet', videoUrl: 'https://cinema8.com/video/LJRZkrGJ?autoplay=1&muted=1&loop=1&controls=0', tiktokUrl: 'https://www.tiktok.com/@puresucces/video/7606116058696650006?is_from_webapp=1' }
     ]
   },
   {
@@ -253,7 +253,7 @@ const caseStudyCards = [
     phones: [
       { type: 'INFLUENCERS', variant: 'emerald', videoUrl: 'https://cinema8.com/video/1Ob20knO?autoplay=1&muted=1&loop=1&controls=0', tiktokUrl: 'https://www.tiktok.com/@justkhiza/video/7608632508695055638?is_from_webapp=1&web_id=7608883123070027286' },
       { type: 'NBA EDITS', variant: 'emerald', videoUrl: 'https://cinema8.com/video/oJKxabPO?autoplay=1&muted=1&loop=1&controls=0', tiktokUrl: 'https://www.tiktok.com/@nivalvfx/video/7608748547923692807?is_from_webapp=1&web_id=7608883123070027286' },
-      { type: 'FOOTBALL EDITS', variant: 'cyan', videoUrl: 'https://www.tiktok.com/@tett3z/video/7609245386863152406?autoplay=1&muted=1&loop=1&controls=0', tiktokUrl: 'https://www.tiktok.com/@tett3z/video/7609245386863152406'  },
+      { type: 'FOOTBALL EDITS', variant: 'cyan', videoUrl: 'https://cinema8.com/video/1Ob20oVO?autoplay=1&muted=1&loop=1&controls=0', tiktokUrl: 'https://www.tiktok.com/@fishhxzs/video/7609041405830384903?is_from_webapp=1&web_id=7645270807602136598'  },
       { type: 'MOVIE EDITS', variant: 'violet', videoUrl: 'https://cinema8.com/video/oJKxagQO?autoplay=1&muted=1&loop=1&controls=0', tiktokUrl: 'https://www.tiktok.com/@9i_my/video/7609396653526764807?is_from_webapp=1&web_id=7608883123070027286' }
     ]
   },
